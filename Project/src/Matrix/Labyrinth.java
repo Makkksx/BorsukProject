@@ -9,8 +9,6 @@ public class Labyrinth {
 
     public Labyrinth(File file) throws IOException {
         String line;
-        char []buf = new char[256];
-        FileReader reader = new FileReader(file);
         Scanner sc = new Scanner(file);
         int i = 0;
         while (sc.hasNextLine()) {
