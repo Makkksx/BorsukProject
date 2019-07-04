@@ -1,4 +1,4 @@
-package Project;
+package Matrix;
 
 // Flood-Fill algorithm for matrix;
 // Input: matrix and pathes-massive; Output: void (making pathes in a massive);
