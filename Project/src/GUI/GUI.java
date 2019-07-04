@@ -1,10 +1,13 @@
 package GUI;
 
+import Matrix.Labyrinth;
+
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 import java.awt.image.BufferedImage;
 import java.io.*;
+import java.util.NoSuchElementException;
 import javax.imageio.*;
 import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
 
@@ -27,25 +30,40 @@ public class GUI extends JFrame {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         JMenuBar menuBar = new JMenuBar();
         JMenu fileMenu = new JMenu("Файл");
-        fileMenu.add(new JMenuItem("Новый"));
-        JMenuItem open = new JMenuItem("Открыть");
-        open.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent event) {
+        JMenu new_file = new JMenu("Создать");
+        JMenuItem open_file = new JMenuItem("Открыть");
+        JMenuItem save_file = new JMenuItem("Сохранить");
+        JMenuItem Pattern1 = new JMenuItem("Шаблон1");
+        JMenuItem Pattern2 = new JMenuItem("Шаблон2");
+        new_file.add(Pattern1);
+        new_file.add(Pattern2);
+        fileMenu.add(new_file);
+        fileMenu.add(open_file);
+        fileMenu.add(save_file);
+        menuBar.add(fileMenu);
+        setJMenuBar(menuBar);
+        setSize(800,600);
+        open_file.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
                 JFileChooser fileopen = new JFileChooser();
                 int ret = fileopen.showDialog(null, "Открыть файл");
                 if (ret == JFileChooser.APPROVE_OPTION) {
-                    File file = fileopen.getSelectedFile();
-                    System.out.println(file.getAbsolutePath());
+                    try {
+                        Labyrinth labyrinth = new Labyrinth(fileopen.getSelectedFile());
+                        labyrinth.printLabyrinth();
+                        labyrinth.floodFill(1, 1);
+                        labyrinth.printLabyrinth();
+
+                    }catch(IOException e){
+                        System.out.println(e.getMessage());
+                    }
+                    catch (NoSuchElementException e){
+
+                    }
                 }
             }
         });
-        fileMenu.add(open);
-        fileMenu.add(new JMenuItem("Сохранить"));
-        fileMenu.addSeparator();
-        fileMenu.add(new JMenuItem("Выйти"));
-        menuBar.add(fileMenu);
-        setJMenuBar(menuBar);
-        setSize(1200,900);
         /*
         JMenu editMenu = new JMenu("Правка");
         editMenu.add(new JMenuItem("Копировать"));
