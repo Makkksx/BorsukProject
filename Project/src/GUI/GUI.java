@@ -1,4 +1,4 @@
-package Project;
+package GUI;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -8,7 +8,7 @@ import java.io.*;
 import javax.imageio.*;
 import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
 
-import Project.Labyrinth.*;
+
 
 public class GUI extends JFrame {
     JLabel mainText = new JLabel("START MENU");
@@ -24,6 +24,42 @@ public class GUI extends JFrame {
      * I want this constructor to be a public!
      */
     public GUI() {
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        JMenuBar menuBar = new JMenuBar();
+        JMenu fileMenu = new JMenu("Файл");
+        fileMenu.add(new JMenuItem("Новый"));
+        JMenuItem open = new JMenuItem("Открыть");
+        open.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent event) {
+                JFileChooser fileopen = new JFileChooser();
+                int ret = fileopen.showDialog(null, "Открыть файл");
+                if (ret == JFileChooser.APPROVE_OPTION) {
+                    File file = fileopen.getSelectedFile();
+                    System.out.println(file.getAbsolutePath());
+                }
+            }
+        });
+        fileMenu.add(open);
+        fileMenu.add(new JMenuItem("Сохранить"));
+        fileMenu.addSeparator();
+        fileMenu.add(new JMenuItem("Выйти"));
+        menuBar.add(fileMenu);
+        setJMenuBar(menuBar);
+        setSize(1200,900);
+        /*
+        JMenu editMenu = new JMenu("Правка");
+        editMenu.add(new JMenuItem("Копировать"));
+        JMenu pasteMenu = new JMenu("Вставить");
+        pasteMenu.add(new JMenuItem("Из буфера"));
+        pasteMenu.add(new JMenuItem("Из файла"));
+        editMenu.add(pasteMenu);
+        menuBar.add(fileMenu);
+        menuBar.add(editMenu);
+        menuBar.add(Box.createHorizontalGlue());
+        menuBar.add(new JLabel(new ImageIcon("2.gif")));
+        setJMenuBar(menuBar);
+        setSize(1200,900);
+        /*
         super("LabyrinthJavaProject - BorSukiTrushnikovTeam");
         this.setBounds(100, 100, 1240, 720);
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -66,20 +102,22 @@ public class GUI extends JFrame {
         button.setBounds(140, 250, 100, 20);
         button.addActionListener(new ButtonEventListener());
         container.add(button);
+
+         */
     }
 
     private class ButtonEventListener implements ActionListener {
         public void actionPerformed(ActionEvent event) {
             if (file_choice.isSelected()) {
-                Labyrinth labyrinth = new Labyrinth(input.getText());
+               // Labyrinth labyrinth = new Labyrinth(input.getText());
             }
             else {
                 // it will be more than 2 patterns;
                 if (pattern1.isSelected()) {
-                    Labyrinth labyrinth = new Labyrinth(1);
+                 //   Labyrinth labyrinth = new Labyrinth(1);
                 }
                 if (pattern2.isSelected()) {
-                    Labyrinth labyrinth = new Labyrinth(2);
+                   // Labyrinth labyrinth = new Labyrinth(2);
                 }
             }
         }
