@@ -27,7 +27,7 @@ public class GUI extends JFrame {
      * I want this constructor to be a public!
      */
     public GUI() {
-        /*Меню*/
+        /*Меню */
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         JMenuBar menuBar = new JMenuBar();
         JMenu fileMenu = new JMenu("Файл");
