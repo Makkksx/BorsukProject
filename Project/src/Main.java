@@ -8,8 +8,11 @@ public class Main {
 
     public static void main(String[] args)  {
         try {
-            Labyrinth labyrinth = new Labyrinth(new File("/home/anderson/IdeaProjects/untitled5/src/lab"));
+            Labyrinth labyrinth = new Labyrinth(new File("./src/lab"));
+            labyrinth.printLabyrinth();
             labyrinth.floodFill(1, 1);
+            labyrinth.printLabyrinth();
+
         }catch(IOException e){
             System.out.println(e.getMessage());
         }
