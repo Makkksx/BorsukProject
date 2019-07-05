@@ -7,8 +7,6 @@ import javax.swing.*;
 // Drawing the window with labyrinth by matrix;
 
 public class DrawLabyrinth {
-    JRadioButton min_path = new JRadioButton("Min Path");
-    JRadioButton max_path = new JRadioButton("Max Path");
 
     public DrawLabyrinth() {
         JFrame frame = new JFrame("Generated Labyrinth");
@@ -18,7 +16,9 @@ public class DrawLabyrinth {
         frame.getContentPane().add(container);
         frame.setVisible(true);
         // pathes;
+        JRadioButton min_path = new JRadioButton("Min Path");
         min_path.setBounds(50, 10, 200, 20);
+        JRadioButton max_path = new JRadioButton("Max Path");
         max_path.setBounds(400, 10, 200, 20);
         ButtonGroup patternGroup = new ButtonGroup();
         patternGroup.add(min_path);

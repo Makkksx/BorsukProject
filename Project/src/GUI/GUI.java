@@ -16,7 +16,7 @@ public class GUI extends JFrame {
         /*Меню */
         Container frameContainer = new Container();
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        ImageIcon image_play =new ImageIcon("Project/Pictures/play.png");
+        ImageIcon image_play =new ImageIcon("Pictures\\play.png");
         JMenuBar menuBar = new JMenuBar();
         JMenu fileMenu = new JMenu("Файл");
         JMenu new_file = new JMenu("Создать");
@@ -35,11 +35,13 @@ public class GUI extends JFrame {
         frameContainer.add(menuBar);
         setJMenuBar(menuBar);
         setSize(800,600);
+        save_file.setEnabled(false);
         open_file.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 JFileChooser fileOpen = new JFileChooser();
-                int ret = fileOpen.showDialog(null, "Открыть файл");
+                fileOpen.setCurrentDirectory(new File("."));
+                int ret = fileOpen.showDialog(null, "Открыть");
                 if (ret == JFileChooser.APPROVE_OPTION) {
                     try {
                         // Чтение лабиринта из файла;
@@ -50,6 +52,26 @@ public class GUI extends JFrame {
                         labyrinth.floodFill(1, 1); // Вызов алгоритма;
                         // рисуем лабиринт с путем;
                         labyrinth.printLabyrinth();
+                        // Если что-то открыли, можем результат записать в файл
+                        save_file.setEnabled(true);
+                        save_file.addActionListener(new ActionListener() {
+                            @Override
+                            public void actionPerformed(ActionEvent e) {
+                                JFileChooser fileSave = new JFileChooser();
+                                fileSave.setCurrentDirectory(new File("."));
+                                fileSave.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
+                                int ret = fileSave.showDialog(null, "Сохранить");
+                                if (ret == JFileChooser.APPROVE_OPTION) {
+                                    File file = fileSave.getSelectedFile();
+                                    try {
+                                        labyrinth.save(file);
+                                        System.out.println("Save successfully");
+                                    } catch (IOException ex) {
+                                        ex.printStackTrace();
+                                    }
+                                }
+                            }
+                        });
                     } catch(IOException e) {
                         System.out.println(e.getMessage());
                     }
@@ -57,7 +79,10 @@ public class GUI extends JFrame {
                         System.exit(0);
                     }
                 }
+
             }
+
         });
+
     }
 }

@@ -23,14 +23,24 @@ public class Labyrinth {
             i++;
         }
     }
+    public void save(File file) throws IOException {
+        FileWriter fw = new FileWriter(file);
+        for(int i=0;i<size; i++){
+            for(int j=0;j<size;j++){
+                fw.write(labyrinth[i][j]);
+            }
+            fw.write("\n");
+        }
+        fw.close();
 
+    }
     public boolean floodFill(int x, int y) {
         if(labyrinth[x][y] == 'f') {
             labyrinth[x][y] = 'r';
             return true;
         }
         else {
-            labyrinth[x][y] = '1';
+            labyrinth[x][y] = '2';
             if (checker(x + 1, y)) {
                 if (floodFill(x + 1, y)) {
                     pathes_x.add(x + 1);
@@ -66,9 +76,7 @@ public class Labyrinth {
     private boolean checker(int x, int y){
         if(x < 0 || y < 0 || x >= size || y >= size)
             return false;
-        if(labyrinth[x][y] != '1')
-            return true;
-        else return false;
+        return labyrinth[x][y] == '0';
     }
 
     public void  printLabyrinth(){
