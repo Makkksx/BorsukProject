@@ -46,10 +46,13 @@ public class GUI extends JFrame {
                     try {
                         // Чтение лабиринта из файла;
                         Labyrinth labyrinth = new Labyrinth(fileOpen.getSelectedFile());
+                        DrawLabyrinth drawLabyrinth = new DrawLabyrinth(labyrinth);
+
                         // рисуем чистый лабиринт;
                         //labyrinth.printLabyrinth();
                         // Здесь должно быть указание координат старта и финиша. Пока строим один путь;
                         labyrinth.floodFill(1, 1); // Вызов алгоритма;
+//                        new DrawLabyrinth(labyrinth);
                         // рисуем лабиринт с путем;
                         labyrinth.printLabyrinth();
                         // Если что-то открыли, можем результат записать в файл
