@@ -8,7 +8,12 @@ public class Labyrinth {
     private static int size;
     private ArrayList<Integer> pathes_x = new ArrayList<Integer>();
     private ArrayList<Integer> pathes_y = new ArrayList<Integer>();
-
+    public int getSize(){
+        return size;
+    }
+    public int getCell(int i, int j){
+        return labyrinth[j][i];
+    }
     public Labyrinth(File file) throws IOException {
         String line;
         Scanner sc = new Scanner(file);
@@ -36,11 +41,12 @@ public class Labyrinth {
     }
     public boolean floodFill(int x, int y) {
         if(labyrinth[x][y] == 'f') {
-            labyrinth[x][y] = 'r';
+//            labyrinth[x][y] = 'r';
             return true;
         }
         else {
-            labyrinth[x][y] = '2';
+            if (labyrinth[x][y] != 's')
+                labyrinth[x][y] = '2';
             if (checker(x + 1, y)) {
                 if (floodFill(x + 1, y)) {
                     pathes_x.add(x + 1);
@@ -76,7 +82,7 @@ public class Labyrinth {
     private boolean checker(int x, int y){
         if(x < 0 || y < 0 || x >= size || y >= size)
             return false;
-        return labyrinth[x][y] == '0';
+        return labyrinth[x][y] == '0' || labyrinth[x][y] == 'f' ;
     }
 
     public void  printLabyrinth(){
