@@ -1,11 +1,13 @@
 package Matrix;
 
 import java.io.*;
-import java.util.Scanner;
+import java.util.*;
 
 public class Labyrinth {
     private static char [][] labyrinth;
     private static int size;
+    private ArrayList<Integer> pathes_x = new ArrayList<Integer>();
+    private ArrayList<Integer> pathes_y = new ArrayList<Integer>();
 
     public Labyrinth(File file) throws IOException {
         String line;
@@ -22,30 +24,43 @@ public class Labyrinth {
         }
     }
 
-    public void floodFill(int x, int y) {
-        if(checker(x, y)) {
-            if(labyrinth[x][y] == 'f')
-                labyrinth[x][y] = 'r';
-            else
-                labyrinth[x][y] = '1';
+    public boolean floodFill(int x, int y) {
+        if(labyrinth[x][y] == 'f') {
+            labyrinth[x][y] = 'r';
+            return true;
         }
-        if(checker(x + 1, y))
-            floodFill(x + 1, y);
-        if(checker(x - 1, y))
-            floodFill(x - 1, y);
-        if(checker(x, y + 1))
-            floodFill(x, y + 1);
-        if(checker(x, y - 1))
-            floodFill(x, y - 1);
-    }
-    public void  printLabyrinth(){
-        for(int i = 0; i < size; i++) {
-            for (int j = 0; j < size; j++) {
-                System.out.print(labyrinth[i][j]);
+        else {
+            labyrinth[x][y] = '1';
+            if (checker(x + 1, y)) {
+                if (floodFill(x + 1, y)) {
+                    pathes_x.add(x + 1);
+                    pathes_y.add(y);
+                    return true;
+                }
             }
-            System.out.println(" ");
+            if (checker(x - 1, y)) {
+                if (floodFill(x - 1, y)) {
+                    pathes_x.add(x - 1);
+                    pathes_y.add(y);
+                    return true;
+                }
+            }
+            if (checker(x, y + 1)) {
+                if (floodFill(x, y + 1)) {
+                    pathes_x.add(x);
+                    pathes_y.add(y + 1);
+                    return true;
+                }
+            }
+            if (checker(x, y - 1)) {
+                if (floodFill(x, y - 1)) {
+                    pathes_x.add(x);
+                    pathes_y.add(y - 1);
+                    return true;
+                }
+            }
         }
-        System.out.println(" ");
+        return false;
     }
 
     private boolean checker(int x, int y){
@@ -54,5 +69,19 @@ public class Labyrinth {
         if(labyrinth[x][y] != '1')
             return true;
         else return false;
+    }
+
+    public void  printLabyrinth(){
+        for(int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
+                System.out.print(labyrinth[i][j]);
+            }
+            System.out.println(" ");
+        }
+        System.out.println(" ");
+        /*for(int i = 0; i < pathes_x.size(); i++) {
+            System.out.print(pathes_x.get(i) + "," + pathes_y.get(i) + " <- ");
+        }
+        System.out.println("START!");*/
     }
 }
