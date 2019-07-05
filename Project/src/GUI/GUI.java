@@ -2,6 +2,7 @@ package GUI;
 
 import Matrix.Labyrinth;
 
+import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 import java.io.*;
@@ -13,11 +14,14 @@ public class GUI extends JFrame {
      */
     public GUI() {
         /*Меню */
+        Container frameContainer = new Container();
         setDefaultCloseOperation(EXIT_ON_CLOSE);
+        ImageIcon image_play =new ImageIcon("Project/Pictures/play.png");
         JMenuBar menuBar = new JMenuBar();
         JMenu fileMenu = new JMenu("Файл");
         JMenu new_file = new JMenu("Создать");
         JMenuItem open_file = new JMenuItem("Открыть");
+        JMenuItem play_button = new JMenuItem(image_play);
         JMenuItem save_file = new JMenuItem("Сохранить");
         JMenuItem Pattern1 = new JMenuItem("Шаблон1");
         JMenuItem Pattern2 = new JMenuItem("Шаблон2");
@@ -27,9 +31,10 @@ public class GUI extends JFrame {
         fileMenu.add(open_file);
         fileMenu.add(save_file);
         menuBar.add(fileMenu);
+        menuBar.add(play_button);
+        frameContainer.add(menuBar);
         setJMenuBar(menuBar);
         setSize(800,600);
-
         open_file.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
