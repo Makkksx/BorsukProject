@@ -51,7 +51,7 @@ public class GUI extends JFrame {
                         // рисуем чистый лабиринт;
                         //labyrinth.printLabyrinth();
                         // Здесь должно быть указание координат старта и финиша. Пока строим один путь;
-                       // labyrinth.floodFill(1, 1); // Вызов алгоритма;
+                        labyrinth.floodFill(1, 1); // Вызов алгоритма;
 //                        new DrawLabyrinth(labyrinth);
                         // рисуем лабиринт с путем;
                        // labyrinth.printLabyrinth();
@@ -98,7 +98,7 @@ public class GUI extends JFrame {
                     // Здесь должно быть указание координат старта и финиша. Пока строим один путь;
                     labyrinth.floodFill(0, 0); // Вызов алгоритма;
                     // Рисуем лабиринт с путем;
-                    labyrinth.printLabyrinth();
+                    //labyrinth.printLabyrinth();
                     // Если что-то открыли, можем результат записать в файл
                     save_file.setEnabled(true);
                     save_file.addActionListener(new ActionListener() {

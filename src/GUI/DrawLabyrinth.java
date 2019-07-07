@@ -21,7 +21,7 @@ public class DrawLabyrinth{
         JPanel board = new JPanel();
         frame.setBounds(800, 200, WIDTH* (SIZE+1), HIGH* (SIZE+1));
         frame.setVisible(true);
-        JTable table = new JTable(5,5);
+        JTable table = new JTable(SIZE,SIZE);
         table.setShowVerticalLines(false);
         table.setShowHorizontalLines(false);
         table.setIntercellSpacing(new Dimension(0, 0));

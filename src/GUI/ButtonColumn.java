@@ -120,11 +120,11 @@ public class ButtonColumn extends AbstractCellEditor
 //  Implement TableCellRenderer interface
 //
     public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
-        if(labyrinth.getCell(row,column) == '1')
+        if(labyrinth.getCell(column,row) == '1')
             renderButton.setIcon(new ImageIcon("Pictures\\black_cell.png"));
-        else if(labyrinth.getCell(row,column) == '0')
+        else if(labyrinth.getCell(column,row) == '0')
             renderButton.setIcon(new ImageIcon("Pictures\\white_cell.png"));
-        else if(labyrinth.getCell(row,column) == 's')
+        else if(labyrinth.getCell(column,row) == 's')
             renderButton.setIcon(new ImageIcon("Pictures\\start_cell.png"));
         else
             renderButton.setIcon(new ImageIcon("Pictures\\finish_cell.png"));
@@ -132,6 +132,7 @@ public class ButtonColumn extends AbstractCellEditor
         //renderButton.setBorderPainted(false);
         //renderButton.setFocusPainted(false);
         //renderButton.setContentAreaFilled(false);
+
         renderButton.setBorder(new LineBorder(Color.BLACK, 1));
         if(row == 0 && column == (table.getColumnCount() - 1))
             renderButton.setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.BLACK));
