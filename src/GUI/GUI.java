@@ -64,7 +64,7 @@ public class GUI extends JFrame {
                 int ret = fileOpen.showDialog(null, "Открыть");
                 if (ret == JFileChooser.APPROVE_OPTION) {
                     try {
-                        // Чтение лабиринта из файла;
+                        //  Чтение лабиринта из файла;
                         if(drawLabyrinth != null)
                             remove(drawLabyrinth.getJPanel());
                         labyrinth = new Labyrinth(fileOpen.getSelectedFile());
@@ -135,6 +135,7 @@ public class GUI extends JFrame {
                 labyrinth.floodFill(labyrinth.getStart()); // Вызов алгоритма;
                 pack();
                 setSize(800,600);
+                labyrinth.printLabyrinth();
             }
         });
     }
