@@ -65,6 +65,8 @@ public class GUI extends JFrame {
                 if (ret == JFileChooser.APPROVE_OPTION) {
                     try {
                         // Чтение лабиринта из файла;
+                        if(drawLabyrinth != null)
+                            remove(drawLabyrinth.getJPanel());
                         labyrinth = new Labyrinth(fileOpen.getSelectedFile());
                         drawLabyrinth = new DrawLabyrinth(labyrinth);
                         pack();
@@ -94,6 +96,8 @@ public class GUI extends JFrame {
             public void actionPerformed(ActionEvent actionEvent) {
                 try {
                     // Случайная генерация лабиринта;
+                    if(drawLabyrinth != null)
+                        remove(drawLabyrinth.getJPanel());
                     labyrinth = new Labyrinth(13);
                     // Рисуем чистый лабиринт;
 //                    labyrinth.printLabyrinth();
@@ -105,6 +109,7 @@ public class GUI extends JFrame {
                     scale_decrease.setEnabled(true);
                     play_button.setEnabled(true);
                     setPlay(play_button, labyrinth);
+                    //remove(drawLabyrinth.getJPanel());
                     // Здесь должно быть указание координат старта и финиша. Пока строим один путь;
 
                     // Рисуем лабиринт с путем;
