@@ -16,6 +16,7 @@ public class DrawLabyrinth{
     private JPanel board;
     private JTable table;
     private int TableScale;
+
     public DrawLabyrinth(Labyrinth labyrinth) {
         TableScale = 40;
         SIZE = labyrinth.getSize();

@@ -25,6 +25,18 @@ public class Labyrinth {
     public void setCell(int i, int j, char val){
         labyrinth[j][i] = val;
     }
+    //Пустой лабиринт
+    public Labyrinth(){
+        size = 8;
+        labyrinth = new char[size][size];
+        for (char[] row : labyrinth)
+            Arrays.fill(row, '0');
+        labyrinth[size/2][size/2] = 's';
+        labyrinth[size-1][size-1] = 'f';
+        start = new Point(size /2, size /2);
+        finish = new Point(size -1, size -1);
+    }
+
     public Labyrinth(File file) throws IOException {
         String line;
         start = new Point();
@@ -51,7 +63,7 @@ public class Labyrinth {
             i++;
         }
     }
-    public Labyrinth(int n) throws IOException {
+    public Labyrinth(int n) {
         // Инициализация;
         labyrinth = new char[n][n];
         size = n;
@@ -160,6 +172,14 @@ public class Labyrinth {
         fw.close();
 
     }
+    public void clearLab(){
+        for (int i=0;i<size;i++){
+            for(int j=0;j<size;j++){
+                if (labyrinth[i][j]=='2')
+                    labyrinth[i][j]='0';
+            }
+        }
+}
     public boolean floodFill(Point xy)
     {
         return floodFill(xy.x,xy.y);
