@@ -13,26 +13,52 @@ public class DrawLabyrinth{
     public static final int WIDTH = 50;
     public static final int HIGH = 50;
     public Labyrinth labyrinth;
+    private JPanel board;
+    private JTable table;
+    private int TableScale;
     public DrawLabyrinth(Labyrinth labyrinth) {
-        int scale = 40;
+        TableScale = 40;
         SIZE = labyrinth.getSize();
         this.labyrinth = labyrinth;
-        JFrame frame = new JFrame("Generated Labyrinth");
-        JPanel board = new JPanel();
-        frame.setBounds(800, 200, WIDTH* (SIZE+1), HIGH* (SIZE+1));
-        frame.setVisible(true);
-        JTable table = new JTable(SIZE,SIZE);
+        board = new JPanel();
+        //frame.setBounds(800, 200, WIDTH* (SIZE+1), HIGH* (SIZE+1));
+        //frame.setVisible(true);
+        table = new JTable(SIZE,SIZE);
         table.setShowVerticalLines(false);
         table.setShowHorizontalLines(false);
         table.setIntercellSpacing(new Dimension(0, 0));
-        table.setRowHeight(scale);
+        table.setRowHeight(TableScale);
         for (int i = 0; i < table.getColumnModel().getColumnCount(); i++) {
             TableColumn column = table.getColumnModel().getColumn(i);
-            column.setPreferredWidth(scale);
+            column.setPreferredWidth(TableScale);
         }
         ButtonColumn button = new ButtonColumn(table,this.labyrinth);
         board.add(table);
-        frame.add(board,BorderLayout.SOUTH);
+        board.setVisible(true);
+    }
+    public JPanel getJPanel(){
+        return board;
+    }
+    public JTable getJTable(){
+        return table;
+    }
+    public void ScaleIncrease(){
+        TableScale +=10;
+        table.setRowHeight(TableScale);
+        for (int i = 0; i < table.getColumnModel().getColumnCount(); i++) {
+            TableColumn column = table.getColumnModel().getColumn(i);
+            column.setPreferredWidth(TableScale);
+        }
+    }
+    public void ScaleDecrease(){
+        if((TableScale - 10) > 0) {
+            TableScale -= 10;
+            table.setRowHeight(TableScale);
+            for (int i = 0; i < table.getColumnModel().getColumnCount(); i++) {
+                TableColumn column = table.getColumnModel().getColumn(i);
+                column.setPreferredWidth(TableScale);
+            }
+        }
     }
     /*
      class myComponent extends JComponent{
