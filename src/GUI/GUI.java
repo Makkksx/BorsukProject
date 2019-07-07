@@ -9,8 +9,12 @@ import java.io.*;
 import java.util.NoSuchElementException;
 
 public class GUI extends JFrame {
-    Labyrinth labyrinth;
-    DrawLabyrinth drawLabyrinth;
+    private Labyrinth labyrinth;
+    private DrawLabyrinth drawLabyrinth;
+    private JMenuItem scale_increase;
+    private JMenuItem scale_decrease;
+    private JMenuItem play_button;
+    private JMenuItem save_file;
     public GUI() {
         /*Меню */
 
@@ -20,10 +24,10 @@ public class GUI extends JFrame {
         JMenu new_file = new JMenu("Создать");
         JMenuItem clean_lab = new JMenuItem("Новый");
         JMenuItem open_file = new JMenuItem("Открыть");
-        JMenuItem play_button = new JMenuItem(new ImageIcon("Pictures\\play.png"));
-        JMenuItem scale_increase = new JMenuItem(new ImageIcon("Pictures\\zoom-in-button.png"));
-        JMenuItem scale_decrease = new JMenuItem(new ImageIcon("Pictures\\zoom-out.png"));
-        JMenuItem save_file = new JMenuItem("Сохранить");
+        play_button = new JMenuItem(new ImageIcon("Pictures\\play.png"));
+        scale_increase = new JMenuItem(new ImageIcon("Pictures\\zoom-in-button.png"));
+        scale_decrease = new JMenuItem(new ImageIcon("Pictures\\zoom-out.png"));
+        save_file = new JMenuItem("Сохранить");
         JMenuItem pattern1 = new JMenuItem("Шаблон1");
         JMenuItem pattern2 = new JMenuItem("Шаблон2");
         new_file.add(pattern1);
@@ -66,18 +70,7 @@ public class GUI extends JFrame {
                 if(drawLabyrinth != null)
                     remove(drawLabyrinth.getJPanel());
                 labyrinth = new Labyrinth();
-                labyrinth.printLabyrinth();
-                drawLabyrinth = new DrawLabyrinth(labyrinth);
-                labyrinth.printLabyrinth();
-                pack();
-                setSize(800,600);
-                add(drawLabyrinth.getJPanel(),BorderLayout.NORTH);
-                scale_increase.setEnabled(true);
-                scale_decrease.setEnabled(true);
-                play_button.setEnabled(true);
-                setPlay(play_button, labyrinth);
-                save_file.setEnabled(true);
-                setSaveButton(save_file,labyrinth);
+                setLabyrinth();
             }
         });
         open_file.addActionListener(new ActionListener() {
@@ -92,18 +85,7 @@ public class GUI extends JFrame {
                         if(drawLabyrinth != null)
                             remove(drawLabyrinth.getJPanel());
                         labyrinth = new Labyrinth(fileOpen.getSelectedFile());
-                        drawLabyrinth = new DrawLabyrinth(labyrinth);
-                        pack();
-                        setSize(800,600);
-                        add(drawLabyrinth.getJPanel(),BorderLayout.NORTH);
-                        scale_increase.setEnabled(true);
-                        scale_decrease.setEnabled(true);
-                        play_button.setEnabled(true);
-                        setPlay(play_button, labyrinth);
-
-                        // Если что-то открыли, можем результат записать в файл
-                        save_file.setEnabled(true);
-                        setSaveButton(save_file,labyrinth);
+                        setLabyrinth();
                     } catch(IOException e) {
                         System.out.println(e.getMessage());
                     }
@@ -122,31 +104,27 @@ public class GUI extends JFrame {
                     if(drawLabyrinth != null)
                         remove(drawLabyrinth.getJPanel());
                     labyrinth = new Labyrinth(13);
-                    // Рисуем чистый лабиринт;
-//                    labyrinth.printLabyrinth();
-                    drawLabyrinth = new DrawLabyrinth(labyrinth);
-                    pack();
-                    setSize(800,600);
-                    add(drawLabyrinth.getJPanel(),BorderLayout.NORTH);
-                    scale_increase.setEnabled(true);
-                    scale_decrease.setEnabled(true);
-                    play_button.setEnabled(true);
-                    setPlay(play_button, labyrinth);
-                    //remove(drawLabyrinth.getJPanel());
-                    // Здесь должно быть указание координат старта и финиша. Пока строим один путь;
-
-                    // Рисуем лабиринт с путем;
-                    //labyrinth.printLabyrinth();
-                    // Если что-то открыли, можем результат записать в файл
-                    save_file.setEnabled(true);
-                    setSaveButton(save_file,labyrinth);
+                    setLabyrinth();
 
             }
         });
 
     }
-
-    private void setPlay(JMenuItem play_button, Labyrinth labyrinth) {
+    private void setLabyrinth(){
+        labyrinth.printLabyrinth();
+        drawLabyrinth = new DrawLabyrinth(labyrinth);
+        labyrinth.printLabyrinth();
+        pack();
+        setSize(800,600);
+        add(drawLabyrinth.getJPanel(),BorderLayout.NORTH);
+        scale_increase.setEnabled(true);
+        scale_decrease.setEnabled(true);
+        play_button.setEnabled(true);
+        setPlay(play_button);
+        save_file.setEnabled(true);
+        setSaveButton(save_file,labyrinth);
+    }
+    private void setPlay(JMenuItem play_button) {
         play_button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
