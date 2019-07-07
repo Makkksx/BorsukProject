@@ -31,6 +31,100 @@ public class Labyrinth {
             i++;
         }
     }
+    public Labyrinth(int n) throws IOException {
+        // Инициализация;
+        labyrinth = new char[n][n];
+        size = n;
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
+                if (i == 0 || j == 0 || i == (size - 1) || j == (size - 1))
+                    labyrinth[i][j] = '0';
+                else labyrinth[i][j] = '1';
+            }
+        }
+
+        labyrinth[n/2][n/2] = '0';
+        digger(n/2, n/2);
+        boolean flag = true;
+        while (flag) {
+            int curr_x = 2, curr_y = 2;
+            boolean f = true;
+            for (int i = 2; i < (size - 2); i += 2) {
+                for (int j = 2; j < (size - 2); j += 2) {
+                    if (labyrinth[i][j] == '1') {
+                        curr_x = i;
+                        curr_y = j;
+                        f = false;
+                        break;
+                    }
+                    if (i == (size - 3) && j == (size - 3)) flag = false;
+                }
+                if (!f) break;
+            }
+            if (flag) {
+                labyrinth[curr_x][curr_y] = '0';
+                digger(curr_x, curr_y);
+            }
+        }
+
+        int count = size;
+        while (count > 0) {
+            int curr_x = (int)(Math.random() * (size - 2) + 1);
+            int curr_y = (int)(Math.random() * (size - 2) + 1);
+            while ((curr_x % 2 == 0 || curr_y % 2 == 0) || labyrinth[curr_x][curr_y] == '0' ||
+                    (!(labyrinth[curr_x][curr_y + 1] == '0' && labyrinth[curr_x][curr_y - 1] == '0'
+                            && labyrinth[curr_x + 1][curr_y] == '1' && labyrinth[curr_x - 1][curr_y] == '1') &&
+                            !(labyrinth[curr_x + 1][curr_y] == '0' && labyrinth[curr_x - 1][curr_y] == '0'
+                                    && labyrinth[curr_x][curr_y + 1] == '1' && labyrinth[curr_x][curr_y - 1] == '1'))) {
+                curr_x = (int)(Math.random() * (size - 1) + 1);
+                curr_y = (int)(Math.random() * (size - 1) + 1);
+            }
+            labyrinth[curr_x][curr_y] = '0';
+            count--;
+        }
+
+        labyrinth[n/2][n/2] = 's';
+        labyrinth[size - 1][size - 1] = 'f';
+    }
+
+    private void digger(int curr_x, int curr_y) {
+        boolean up = true, down = true, left = true, right = true;
+        while (up || down || left || right) {
+            int direction = (int)(Math.random() * 4);
+            if (direction == 0) {
+                if (up && curr_x >= 0 && curr_y + 2 >= 0 && curr_x < size && curr_y + 2 < size && labyrinth[curr_x][curr_y + 2] != '0') {
+                    labyrinth[curr_x][curr_y + 1] = '0';
+                    labyrinth[curr_x][curr_y + 2] = '0';
+                    digger(curr_x, curr_y + 2);
+                    return;
+                } else up = false;
+            }
+            if (direction == 1) {
+                if (down && curr_x >= 0 && curr_y - 2 >= 0 && curr_x < size && curr_y - 2 < size && labyrinth[curr_x][curr_y - 2] != '0') {
+                    labyrinth[curr_x][curr_y - 1] = '0';
+                    labyrinth[curr_x][curr_y - 2] = '0';
+                    digger(curr_x, curr_y - 2);
+                    return;
+                } else down = false;
+            }
+            if (direction == 2) {
+                if (right && curr_x + 2 >= 0 && curr_y >= 0 && curr_x + 2 < size && curr_y < size && labyrinth[curr_x + 2][curr_y] != '0') {
+                    labyrinth[curr_x + 1][curr_y] = '0';
+                    labyrinth[curr_x + 2][curr_y] = '0';
+                    digger(curr_x + 2, curr_y);
+                    return;
+                } else right = false;
+            }
+            if (direction == 3) {
+                if (left && curr_x - 2 >= 0 && curr_y >= 0 && curr_x - 2 < size && curr_y < size && labyrinth[curr_x - 2][curr_y] != '0') {
+                    labyrinth[curr_x - 1][curr_y] = '0';
+                    labyrinth[curr_x - 2][curr_y] = '0';
+                    digger(curr_x - 2, curr_y);
+                    return;
+                } else left = false;
+            }
+        }
+    }
     public void save(File file) throws IOException {
         FileWriter fw = new FileWriter(file);
         for(int i=0;i<size; i++){

@@ -1,21 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4b252c7a-d305-4437-847e-2c70f56919df" name="Default Changelist" comment="добавил вывод лаьиринта в виде JTable">
-      <change afterPath="$PROJECT_DIR$/src/GUI/ButtonColumn.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="4b252c7a-d305-4437-847e-2c70f56919df" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BorsukProject/GUI/DrawLabyrinth$myComponent.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BorsukProject/GUI/DrawLabyrinth.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BorsukProject/GUI/DrawLabyrinth.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BorsukProject/GUI/GUI$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BorsukProject/GUI/GUI$1$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BorsukProject/GUI/GUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BorsukProject/GUI/GUI$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BorsukProject/GUI/GUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BorsukProject/GUI/GUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BorsukProject/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BorsukProject/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BorsukProject/Matrix/Algorithm.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BorsukProject/Matrix/Algorithm.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BorsukProject/Matrix/Labyrinth.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BorsukProject/Matrix/Labyrinth.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/DrawLabyrinth.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/DrawLabyrinth.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/GUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Matrix/Labyrinth.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Matrix/Labyrinth.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -41,8 +28,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GUI/GUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="215">
-              <caret line="49" lean-forward="true" selection-start-line="49" selection-end-line="49" />
+            <state relative-caret-position="860">
+              <caret line="49" selection-start-line="49" selection-end-line="49" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -62,7 +49,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GUI/DrawLabyrinth.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="235">
+            <state relative-caret-position="280">
               <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -71,36 +58,26 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GUI/ButtonColumn.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1162">
+            <state relative-caret-position="1220">
               <caret line="70" column="4" selection-start-line="70" selection-start-column="4" selection-end-line="70" selection-end-column="4" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2470#2471#0" expanded="true" />
-                <element signature="e#2504#2505#0" expanded="true" />
-                <element signature="e#2827#2828#0" expanded="true" />
-                <element signature="e#2858#2859#0" expanded="true" />
-                <element signature="e#3795#3796#0" expanded="true" />
-                <element signature="e#3829#3830#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Matrix/Labyrinth.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="142">
-              <caret line="9" column="56" selection-start-line="9" selection-start-column="56" selection-end-line="9" selection-end-column="56" />
+            <state relative-caret-position="260">
+              <caret line="16" column="20" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
               <folding>
                 <element signature="e#310#311#0" expanded="true" />
                 <element signature="e#337#338#0" expanded="true" />
-                <element signature="e#375#376#0" expanded="true" />
-                <element signature="e#413#414#0" expanded="true" />
-                <element signature="e#451#452#0" expanded="true" />
-                <element signature="e#489#490#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -221,29 +198,36 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1562345100714</updated>
-      <workItem from="1562497403672" duration="2015000" />
+      <workItem from="1562497403672" duration="2352000" />
+      <workItem from="1562500174579" duration="322000" />
     </task>
+    <task id="LOCAL-00001" summary="добавил вывод лаьиринта в виде JTable">
+      <created>1562499426212</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1562499426213</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2015000" />
+    <option name="totallyTimeSpent" value="2674000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25973153" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26308724" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3286119" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3286119" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -251,8 +235,9 @@
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info active="true" anchor="bottom" id="Messages" order="10" visible="true" weight="0.3286119" />
-      <window_info anchor="right" id="Database" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.3286119" />
+      <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -261,6 +246,7 @@
       <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Database" order="8" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -438,10 +424,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/DrawLabyrinth.java">
+    <entry file="file://$PROJECT_DIR$/src/GUI/GUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
+        <state relative-caret-position="860">
+          <caret line="49" selection-start-line="49" selection-end-line="49" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -455,10 +441,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/GUI.java">
+    <entry file="file://$PROJECT_DIR$/src/GUI/DrawLabyrinth.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="49" lean-forward="true" selection-start-line="49" selection-end-line="49" />
+        <state relative-caret-position="280">
+          <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/ButtonColumn.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1220">
+          <caret line="70" column="4" selection-start-line="70" selection-start-column="4" selection-end-line="70" selection-end-column="4" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -467,31 +463,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Matrix/Labyrinth.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="9" column="56" selection-start-line="9" selection-start-column="56" selection-end-line="9" selection-end-column="56" />
+        <state relative-caret-position="260">
+          <caret line="16" column="20" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
           <folding>
             <element signature="e#310#311#0" expanded="true" />
             <element signature="e#337#338#0" expanded="true" />
-            <element signature="e#375#376#0" expanded="true" />
-            <element signature="e#413#414#0" expanded="true" />
-            <element signature="e#451#452#0" expanded="true" />
-            <element signature="e#489#490#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/ButtonColumn.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1162">
-          <caret line="70" column="4" selection-start-line="70" selection-start-column="4" selection-end-line="70" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2470#2471#0" expanded="true" />
-            <element signature="e#2504#2505#0" expanded="true" />
-            <element signature="e#2827#2828#0" expanded="true" />
-            <element signature="e#2858#2859#0" expanded="true" />
-            <element signature="e#3795#3796#0" expanded="true" />
-            <element signature="e#3829#3830#0" expanded="true" />
           </folding>
         </state>
       </provider>
