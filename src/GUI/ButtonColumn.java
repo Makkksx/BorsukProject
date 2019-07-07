@@ -189,10 +189,10 @@ public class ButtonColumn extends AbstractCellEditor
     public void actionPerformed(ActionEvent e) {
         int row = table.convertRowIndexToModel( table.getEditingRow() );
         int column = table.convertColumnIndexToModel(table.getEditingColumn());
-        if(labyrinth.getCell(row,column) == '1')
-            labyrinth.setCell(row,column,'0');
+        if(labyrinth.getCell(column,row) == '1')
+            labyrinth.setCell(column,row,'0');
         else
-            labyrinth.setCell(row,column,'1');
+            labyrinth.setCell(column,row,'1');
         /*
 
         //  Invoke the Action
