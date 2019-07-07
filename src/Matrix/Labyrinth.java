@@ -11,8 +11,11 @@ public class Labyrinth {
     public int getSize(){
         return size;
     }
-    public int getCell(int i, int j){
+    public char getCell(int i, int j){
         return labyrinth[j][i];
+    }
+    public void setCell(int i, int j, char val){
+        labyrinth[j][i] = val;
     }
     public Labyrinth(File file) throws IOException {
         String line;

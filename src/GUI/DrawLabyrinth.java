@@ -1,10 +1,10 @@
 package GUI;
 
 import Matrix.Labyrinth;
-
 import java.awt.*;
 import java.awt.geom.*;
 import javax.swing.*;
+import javax.swing.table.TableColumn;
 
 // Drawing the window with labyrinth by matrix;
 
@@ -14,13 +14,27 @@ public class DrawLabyrinth{
     public static final int HIGH = 50;
     public Labyrinth labyrinth;
     public DrawLabyrinth(Labyrinth labyrinth) {
+        int scale = 40;
         SIZE = labyrinth.getSize();
         this.labyrinth = labyrinth;
         JFrame frame = new JFrame("Generated Labyrinth");
+        JPanel board = new JPanel();
         frame.setBounds(800, 200, WIDTH* (SIZE+1), HIGH* (SIZE+1));
-        frame.add(new myComponent());
         frame.setVisible(true);
+        JTable table = new JTable(5,5);
+        table.setShowVerticalLines(false);
+        table.setShowHorizontalLines(false);
+        table.setIntercellSpacing(new Dimension(0, 0));
+        table.setRowHeight(scale);
+        for (int i = 0; i < table.getColumnModel().getColumnCount(); i++) {
+            TableColumn column = table.getColumnModel().getColumn(i);
+            column.setPreferredWidth(scale);
+        }
+        ButtonColumn button = new ButtonColumn(table,this.labyrinth);
+        board.add(table);
+        frame.add(board,BorderLayout.SOUTH);
     }
+    /*
      class myComponent extends JComponent{
         @Override
         protected void paintComponent(Graphics g) {
@@ -66,6 +80,8 @@ public class DrawLabyrinth{
         }
     }
 
+
+     */
     /*public DrawLabyrinth() {
         JFrame frame = new JFrame("Generated Labyrinth");
         frame.setBounds(630, 150, 650, 650);
