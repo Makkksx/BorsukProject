@@ -64,7 +64,7 @@ public class GUI extends JFrame {
                 int ret = fileOpen.showDialog(null, "Открыть");
                 if (ret == JFileChooser.APPROVE_OPTION) {
                     try {
-                        // Чтение лабиринта из файла;
+                        //  Чтение лабиринта из файла;
                         if(drawLabyrinth != null)
                             remove(drawLabyrinth.getJPanel());
                         labyrinth = new Labyrinth(fileOpen.getSelectedFile());
