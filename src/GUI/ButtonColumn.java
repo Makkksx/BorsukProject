@@ -126,8 +126,10 @@ public class ButtonColumn extends AbstractCellEditor
             renderButton.setIcon(new ImageIcon("Pictures\\white_cell.png"));
         else if(labyrinth.getCell(column,row) == 's')
             renderButton.setIcon(new ImageIcon("Pictures\\start_cell.png"));
-        else
+        else if(labyrinth.getCell(column,row) == 'f')
             renderButton.setIcon(new ImageIcon("Pictures\\finish_cell.png"));
+        else
+            renderButton.setIcon(new ImageIcon("Pictures\\path_cell.png"));
         //else if(labyrinth.getCell(row,column) == '0')
         //renderButton.setBorderPainted(false);
         //renderButton.setFocusPainted(false);
@@ -193,6 +195,7 @@ public class ButtonColumn extends AbstractCellEditor
             labyrinth.setCell(column,row,'0');
         else
             labyrinth.setCell(column,row,'1');
+        labyrinth.printLabyrinth();
         /*
 
         //  Invoke the Action

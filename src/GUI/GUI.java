@@ -135,6 +135,7 @@ public class GUI extends JFrame {
                 labyrinth.floodFill(labyrinth.getStart()); // Вызов алгоритма;
                 pack();
                 setSize(800,600);
+                labyrinth.printLabyrinth();
             }
         });
     }
