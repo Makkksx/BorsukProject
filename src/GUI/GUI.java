@@ -36,6 +36,7 @@ public class GUI extends JFrame {
         setJMenuBar(menuBar);
         setSize(800,600);
         save_file.setEnabled(false);
+        play_button.setEnabled((false));
         open_file.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
@@ -47,34 +48,17 @@ public class GUI extends JFrame {
                         // Чтение лабиринта из файла;
                         Labyrinth labyrinth = new Labyrinth(fileOpen.getSelectedFile());
                         DrawLabyrinth drawLabyrinth = new DrawLabyrinth(labyrinth);
-
+                        play_button.setEnabled(true);
+                        setPlay(play_button, labyrinth);
                         // рисуем чистый лабиринт;
-                        //labyrinth.printLabyrinth();
+//                        labyrinth.printLabyrinth();
                         // Здесь должно быть указание координат старта и финиша. Пока строим один путь;
-                        labyrinth.floodFill(1, 1); // Вызов алгоритма;
 //                        new DrawLabyrinth(labyrinth);
                         // рисуем лабиринт с путем;
                        // labyrinth.printLabyrinth();
                         // Если что-то открыли, можем результат записать в файл
                         save_file.setEnabled(true);
-                        save_file.addActionListener(new ActionListener() {
-                            @Override
-                            public void actionPerformed(ActionEvent e) {
-                                JFileChooser fileSave = new JFileChooser();
-                                fileSave.setCurrentDirectory(new File("."));
-                                fileSave.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
-                                int ret = fileSave.showDialog(null, "Сохранить");
-                                if (ret == JFileChooser.APPROVE_OPTION) {
-                                    File file = fileSave.getSelectedFile();
-                                    try {
-                                        labyrinth.save(file);
-                                        System.out.println("Save successfully");
-                                    } catch (IOException ex) {
-                                        ex.printStackTrace();
-                                    }
-                                }
-                            }
-                        });
+                        setSaveButton(save_file,labyrinth);
                     } catch(IOException e) {
                         System.out.println(e.getMessage());
                     }
@@ -92,33 +76,18 @@ public class GUI extends JFrame {
                 try {
                     // Случайная генерация лабиринта;
                     Labyrinth labyrinth = new Labyrinth(13);
-                    DrawLabyrinth drawLabyrinth = new DrawLabyrinth(labyrinth);
+                    new DrawLabyrinth(labyrinth);
                     // Рисуем чистый лабиринт;
-                    labyrinth.printLabyrinth();
+//                    labyrinth.printLabyrinth();
+                    play_button.setEnabled(true);
+                    setPlay(play_button, labyrinth);
                     // Здесь должно быть указание координат старта и финиша. Пока строим один путь;
-                    labyrinth.floodFill(0, 0); // Вызов алгоритма;
+
                     // Рисуем лабиринт с путем;
                     //labyrinth.printLabyrinth();
                     // Если что-то открыли, можем результат записать в файл
                     save_file.setEnabled(true);
-                    save_file.addActionListener(new ActionListener() {
-                        @Override
-                        public void actionPerformed(ActionEvent e) {
-                            JFileChooser fileSave = new JFileChooser();
-                            fileSave.setCurrentDirectory(new File("."));
-                            fileSave.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
-                            int ret = fileSave.showDialog(null, "Сохранить");
-                            if (ret == JFileChooser.APPROVE_OPTION) {
-                                File file = fileSave.getSelectedFile();
-                                try {
-                                    labyrinth.save(file);
-                                    System.out.println("Save successfully");
-                                } catch (IOException ex) {
-                                    ex.printStackTrace();
-                                }
-                            }
-                        }
-                    });
+                    setSaveButton(save_file,labyrinth);
                 } catch(IOException e) {
                     System.out.println(e.getMessage());
                 }
@@ -129,4 +98,36 @@ public class GUI extends JFrame {
         });
 
     }
+
+    private void setPlay(JMenuItem play_button, Labyrinth labyrinth) {
+        play_button.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                labyrinth.floodFill(labyrinth.getStart()); // Вызов алгоритма;
+                new DrawLabyrinth(labyrinth);
+            }
+        });
+    }
+
+    private void setSaveButton(JMenuItem save_file,Labyrinth labyrinth){
+        save_file.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JFileChooser fileSave = new JFileChooser();
+                fileSave.setCurrentDirectory(new File("."));
+                fileSave.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
+                int ret = fileSave.showDialog(null, "Сохранить");
+                if (ret == JFileChooser.APPROVE_OPTION) {
+                    File file = fileSave.getSelectedFile();
+                    try {
+                        labyrinth.save(file);
+                        System.out.println("Save successfully");
+                    } catch (IOException ex) {
+                        ex.printStackTrace();
+                    }
+                }
+            }
+        });
+    }
+
 }

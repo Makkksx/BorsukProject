@@ -1,16 +1,24 @@
 package Matrix;
 
+import java.awt.*;
 import java.io.*;
 import java.util.*;
 
 public class Labyrinth {
     private static char [][] labyrinth;
     private static int size;
+    private static Point start;
+    private static Point finish;
     private ArrayList<Integer> pathes_x = new ArrayList<Integer>();
     private ArrayList<Integer> pathes_y = new ArrayList<Integer>();
     public int getSize(){
         return size;
     }
+
+    public Point getStart() {
+        return start;
+    }
+
     public char getCell(int i, int j){
         return labyrinth[j][i];
     }
@@ -26,6 +34,16 @@ public class Labyrinth {
             if (i == 0) {
                 labyrinth = new char[line.length()][line.length()];
                 size =  line.length();
+            }
+            if (line.indexOf('s') != -1){
+                System.out.println(line.indexOf('s'));
+                start.x = i;
+                start.y = line.indexOf('s');
+            }
+            if (line.indexOf('f') != -1){
+                System.out.println(line.indexOf('f'));
+                start.x = i;
+                start.y = line.indexOf('f');
             }
             System.arraycopy(line.toCharArray(), 0, labyrinth[i], 0, line.length());
             i++;
@@ -85,6 +103,10 @@ public class Labyrinth {
 
         labyrinth[n/2][n/2] = 's';
         labyrinth[size - 1][size - 1] = 'f';
+        start = new Point(n/2,n/2);
+        finish = new Point(size - 1, size - 1);
+
+
     }
 
     private void digger(int curr_x, int curr_y) {
@@ -135,6 +157,10 @@ public class Labyrinth {
         }
         fw.close();
 
+    }
+    public boolean floodFill(Point xy)
+    {
+        return floodFill(xy.x,xy.y);
     }
     public boolean floodFill(int x, int y) {
         if(labyrinth[x][y] == 'f') {
