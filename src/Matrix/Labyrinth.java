@@ -27,6 +27,8 @@ public class Labyrinth {
     }
     public Labyrinth(File file) throws IOException {
         String line;
+        start = new Point();
+        finish = new Point();
         Scanner sc = new Scanner(file);
         int i = 0;
         while (sc.hasNextLine()) {
@@ -36,14 +38,14 @@ public class Labyrinth {
                 size =  line.length();
             }
             if (line.indexOf('s') != -1){
-                System.out.println(line.indexOf('s'));
                 start.x = i;
                 start.y = line.indexOf('s');
+//                System.out.println(start);
             }
             if (line.indexOf('f') != -1){
-                System.out.println(line.indexOf('f'));
-                start.x = i;
-                start.y = line.indexOf('f');
+                finish.x = i;
+                finish.y = line.indexOf('f');
+//                System.out.println(finish);
             }
             System.arraycopy(line.toCharArray(), 0, labyrinth[i], 0, line.length());
             i++;

@@ -47,7 +47,7 @@ public class GUI extends JFrame {
                     try {
                         // Чтение лабиринта из файла;
                         Labyrinth labyrinth = new Labyrinth(fileOpen.getSelectedFile());
-                        DrawLabyrinth drawLabyrinth = new DrawLabyrinth(labyrinth);
+                        new DrawLabyrinth(labyrinth);
                         play_button.setEnabled(true);
                         setPlay(play_button, labyrinth);
                         // рисуем чистый лабиринт;
