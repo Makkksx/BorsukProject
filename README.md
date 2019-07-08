@@ -62,6 +62,9 @@
 ![Imgur](https://pp.userapi.com/c852036/v852036125/15f1af/i--SzLRpnx0.jpg)
 ![Imgur](https://pp.userapi.com/c852036/v852036125/15f266/_H6qoOMGlSg.jpg)
 
+### UML-диаграмма
+![Imgur](https://pp.userapi.com/c852120/v852120257/167e74/4kSUJx7dsKs.jpg)
+
 ### Примерное распределение ролей
 1. [Трушников Андрей](https://github.com/AndersonGH)
 	- Создание гуи
