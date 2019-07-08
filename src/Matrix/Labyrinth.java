@@ -18,13 +18,18 @@ public class Labyrinth {
     public Point getStart() {
         return start;
     }
-
+    // НУЖНО ИСПРАВИТЬ i j ЗДЕСЬ И ВО ВСЕХ ИСПОЛЬЗОВАНИЯХ
     public char getCell(int i, int j){
         return labyrinth[j][i];
     }
     public void setCell(int i, int j, char val){
         labyrinth[j][i] = val;
     }
+
+    public Point getFinish() {
+        return finish;
+    }
+
     //Пустой лабиринт
     public Labyrinth(){
         size = 8;
@@ -180,7 +185,8 @@ public class Labyrinth {
             }
         }
 }
-    public boolean floodFill(Point xy)
+
+    /*public boolean floodFill(Point xy)
     {
         return floodFill(xy.x,xy.y);
     }
@@ -222,7 +228,7 @@ public class Labyrinth {
             }
         }
         return false;
-    }
+    }*/
 
     private boolean checker(int x, int y){
         if(x < 0 || y < 0 || x >= size || y >= size)
@@ -243,4 +249,95 @@ public class Labyrinth {
         }
         System.out.println("START!");*/
     }
+
+    double Evr(Point a, Point finish) {
+        return Math.sqrt(Math.pow(a.x-finish.x, 2)+Math.pow(a.y-finish.y, 2));
+    }
+
+    public class Vertex {
+        public Point name;
+        public double priority; // Приоритет
+        public double way; // Путь от начальной
+
+        public Vertex(Point name, double priority, double way) {
+            this.name = name;
+            this.priority = priority;
+            this.way = way;
+        }
+    }
+
+    public boolean FindA (Point begin, Point finish )
+    {
+        HashSet <Point> closeSet = new HashSet<>(); // Исследованные вершины
+        PriorityQueue<Vertex> openSet = new PriorityQueue<>(idComparator);
+        openSet.add(new Vertex(begin,0,0));
+        Vertex[][] fromSet = new Vertex[size][size]; // Кратчайшие пути для вершин
+        for (int i=0;i<size;i++) {
+            for (int j=0;j<size;j++){
+                fromSet[i][j] = new Vertex(new Point(i,j),0,10000);
+            }
+        }
+        while(!openSet.isEmpty())
+        {
+            Vertex node = openSet.peek(); //Берем вершину из очереди
+            if (!closeSet.contains(node.name)) // Если еще не исследовали
+            {
+                if (node.name.equals(finish))
+                {
+                    getWay(fromSet,begin,finish);
+                    return true;
+                }
+                openSet.poll();
+                closeSet.add(node.name);
+                Vector<Vertex>neighbours = getNeighbours(node,finish);
+                for (Vertex temp : neighbours) {
+                    if ((temp.way) <= fromSet[temp.name.x][temp.name.y].way) {
+                        fromSet[temp.name.x][temp.name.y].name = node.name;
+                        fromSet[temp.name.x][temp.name.y].way = temp.way;
+                        openSet.add(temp);
+                    }
+                }
+            }
+            else
+            {
+                openSet.poll();
+            }
+        }
+        return false;
+
+    }
+    private Vector<Vertex> getNeighbours(Vertex vertex, Point finish) //Получение соседей вершины
+    {
+        Vector<Vertex> neighbours = new Vector<>();
+        if(checker(vertex.name.x-1, vertex.name.y)){
+            Point point = new Point((vertex.name.x-1), vertex.name.y);
+            neighbours.add(new Vertex(point,vertex.way+Evr(point,finish)+1, vertex.way + 1));
+        }
+        if(checker(vertex.name.x+1, vertex.name.y)){
+            Point point = new Point((vertex.name.x+1), vertex.name.y);
+            neighbours.add(new Vertex(point,vertex.way+Evr(point,finish)+1, vertex.way + 1));
+        }
+        if(checker(vertex.name.x, vertex.name.y-1)){
+            Point point = new Point((vertex.name.x), vertex.name.y-1);
+            neighbours.add(new Vertex(point,vertex.way+Evr(point,finish)+1, vertex.way + 1));
+        }
+        if(checker(vertex.name.x, vertex.name.y+1)){
+            Point point = new Point((vertex.name.x), vertex.name.y+1);
+            neighbours.add(new Vertex(point,vertex.way+Evr(point,finish)+1, vertex.way + 1));
+        }
+        return neighbours;
+    }
+    private void getWay(Vertex[][] fromSet, Point begin, Point end) // Восстановление пути
+    {
+        Point curr = end;
+        curr = fromSet[curr.x][curr.y].name;
+        while(curr != begin)
+        {
+            labyrinth[curr.x][curr.y] = '2';
+            curr = fromSet[curr.x][curr.y].name;
+        }
+
+    }
+    private static Comparator<Vertex> idComparator = (c1, c2) -> (int) (c1.priority - c2.priority);
+
 }

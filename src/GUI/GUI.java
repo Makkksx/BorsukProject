@@ -129,7 +129,8 @@ public class GUI extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 labyrinth.clearLab();
-                labyrinth.floodFill(labyrinth.getStart()); // Вызов алгоритма;
+//                labyrinth.floodFill(labyrinth.getStart()); // Вызов алгоритма;
+                labyrinth.FindA(labyrinth.getStart(),labyrinth.getFinish());
                 pack();
                 setSize(800,600);
                 labyrinth.printLabyrinth();
