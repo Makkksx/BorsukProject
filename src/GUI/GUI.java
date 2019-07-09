@@ -43,7 +43,7 @@ public class GUI extends JFrame {
         menuBar.add(scale_decrease);
         menuBar.add(play_button);
         setJMenuBar(menuBar);
-        setSize(800,600);
+        setSize(400,200);
         setVisible(true);
         save_file.setEnabled(false);
         play_button.setEnabled((false));
@@ -52,7 +52,7 @@ public class GUI extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 drawLabyrinth.ScaleDecrease();
                 pack();
-                setSize(800,600);
+
             }
         });
         scale_increase.addActionListener(new ActionListener() {
@@ -60,7 +60,7 @@ public class GUI extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 drawLabyrinth.ScaleIncrease();
                 pack();
-                setSize(800,600);
+
             }
         });
         clean_lab.addActionListener(new ActionListener() {
@@ -114,9 +114,8 @@ public class GUI extends JFrame {
         labyrinth.printLabyrinth();
         drawLabyrinth = new DrawLabyrinth(labyrinth);
         labyrinth.printLabyrinth();
-        pack();
-        setSize(800,600);
         add(drawLabyrinth.getJPanel(),BorderLayout.NORTH);
+        pack();
         scale_increase.setEnabled(true);
         scale_decrease.setEnabled(true);
         play_button.setEnabled(true);
@@ -132,9 +131,7 @@ public class GUI extends JFrame {
 //                labyrinth.floodFill(labyrinth.getStart()); // Вызов алгоритма;
                 labyrinth.FindA(labyrinth.getStart(),labyrinth.getFinish());
                 pack();
-                setSize(800,600);
                 labyrinth.printLabyrinth();
-
             }
         });
     }
