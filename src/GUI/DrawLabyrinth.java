@@ -2,6 +2,8 @@ package GUI;
 
 import Matrix.Labyrinth;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.geom.*;
 import javax.swing.*;
 import javax.swing.table.TableColumn;
@@ -36,6 +38,22 @@ public class DrawLabyrinth{
         ButtonColumn button = new ButtonColumn(table,this.labyrinth);
         board.add(table);
         board.setVisible(true);
+        JButton setFinish = new JButton("Финиш");
+        JButton setStart = new JButton("Старт");
+        setFinish.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                button.setFINISH();
+            }
+        });
+        setStart.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                button.setSTART();
+            }
+        });
+        board.add(setFinish,BorderLayout.EAST);
+        board.add(setStart,BorderLayout.EAST);
     }
     public JPanel getJPanel(){
         return board;

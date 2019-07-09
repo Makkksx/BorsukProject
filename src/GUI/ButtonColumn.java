@@ -25,6 +25,8 @@ public class ButtonColumn extends AbstractCellEditor
         implements TableCellRenderer, TableCellEditor, ActionListener, MouseListener
 {
     private JTable table;
+    private boolean FINISH;
+    private boolean START;
     private Action action;
     private int mnemonic;
     private Border originalBorder;
@@ -37,7 +39,8 @@ public class ButtonColumn extends AbstractCellEditor
     public ButtonColumn(JTable table, Labyrinth labyrinth) {
         this.table = table;
         this.labyrinth = labyrinth;
-
+        FINISH = false;
+        START = false;
         renderButton = new JButton();
         editButton = new JButton();
         editButton.setFocusPainted( false );
@@ -115,6 +118,12 @@ public class ButtonColumn extends AbstractCellEditor
     {
         return editorValue;
     }
+    public void setFINISH(){
+        FINISH = true;
+    }
+    public void setSTART(){
+        START = true;
+    }
 
     //
 //  Implement TableCellRenderer interface
@@ -191,7 +200,17 @@ public class ButtonColumn extends AbstractCellEditor
     public void actionPerformed(ActionEvent e) {
         int row = table.convertRowIndexToModel( table.getEditingRow() );
         int column = table.convertColumnIndexToModel(table.getEditingColumn());
-        if(labyrinth.getCell(column,row) == '1')
+        if(START){
+            labyrinth.newStart(new Point(row,column));
+            START = false;
+            table.repaint();
+        }
+        else if(FINISH){
+            labyrinth.newFinish(new Point(row,column));
+            FINISH = false;
+            table.repaint();
+        }
+        else if(labyrinth.getCell(column,row) == '1')
             labyrinth.setCell(column,row,'0');
         else
             labyrinth.setCell(column,row,'1');

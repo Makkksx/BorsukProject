@@ -44,6 +44,16 @@ public class Labyrinth {
         start = new Point(size /2, size /2);
         finish = new Point(size -1, size -1);
     }
+    public void newFinish(Point point){
+        labyrinth[finish.x][finish.y] = '0';
+        finish = point;
+        labyrinth[finish.x][finish.y] = 'f';
+    }
+    public void newStart(Point point){
+        labyrinth[start.x][start.y] = '0';
+        start = point;
+        labyrinth[start.x][start.y] = 's';
+    }
 
     public Labyrinth(File file) throws IOException {
         String line;
