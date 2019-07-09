@@ -192,7 +192,7 @@ public class Labyrinth {
     public void clearLab() {
         for (int i = 0; i < size; i++){
             for(int j = 0; j < size; j++){
-                if (labyrinth[i][j] == '2')
+                if (labyrinth[i][j] == '2' || labyrinth[i][j] == '3')
                     labyrinth[i][j] = '0';
             }
         }
@@ -230,6 +230,17 @@ public class Labyrinth {
         }
     }
 
+    private void printOpenSetVertexes(PriorityQueue openSet){
+        Vertex[] arr = new Vertex[openSet.size()];
+        arr = (Vertex[]) openSet.toArray(arr);
+        for (Vertex vertex : arr) {
+            Point point = vertex.name;
+            if (!point.equals(start) && !point.equals(finish))
+                labyrinth[point.x][point.y] = '3';
+        }
+        printLabyrinth();
+
+    }
     public boolean FindA (Point begin, Point finish ) {
         HashSet <Point> closeSet = new HashSet<>(); // Исследованные вершины
         PriorityQueue<Vertex> openSet = new PriorityQueue<>(idComparator);
@@ -241,6 +252,7 @@ public class Labyrinth {
             }
         }
         while(!openSet.isEmpty()) {
+            printOpenSetVertexes(openSet);
             Vertex node = openSet.peek(); //Берем вершину из очереди
             if (!closeSet.contains(node.name)) // Если еще не исследовали
             {
@@ -250,6 +262,7 @@ public class Labyrinth {
                     return true;
                 }
                 openSet.poll();
+
                 closeSet.add(node.name);
                 Vector<Vertex>neighbours = getNeighbours(node,finish);
                 for (Vertex temp : neighbours) {
