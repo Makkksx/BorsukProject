@@ -63,7 +63,7 @@
 ![Imgur](https://pp.userapi.com/c852036/v852036125/15f266/_H6qoOMGlSg.jpg)
 
 ### UML-диаграмма
-![Imgur](https://pp.userapi.com/c852120/v852120257/167e74/4kSUJx7dsKs.jpg)
+![Imgur](https://vk.com/doc88097903_511665601?hash=4f37a077752de90389&dl=3ccddbb2e2905d6af5)
 
 ### Примерное распределение ролей
 1. [Трушников Андрей](https://github.com/AndersonGH)
