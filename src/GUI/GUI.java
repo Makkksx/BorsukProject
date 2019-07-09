@@ -130,7 +130,9 @@ public class GUI extends JFrame {
                 labyrinth.clearLab();
 //                labyrinth.floodFill(labyrinth.getStart()); // Вызов алгоритма;
                 labyrinth.FindA(labyrinth.getStart(),labyrinth.getFinish());
+                repaint();
                 pack();
+                //setSize(800,600);
                 labyrinth.printLabyrinth();
             }
         });
