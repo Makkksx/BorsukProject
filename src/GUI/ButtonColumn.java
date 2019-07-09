@@ -27,14 +27,13 @@ public class ButtonColumn extends AbstractCellEditor implements TableCellRendere
     private boolean START;
     private Action action;
     private int mnemonic;
-    private Border originalBorder;
     private Border focusBorder;
     private JButton renderButton;
     private JButton editButton;
     private Object editorValue;
     private boolean isButtonColumnEditor;
     private Labyrinth labyrinth;
-    public ButtonColumn(JTable table, Labyrinth labyrinth) {
+    ButtonColumn(JTable table, Labyrinth labyrinth) {
         this.table = table;
         this.labyrinth = labyrinth;
         FINISH = false;
@@ -43,7 +42,7 @@ public class ButtonColumn extends AbstractCellEditor implements TableCellRendere
         editButton = new JButton();
         editButton.setFocusPainted( false );
         editButton.addActionListener( this );
-        originalBorder = editButton.getBorder();
+        Border originalBorder = editButton.getBorder();
         setFocusBorder( new LineBorder(Color.BLUE) );
         TableColumnModel columnModel = table.getColumnModel();
         for(int i = 0; i < table.getColumnCount(); i++) {
@@ -52,10 +51,10 @@ public class ButtonColumn extends AbstractCellEditor implements TableCellRendere
         }
         table.addMouseListener( this );
     }
-    public void setFINISH(){
+    void setFINISH(){
         FINISH = true;
     }
-    public void setSTART(){
+    void setSTART(){
         START = true;
     }
 
@@ -75,7 +74,7 @@ public class ButtonColumn extends AbstractCellEditor implements TableCellRendere
      *
      *  @param focusBorder the foreground color
      */
-    public void setFocusBorder(Border focusBorder)
+    private void setFocusBorder(Border focusBorder)
     {
         this.focusBorder = focusBorder;
         editButton.setBorder( focusBorder );
@@ -127,13 +126,13 @@ public class ButtonColumn extends AbstractCellEditor implements TableCellRendere
 //  Implement TableCellRenderer interface
 //
     public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
-        if(labyrinth.getCell(column,row) == '1')
+        if(labyrinth.getCell(row,column) == '1')
             renderButton.setIcon(new ImageIcon("Pictures\\black_cell.png"));
-        else if(labyrinth.getCell(column,row) == '0')
+        else if(labyrinth.getCell(row,column) == '0')
             renderButton.setIcon(new ImageIcon("Pictures\\white_cell.png"));
-        else if(labyrinth.getCell(column,row) == 's')
+        else if(labyrinth.getCell(row,column) == 's')
             renderButton.setIcon(new ImageIcon("Pictures\\start_cell.png"));
-        else if(labyrinth.getCell(column,row) == 'f')
+        else if(labyrinth.getCell(row,column) == 'f')
             renderButton.setIcon(new ImageIcon("Pictures\\finish_cell.png"));
         else
             renderButton.setIcon(new ImageIcon("Pictures\\path_cell.png"));
@@ -209,10 +208,10 @@ public class ButtonColumn extends AbstractCellEditor implements TableCellRendere
             FINISH = false;
             table.repaint();
         }
-        else if(labyrinth.getCell(column,row) == '1')
-            labyrinth.setCell(column,row,'0');
+        else if(labyrinth.getCell(row,column) == '1')
+            labyrinth.setCell(row,column,'0');
         else
-            labyrinth.setCell(column,row,'1');
+            labyrinth.setCell(row,column,'1');
         labyrinth.printLabyrinth();
         /*
 

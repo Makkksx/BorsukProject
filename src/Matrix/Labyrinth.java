@@ -20,13 +20,12 @@ public class Labyrinth {
         return start;
     }
 	
-    // НУЖНО ИСПРАВИТЬ i j ЗДЕСЬ И ВО ВСЕХ ИСПОЛЬЗОВАНИЯХ
     public char getCell(int i, int j) {
-        return labyrinth[j][i];
+        return labyrinth[i][j];
     }
 	
     public void setCell(int i, int j, char val) {
-        labyrinth[j][i] = val;
+        labyrinth[i][j] = val;
     }
 
     public Point getFinish() {
@@ -199,7 +198,7 @@ public class Labyrinth {
         }
 	}
 
-    private boolean checker(int x, int y) {
+    public boolean checker(int x, int y) {
         if(x < 0 || y < 0 || x >= size || y >= size)
             return false;
         return labyrinth[x][y] == '0' || labyrinth[x][y] == 'f';
@@ -215,16 +214,16 @@ public class Labyrinth {
         System.out.println(" ");
     }
 
-    double Evr(Point a, Point finish) {
+    private double Evr(Point a, Point finish) {
         return Math.sqrt(Math.pow(a.x-finish.x, 2)+Math.pow(a.y-finish.y, 2));
     }
 
     public class Vertex {
-        public Point name;
-        public double priority; // Приоритет
-        public double way; // Путь от начальной
+        Point name;
+        double priority; // Приоритет
+        double way; // Путь от начальной
 
-        public Vertex(Point name, double priority, double way) {
+        Vertex(Point name, double priority, double way) {
             this.name = name;
             this.priority = priority;
             this.way = way;
