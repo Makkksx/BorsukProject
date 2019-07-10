@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4b252c7a-d305-4437-847e-2c70f56919df" name="Default Changelist" comment="Добавил начальное инфо">
+    <list default="true" id="4b252c7a-d305-4437-847e-2c70f56919df" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pictures/gifka.gif" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/gifka.gif" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,8 +20,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/GUI/GUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="178" column="71" selection-start-line="178" selection-start-column="71" selection-end-line="178" selection-end-column="71" />
+            <state relative-caret-position="210">
+              <caret line="185" column="51" selection-start-line="185" selection-start-column="51" selection-end-line="185" selection-end-column="51" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -276,7 +277,7 @@
       <workItem from="1562775206207" duration="104000" />
       <workItem from="1562783054446" duration="679000" />
       <workItem from="1562787797262" duration="938000" />
-      <workItem from="1562788993857" duration="4843000" />
+      <workItem from="1562788993857" duration="5627000" />
     </task>
     <task id="LOCAL-00001" summary="добавил вывод лаьиринта в виде JTable">
       <created>1562499426212</created>
@@ -348,7 +349,21 @@
       <option name="project" value="LOCAL" />
       <updated>1562793607525</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="вот">
+      <created>1562794038763</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1562794038763</updated>
+    </task>
+    <task id="LOCAL-00012" summary="вот">
+      <created>1562794431158</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1562794431158</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -363,7 +378,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39388000" />
+    <option name="totallyTimeSpent" value="40172000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -444,7 +459,8 @@
     <MESSAGE value="Добаввил сообщение &quot;Путь не найден&quot;" />
     <MESSAGE value="Добавил возможность задавать размер нового лабиринта" />
     <MESSAGE value="Добавил начальное инфо" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавил начальное инфо" />
+    <MESSAGE value="вот" />
+    <option name="LAST_COMMIT_MESSAGE" value="вот" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -463,25 +479,25 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/GUI/GUI.java</url>
-          <line>116</line>
+          <line>117</line>
           <properties />
           <option name="timeStamp" value="54" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/GUI/GUI.java</url>
-          <line>117</line>
+          <line>118</line>
           <properties />
           <option name="timeStamp" value="55" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/GUI/GUI.java</url>
-          <line>115</line>
+          <line>116</line>
           <properties />
           <option name="timeStamp" value="56" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/GUI/GUI.java</url>
-          <line>118</line>
+          <line>119</line>
           <properties />
           <option name="timeStamp" value="57" />
         </line-breakpoint>
@@ -555,8 +571,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GUI/GUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="178" column="71" selection-start-line="178" selection-start-column="71" selection-end-line="178" selection-end-column="71" />
+        <state relative-caret-position="210">
+          <caret line="185" column="51" selection-start-line="185" selection-start-column="51" selection-end-line="185" selection-end-column="51" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
