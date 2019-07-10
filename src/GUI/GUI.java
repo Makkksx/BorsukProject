@@ -79,12 +79,6 @@ public class GUI extends JFrame {
                     next_step.setEnabled(false);
                     play_button.setEnabled(false);
                 }
-                else {
-
-                    //JOptionPane.showMessageDialog(drawLabyrinth.getJPanel(),"Путь не найден");
-                   // next_step.setEnabled(false);
-                   // play_button.setEnabled(false);
-                }
                 repaint();
                 pack();
                 labyrinth.printLabyrinth();
