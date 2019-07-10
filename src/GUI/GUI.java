@@ -184,6 +184,7 @@ public class GUI extends JFrame {
         });
         getContentPane().add(info,BorderLayout.CENTER);
         getContentPane().add(gif,BorderLayout.SOUTH);
+        //ffffff
 
         pack();
     }
