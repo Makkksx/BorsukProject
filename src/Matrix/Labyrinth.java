@@ -4,7 +4,6 @@ import java.awt.*;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -27,7 +26,7 @@ public class Labyrinth {
         return labyrinth[i][j];
     }
 
-    public void setCell(Point ij, char val) {
+    void setCell(Point ij, char val) {
         labyrinth[ij.x][ij.y] = val;
     }
 
@@ -41,8 +40,8 @@ public class Labyrinth {
 
     // Конструкторы;
     //Пустой лабиринт
-    public Labyrinth() {
-        size = 8;
+    public Labyrinth(int size) {
+        Labyrinth.size = size;
         labyrinth = new char[size][size];
         for (char[] row : labyrinth)
             Arrays.fill(row, '0');
@@ -91,7 +90,7 @@ public class Labyrinth {
                     else labyrinth[i][j] = '0';
                 }
             }
-            parall();
+            parallel();
             labyrinth[0][0] = 's';
             labyrinth[size - 1][size - 1] = 'f';
             start = new Point(0,0);
@@ -154,7 +153,7 @@ public class Labyrinth {
     }
 
     // Вспомогательные методы;
-    public void parall() {
+    private void parallel() {
         // Создание перегородок;
         for (int i = 2; i < (size - 1); i += 2) {
             int count = (int)(Math.random() * (size / 3 - 1) + 1);
@@ -253,7 +252,7 @@ public class Labyrinth {
         }
     }
 
-    public boolean checker(int x, int y) {
+    boolean checker(int x, int y) {
         if(x < 0 || y < 0 || x >= size || y >= size)
             return false;
         return labyrinth[x][y] == '0' || labyrinth[x][y] == 'f';

@@ -108,7 +108,7 @@ public class GUI extends JFrame {
                 // Пустой лабиринт
                 if(drawLabyrinth != null)
                     remove(drawLabyrinth.getJPanel());
-                labyrinth = new Labyrinth();
+                labyrinth = new Labyrinth(8);
                 algorithm = new Algorithm(labyrinth);
                 setLabyrinth();
             }

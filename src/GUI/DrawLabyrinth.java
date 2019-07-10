@@ -58,7 +58,7 @@ public class DrawLabyrinth {
         return board;
     }
 
-    public JTable getJTable() {
+    JTable getJTable() {
         return table;
     }
 
