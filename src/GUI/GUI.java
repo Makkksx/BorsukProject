@@ -110,7 +110,7 @@ public class GUI extends JFrame {
                     remove(drawLabyrinth.getJPanel());
 
                 String size_lab = new String("30");
-                while( (size_lab!=null && !(size_lab.matches("[0-9]+"))) || Integer.parseInt(size_lab) > 25)
+                while( (size_lab!=null && !(size_lab.matches("[0-9]+"))) || (size_lab!=null &&Integer.parseInt(size_lab) > 25))
                     size_lab = JOptionPane.showInputDialog(null, "Размер лабиринта");
                 System.out.println(size_lab);
                 if(size_lab != null) {
