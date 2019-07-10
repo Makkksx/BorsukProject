@@ -25,7 +25,7 @@ public class GUI extends JFrame {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         JLabel gif = new JLabel();
         JLabel info = new JLabel("Нажмите 'Файл -> Новый', чтобы создать новый лабиринт");
-        gif.setIcon(new ImageIcon("Pictures\\tenor.gif"));
+        gif.setIcon(new ImageIcon("Pictures\\gifka.gif"));
         JMenuBar menuBar = new JMenuBar();
         JMenu fileMenu = new JMenu("Файл");
         JMenu new_file = new JMenu("Создать");
@@ -114,7 +114,7 @@ public class GUI extends JFrame {
                 remove(gif);
 
                 String size_lab = new String("30");
-                while( (size_lab!=null && !(size_lab.matches("[0-9]+"))) || (size_lab!=null &&Integer.parseInt(size_lab) > 25))
+                while( (size_lab!=null && !(size_lab.matches("[0-9]+"))) || (size_lab!=null &&Integer.parseInt(size_lab) > 25)|| (size_lab!=null &&Integer.parseInt(size_lab) < 3))
                     size_lab = JOptionPane.showInputDialog(null, "Размер лабиринта");
                 System.out.println(size_lab);
                 if(size_lab != null) {
@@ -157,7 +157,10 @@ public class GUI extends JFrame {
                 // Случайная генерация лабиринта;
                 if(drawLabyrinth != null)
                     remove(drawLabyrinth.getJPanel());
-                labyrinth = new Labyrinth(13, 1);
+                String size_lab = new String("30");
+                while( (size_lab!=null && !(size_lab.matches("[0-9]+"))) || (size_lab!=null &&Integer.parseInt(size_lab) > 25)|| (size_lab!=null &&Integer.parseInt(size_lab) < 3))
+                    size_lab = JOptionPane.showInputDialog(null, "Размер лабиринта");
+                labyrinth = new Labyrinth(Integer.parseInt(size_lab), 1);
                 algorithm = new Algorithm(labyrinth);
                 setLabyrinth();
             }
@@ -170,7 +173,10 @@ public class GUI extends JFrame {
                 // Случайная генерация лабиринта;
                 if(drawLabyrinth != null)
                     remove(drawLabyrinth.getJPanel());
-                labyrinth = new Labyrinth(13, 2);
+                String size_lab = new String("30");
+                while( (size_lab!=null && !(size_lab.matches("[0-9]+"))) || (size_lab!=null &&Integer.parseInt(size_lab) > 25)|| (size_lab!=null &&Integer.parseInt(size_lab) < 3))
+                    size_lab = JOptionPane.showInputDialog(null, "Размер лабиринта");
+                labyrinth = new Labyrinth(Integer.parseInt(size_lab), 2);
                 algorithm = new Algorithm(labyrinth);
                 setLabyrinth();
             }
