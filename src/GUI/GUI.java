@@ -1,5 +1,6 @@
 package GUI;
 
+import Matrix.Algorithm;
 import Matrix.Labyrinth;
 
 import java.awt.*;
@@ -11,10 +12,13 @@ import java.util.NoSuchElementException;
 public class GUI extends JFrame {
     private Labyrinth labyrinth;
     private DrawLabyrinth drawLabyrinth;
+    private Algorithm algorithm;
     private JMenuItem scale_increase;
     private JMenuItem scale_decrease;
     private JMenuItem play_button;
     private JMenuItem save_file;
+    private JMenuItem next_step;
+    private JMenuItem refresh;
     public GUI() {
         /*Меню */
 
@@ -24,10 +28,12 @@ public class GUI extends JFrame {
         JMenu new_file = new JMenu("Создать");
         JMenuItem new_lab = new JMenuItem("Новый");
         JMenuItem open_file = new JMenuItem("Открыть");
+        refresh = new JMenuItem(new ImageIcon("Pictures\\refresh.png"));
         play_button = new JMenuItem(new ImageIcon("Pictures\\play.png"));
         scale_increase = new JMenuItem(new ImageIcon("Pictures\\zoom-in-button.png"));
         scale_decrease = new JMenuItem(new ImageIcon("Pictures\\zoom-out.png"));
         save_file = new JMenuItem("Сохранить");
+        next_step = new JMenuItem(new ImageIcon("Pictures\\next.png"));
         JMenuItem pattern1 = new JMenuItem("Шаблон1");
         JMenuItem pattern2 = new JMenuItem("Шаблон2");
         new_file.add(pattern1);
@@ -41,13 +47,43 @@ public class GUI extends JFrame {
         scale_decrease.setEnabled(false);
         menuBar.add(scale_increase);
         menuBar.add(scale_decrease);
+        menuBar.add(next_step);
+        menuBar.add(refresh);
         menuBar.add(play_button);
         setJMenuBar(menuBar);
         setSize(400,200);
         setVisible(true);
         save_file.setEnabled(false);
-        play_button.setEnabled((false));
+        play_button.setEnabled(false);
+        next_step.setEnabled(false);
+        refresh.setEnabled(false);
         setSaveButton(save_file);
+
+        refresh.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                labyrinth.clearLab();
+                repaint();
+                pack();
+                algorithm = new Algorithm(labyrinth);
+                next_step.setEnabled(true);
+                play_button.setEnabled(true);
+            }
+        });
+        next_step.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (algorithm.stepFindA(labyrinth)) {
+                    next_step.setEnabled(false);
+                    play_button.setEnabled(false);
+                }
+                repaint();
+                pack();
+                labyrinth.printLabyrinth();
+
+            }
+        });
+
         scale_decrease.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -71,6 +107,7 @@ public class GUI extends JFrame {
                 if(drawLabyrinth != null)
                     remove(drawLabyrinth.getJPanel());
                 labyrinth = new Labyrinth();
+                algorithm = new Algorithm(labyrinth);
                 setLabyrinth();
             }
         });
@@ -86,8 +123,8 @@ public class GUI extends JFrame {
                         if(drawLabyrinth != null)
                             remove(drawLabyrinth.getJPanel());
                         labyrinth = new Labyrinth(fileOpen.getSelectedFile());
+                        algorithm = new Algorithm(labyrinth);
                         setLabyrinth();
-//                        setSaveButton(save_file);
                     } catch(IOException e) {
                         System.out.println(e.getMessage());
                     }
@@ -106,6 +143,7 @@ public class GUI extends JFrame {
                     if(drawLabyrinth != null)
                         remove(drawLabyrinth.getJPanel());
                     labyrinth = new Labyrinth(13);
+                    algorithm = new Algorithm(labyrinth);
                     setLabyrinth();
 
             }
@@ -123,16 +161,20 @@ public class GUI extends JFrame {
         play_button.setEnabled(true);
         setPlay(play_button);
         save_file.setEnabled(true);
+        next_step.setEnabled(true);
+        refresh.setEnabled(true);
 
     }
     private void setPlay(JMenuItem play_button) {
         play_button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                labyrinth.clearLab();
-                if(!labyrinth.FindA(labyrinth.getStart(),labyrinth.getFinish())){
-                    // Нужно добавить какое-то сообщение, если путь не найден
+//                labyrinth.clearLab();
+                if(algorithm.FindA(labyrinth)) {
+                    next_step.setEnabled(false);
+                    play_button.setEnabled(false);
                 }
+
                 repaint();
                 pack();
                 labyrinth.printLabyrinth();
