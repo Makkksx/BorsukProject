@@ -126,12 +126,12 @@ public class ButtonColumn extends AbstractCellEditor implements TableCellRendere
         int row = table.convertRowIndexToModel( table.getEditingRow() );
         int column = table.convertColumnIndexToModel(table.getEditingColumn());
 
-        if(START){
+        if(START && (row != labyrinth.getFinish().x && column != labyrinth.getFinish().y)){
             labyrinth.newStart(new Point(row,column));
             START = false;
             table.repaint();
         }
-        else if(FINISH){
+        else if(FINISH && (row != labyrinth.getStart().x && column != labyrinth.getStart().y)){
             labyrinth.newFinish(new Point(row,column));
             FINISH = false;
             table.repaint();
