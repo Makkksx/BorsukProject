@@ -62,6 +62,7 @@ public class GUI extends JFrame {
         refresh.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                drawLabyrinth.getJTable().setEnabled(true);
                 labyrinth.clearLab();
                 repaint();
                 pack();
@@ -73,6 +74,7 @@ public class GUI extends JFrame {
         next_step.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                drawLabyrinth.getJTable().setEnabled(false);
                 if (algorithm.stepFindA(labyrinth)) {
                     next_step.setEnabled(false);
                     play_button.setEnabled(false);
@@ -169,8 +171,12 @@ public class GUI extends JFrame {
         play_button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-//                labyrinth.clearLab();
                 if(algorithm.FindA(labyrinth)) {
+                    next_step.setEnabled(false);
+                    play_button.setEnabled(false);
+                }
+                else{
+                    JOptionPane.showMessageDialog(drawLabyrinth.getJPanel(),"Путь не найден");
                     next_step.setEnabled(false);
                     play_button.setEnabled(false);
                 }

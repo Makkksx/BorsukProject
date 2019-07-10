@@ -1,22 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4b252c7a-d305-4437-847e-2c70f56919df" name="Default Changelist" comment="Егорыч">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BorsukProject/GUI/ButtonColumn.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BorsukProject/GUI/ButtonColumn.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BorsukProject/GUI/GUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BorsukProject/GUI/GUI$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BorsukProject/GUI/GUI$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BorsukProject/GUI/GUI$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BorsukProject/GUI/GUI$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BorsukProject/GUI/GUI$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BorsukProject/GUI/GUI$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BorsukProject/GUI/GUI$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BorsukProject/GUI/GUI$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BorsukProject/GUI/GUI$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BorsukProject/GUI/GUI$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BorsukProject/GUI/GUI$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BorsukProject/GUI/GUI$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BorsukProject/GUI/GUI$7.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BorsukProject/GUI/GUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BorsukProject/GUI/GUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BorsukProject/Matrix/Algorithm.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BorsukProject/Matrix/Algorithm.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BorsukProject/Matrix/Labyrinth$Vertex.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BorsukProject/Matrix/Labyrinth.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BorsukProject/Matrix/Labyrinth.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/ButtonColumn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/ButtonColumn.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/GUI.java" afterDir="false" />
+    <list default="true" id="4b252c7a-d305-4437-847e-2c70f56919df" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/src/Matrix/Algorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Matrix/Algorithm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Matrix/Labyrinth.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Matrix/Labyrinth.java" afterDir="false" />
     </list>
@@ -35,8 +20,17 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/GUI/GUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="278">
-              <caret line="176" selection-start-line="176" selection-end-line="176" />
+            <state relative-caret-position="136">
+              <caret line="8" column="17" lean-forward="true" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/GUI/ButtonColumn.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="3213">
+              <caret line="202" column="79" selection-start-line="202" selection-start-column="79" selection-end-line="202" selection-end-column="79" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -45,10 +39,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/GUI/ButtonColumn.java">
+        <entry file="file://$PROJECT_DIR$/src/GUI/DrawLabyrinth.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2907">
-              <caret line="205" column="21" selection-start-line="205" selection-start-column="12" selection-end-line="205" selection-end-column="21" />
+            <state relative-caret-position="391">
+              <caret line="23" column="13" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -59,8 +53,13 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Matrix/Labyrinth.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-4">
-              <caret line="203" column="9" lean-forward="true" selection-start-line="203" selection-start-column="9" selection-end-line="203" selection-end-column="9" />
+            <state relative-caret-position="34">
+              <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#470#471#0" expanded="true" />
+                <element signature="e#498#499#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -68,12 +67,22 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Matrix/Algorithm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1500">
-              <caret line="34" selection-start-line="34" selection-end-line="34" />
+            <state relative-caret-position="85">
+              <caret line="5" selection-start-line="5" selection-end-line="5" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2620#2621#0" expanded="true" />
-                <element signature="e#2705#2706#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Matrix/LabyrinthTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="15" column="47" lean-forward="true" selection-start-line="15" selection-start-column="47" selection-end-line="15" selection-end-column="47" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -99,6 +108,9 @@
       <find>setCell</find>
       <find>getCell</find>
       <find>Dr</find>
+      <find>JP</find>
+      <find>FindA</find>
+      <find>next_step</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -110,15 +122,18 @@
         <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/GUI/ImgUtils.java" />
         <option value="$PROJECT_DIR$/src/Test/LabyrinthTest.java" />
-        <option value="$PROJECT_DIR$/src/GUI/DrawLabyrinth.java" />
+        <option value="$PROJECT_DIR$/src/GUI/MyTable.java" />
         <option value="$PROJECT_DIR$/src/GUI/ButtonColumn.java" />
-        <option value="$PROJECT_DIR$/src/Matrix/Labyrinth.java" />
-        <option value="$PROJECT_DIR$/src/Matrix/Algorithm.java" />
+        <option value="$PROJECT_DIR$/src/GUI/DrawLabyrinth.java" />
         <option value="$PROJECT_DIR$/src/GUI/GUI.java" />
+        <option value="$PROJECT_DIR$/src/Test/Matrix/LabyrinthTest.java" />
+        <option value="$PROJECT_DIR$/src/Matrix/LabyrinthTest.java" />
+        <option value="$PROJECT_DIR$/src/Matrix/Algorithm.java" />
+        <option value="$PROJECT_DIR$/src/Matrix/Labyrinth.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="360" />
     <option name="y" value="-25" />
     <option name="width" value="1925" />
@@ -155,12 +170,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Matrix" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="BorsukProject" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BorsukProject" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Test" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -191,9 +200,9 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application">
-      <option name="ALTERNATIVE_JRE_PATH" value="C:/Program Files/Java/jdk-11" />
+      <option name="ALTERNATIVE_JRE_PATH" value="11" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="BorsukProject" />
@@ -203,6 +212,43 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="LabyrinthTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="BorsukProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Matrix.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Matrix" />
+      <option name="MAIN_CLASS_NAME" value="Matrix.LabyrinthTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LabyrinthTest.testGetStart" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="BorsukProject" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Matrix.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Matrix" />
+      <option name="MAIN_CLASS_NAME" value="Matrix.LabyrinthTest" />
+      <option name="METHOD_NAME" value="testGetStart" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.LabyrinthTest" />
+        <item itemvalue="JUnit.LabyrinthTest.testGetStart" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -224,7 +270,11 @@
       <workItem from="1562686589636" duration="2062000" />
       <workItem from="1562692610360" duration="2515000" />
       <workItem from="1562695557525" duration="4970000" />
-      <workItem from="1562749141856" duration="5558000" />
+      <workItem from="1562749141856" duration="5654000" />
+      <workItem from="1562755137000" duration="99000" />
+      <workItem from="1562755287276" duration="2106000" />
+      <workItem from="1562757648921" duration="2562000" />
+      <workItem from="1562771835506" duration="45000" />
     </task>
     <task id="LOCAL-00001" summary="добавил вывод лаьиринта в виде JTable">
       <created>1562499426212</created>
@@ -261,17 +311,35 @@
       <option name="project" value="LOCAL" />
       <updated>1562511227498</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Добаввил сообщение &quot;Путь не найден&quot;">
+      <created>1562758968682</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1562758968683</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
+  <component name="TestHistory">
+    <history-entry file="LabyrinthTest_testGetStart - 2019.07.10 at 18h 26m 58s.xml">
+      <configuration name="LabyrinthTest.testGetStart" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="LabyrinthTest - 2019.07.10 at 18h 27m 08s.xml">
+      <configuration name="LabyrinthTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="LabyrinthTest - 2019.07.10 at 18h 30m 19s.xml">
+      <configuration name="LabyrinthTest" configurationId="JUnit" />
+    </history-entry>
+  </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27381000" />
+    <option name="totallyTimeSpent" value="32824000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23288591" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17449665" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -281,7 +349,7 @@
       <window_info id="simpleUML" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.33569404" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.23087819" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -301,6 +369,7 @@
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Database" order="8" />
+      <window_info anchor="right" id="Coverage" order="9" side_tool="true" />
     </layout>
     <layout-to-restore>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23288591" />
@@ -342,7 +411,8 @@
     <MESSAGE value="добавил вывод лаьиринта в виде JTable" />
     <MESSAGE value="Егорыч" />
     <MESSAGE value="Добавил масштабирование лабиринта" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавил масштабирование лабиринта" />
+    <MESSAGE value="Добаввил сообщение &quot;Путь не найден&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добаввил сообщение &quot;Путь не найден&quot;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -396,19 +466,16 @@
           <option name="timeStamp" value="47" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/GUI/GUI.java</url>
-          <line>168</line>
-          <properties />
-          <option name="timeStamp" value="54" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/Matrix/Algorithm.java</url>
-          <line>45</line>
+          <line>49</line>
           <properties />
-          <option name="timeStamp" value="61" />
+          <option name="timeStamp" value="60" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/BorsukProject$Main.ic" NAME="Main Coverage Results" MODIFIED="1562756988940" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/com/company/Main.java" />
@@ -424,28 +491,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../ssss/BorsukProject/src/Test/LabyrinthTest.java" />
-    <entry file="jar://C:/Program Files/Java/jdk-11/lib/src.zip!/java.base/java/lang/String.java">
+    <entry file="jar://C:/Program Files/Java/jdk-11/lib/src.zip!/java.base/java/lang/String.java" />
+    <entry file="file://$PROJECT_DIR$/src/Test/LabyrinthTest.java" />
+    <entry file="file://$PROJECT_DIR$/src/GUI/MyTable.java" />
+    <entry file="file://$PROJECT_DIR$/src/Matrix/LabyrinthTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="124" column="19" selection-start-line="124" selection-start-column="19" selection-end-line="124" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Test/LabyrinthTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="35" selection-start-line="35" selection-end-line="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#testGetFinish#0;class#LabyrinthTest#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/DrawLabyrinth.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-38">
-          <caret column="12" lean-forward="true" selection-start-column="12" selection-end-column="12" />
+        <state relative-caret-position="255">
+          <caret line="15" column="47" lean-forward="true" selection-start-line="15" selection-start-column="47" selection-end-line="15" selection-end-column="47" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -454,27 +506,40 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Matrix/Algorithm.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1500">
-          <caret line="34" selection-start-line="34" selection-end-line="34" />
+        <state relative-caret-position="85">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2620#2621#0" expanded="true" />
-            <element signature="e#2705#2706#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Matrix/Labyrinth.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4">
-          <caret line="203" column="9" lean-forward="true" selection-start-line="203" selection-start-column="9" selection-end-line="203" selection-end-column="9" />
+        <state relative-caret-position="34">
+          <caret line="2" column="4" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#470#471#0" expanded="true" />
+            <element signature="e#498#499#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/DrawLabyrinth.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="13" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GUI/ButtonColumn.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2907">
-          <caret line="205" column="21" selection-start-line="205" selection-start-column="12" selection-end-line="205" selection-end-column="21" />
+        <state relative-caret-position="3213">
+          <caret line="202" column="79" selection-start-line="202" selection-start-column="79" selection-end-line="202" selection-end-column="79" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -483,11 +548,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GUI/GUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="176" selection-start-line="176" selection-end-line="176" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="136">
+          <caret line="8" column="17" lean-forward="true" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
         </state>
       </provider>
     </entry>

@@ -45,15 +45,16 @@ public class Algorithm {
     public boolean stepFindA(Labyrinth labyrinth){
         if(isFirstStep){
             labyrinth.clearLab();
-            openSet.poll();
+            closeSet.clear();
+            openSet.clear();
             openSet.add(new Vertex(labyrinth.getStart(),0,0));
             isFirstStep = false;
+            stepFindA(labyrinth);
         }
         printOpenSetVertexes(openSet, labyrinth);
         Vertex node = openSet.peek(); //Берем вершину из очереди
         if (!closeSet.contains(node.name)) // Если еще не исследовали
         {
-//                new DrawLabyrinth();
             if (node.name.equals(labyrinth.getFinish()))
             {
                 getWay(fromSet, labyrinth);
@@ -82,6 +83,9 @@ public class Algorithm {
         while(!openSet.isEmpty()){
             if(stepFindA(labyrinth))
                 return true;
+            else{
+
+            }
         }
         return false;
     }
