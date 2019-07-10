@@ -55,7 +55,6 @@ public class Algorithm {
         Vertex node = openSet.peek(); //Берем вершину из очереди
         if (!closeSet.contains(node.name)) // Если еще не исследовали
         {
-//                new DrawLabyrinth();
             if (node.name.equals(labyrinth.getFinish()))
             {
                 getWay(fromSet, labyrinth);
