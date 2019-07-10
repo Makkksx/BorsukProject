@@ -14,13 +14,14 @@ public class Algorithm {
     private PriorityQueue<Vertex> openSet;
     private Vertex[][] fromSet;
     private boolean isFirstStep;
+
     public Algorithm(Labyrinth labyrinth) {
         closeSet = new HashSet<>();
         openSet = new PriorityQueue<>(idComparator);
         fromSet = new Vertex[labyrinth.getSize()][labyrinth.getSize()]; // Кратчайшие пути для вершин
         openSet.add(new Vertex(labyrinth.getStart(),0,0));
-        for (int i=0;i<labyrinth.getSize();i++) {
-            for (int j=0;j<labyrinth.getSize();j++) {
+        for (int i = 0; i < labyrinth.getSize(); i++) {
+            for (int j = 0; j < labyrinth.getSize(); j++) {
                 fromSet[i][j] = new Vertex(new Point(i,j),0,10000);
             }
         }
@@ -28,7 +29,7 @@ public class Algorithm {
         isFirstStep = true;
     }
 
-    private void printOpenSetVertexes(PriorityQueue<Vertex> openSet, Labyrinth labyrinth){
+    private void printOpenSetVertexes(PriorityQueue<Vertex> openSet, Labyrinth labyrinth) {
         Vertex now = openSet.peek();
         if (!now.name.equals(labyrinth.getStart()) && !now.name.equals(labyrinth.getFinish()))
             labyrinth.setCell(now.name,'4');
@@ -39,11 +40,10 @@ public class Algorithm {
             if (!point.equals(labyrinth.getStart()) && !point.equals(labyrinth.getFinish()) && !now.equals(vertex))
                 labyrinth.setCell(point, '3');
         }
-
     }
 
-    public boolean stepFindA(Labyrinth labyrinth){
-        if(isFirstStep){
+    public boolean stepFindA(Labyrinth labyrinth) {
+        if(isFirstStep) {
             labyrinth.clearLab();
             closeSet.clear();
             openSet.clear();
@@ -55,13 +55,11 @@ public class Algorithm {
         Vertex node = openSet.peek(); //Берем вершину из очереди
         if (!closeSet.contains(node.name)) // Если еще не исследовали
         {
-            if (node.name.equals(labyrinth.getFinish()))
-            {
+            if (node.name.equals(labyrinth.getFinish())) {
                 getWay(fromSet, labyrinth);
                 return true;
             }
             openSet.poll();
-
             closeSet.add(node.name);
             Vector<Vertex> neighbours = getNeighbours(node,labyrinth);
             for (Vertex temp : neighbours) {
@@ -72,20 +70,16 @@ public class Algorithm {
                 }
             }
         }
-        else
-        {
+        else {
             openSet.poll();
         }
         return false;
     }
 
-    public boolean FindA (Labyrinth labyrinth){
-        while(!openSet.isEmpty()){
+    public boolean FindA (Labyrinth labyrinth) {
+        while(!openSet.isEmpty()) {
             if(stepFindA(labyrinth))
                 return true;
-            else{
-
-            }
         }
         return false;
     }
@@ -97,21 +91,21 @@ public class Algorithm {
     private Vector<Vertex> getNeighbours(Vertex vertex, Labyrinth labyrinth) //Получение соседей вершины
     {
         Vector<Vertex> neighbours = new Vector<>();
-        if(labyrinth.checker(vertex.name.x-1, vertex.name.y)){
-            Point point = new Point((vertex.name.x-1), vertex.name.y);
-            neighbours.add(new Vertex(point,vertex.way+Evr(point,labyrinth.getFinish())+1, vertex.way + 1));
+        if (labyrinth.checker(vertex.name.x - 1, vertex.name.y)) {
+            Point point = new Point((vertex.name.x - 1), vertex.name.y);
+            neighbours.add(new Vertex(point,vertex.way+Evr(point,labyrinth.getFinish()) + 1, vertex.way + 1));
         }
-        if(labyrinth.checker(vertex.name.x+1, vertex.name.y)){
-            Point point = new Point((vertex.name.x+1), vertex.name.y);
-            neighbours.add(new Vertex(point,vertex.way+Evr(point,labyrinth.getFinish())+1, vertex.way + 1));
+        if (labyrinth.checker(vertex.name.x + 1, vertex.name.y)) {
+            Point point = new Point((vertex.name.x + 1), vertex.name.y);
+            neighbours.add(new Vertex(point,vertex.way + Evr(point,labyrinth.getFinish()) + 1, vertex.way + 1));
         }
-        if(labyrinth.checker(vertex.name.x, vertex.name.y-1)){
-            Point point = new Point((vertex.name.x), vertex.name.y-1);
-            neighbours.add(new Vertex(point,vertex.way+Evr(point,labyrinth.getFinish())+1, vertex.way + 1));
+        if (labyrinth.checker(vertex.name.x, vertex.name.y - 1)) {
+            Point point = new Point((vertex.name.x), vertex.name.y - 1);
+            neighbours.add(new Vertex(point,vertex.way + Evr(point,labyrinth.getFinish()) + 1, vertex.way + 1));
         }
-        if(labyrinth.checker(vertex.name.x, vertex.name.y+1)){
-            Point point = new Point((vertex.name.x), vertex.name.y+1);
-            neighbours.add(new Vertex(point,vertex.way+Evr(point,labyrinth.getFinish())+1, vertex.way + 1));
+        if (labyrinth.checker(vertex.name.x, vertex.name.y + 1)) {
+            Point point = new Point((vertex.name.x), vertex.name.y + 1);
+            neighbours.add(new Vertex(point,vertex.way + Evr(point,labyrinth.getFinish()) + 1, vertex.way + 1));
         }
         return neighbours;
     }
@@ -120,12 +114,10 @@ public class Algorithm {
     {
         Point curr = labyrinth.getFinish();
         curr = fromSet[curr.x][curr.y].name;
-        while(curr != labyrinth.getStart())
-        {
+        while(curr != labyrinth.getStart()) {
             labyrinth.setCell(curr,'2');
             curr = fromSet[curr.x][curr.y].name;
         }
-
     }
 
     private static Comparator<Vertex> idComparator = (c1, c2) -> (int) (c1.priority - c2.priority);
@@ -141,5 +133,4 @@ public class Algorithm {
             this.way = way;
         }
     }
-
 }

@@ -35,21 +35,23 @@ public class DrawLabyrinth {
         board.setVisible(true);
         JButton setFinish = new JButton("Финиш");
         JButton setStart = new JButton("Старт");
+
         setFinish.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 button.setFINISH();
             }
         });
+
         setStart.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 button.setSTART();
             }
         });
+
         board.add(setFinish, BorderLayout.EAST);
         board.add(setStart, BorderLayout.EAST);
-
     }
 
     JPanel getJPanel() {
@@ -78,6 +80,5 @@ public class DrawLabyrinth {
                 column.setPreferredWidth(TableScale);
             }
         }
-
     }
 }
