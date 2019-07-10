@@ -20,6 +20,7 @@ public class ButtonColumn extends AbstractCellEditor implements TableCellRendere
     private Object editorValue;
     private boolean isButtonColumnEditor;
     private Labyrinth labyrinth;
+
     ButtonColumn(JTable table, Labyrinth labyrinth) {
         this.table = table;
         this.labyrinth = labyrinth;
@@ -28,8 +29,8 @@ public class ButtonColumn extends AbstractCellEditor implements TableCellRendere
         START = false;
         renderButton = new JButton();
         editButton = new JButton();
-        editButton.setFocusPainted( false );
-        editButton.addActionListener( this );
+        editButton.setFocusPainted(false);
+        editButton.addActionListener(this);
         Border originalBorder = editButton.getBorder();
         setFocusBorder( new LineBorder(Color.BLUE) );
         TableColumnModel columnModel = table.getColumnModel();
@@ -37,33 +38,31 @@ public class ButtonColumn extends AbstractCellEditor implements TableCellRendere
             columnModel.getColumn(i).setCellRenderer(this);
             columnModel.getColumn(i).setCellEditor(this);
         }
-        table.addMouseListener( this );
+        table.addMouseListener(this);
     }
-    void setFINISH(){
+
+    void setFINISH() {
         FINISH = true;
     }
-    void setSTART(){
+
+    void setSTART() {
         START = true;
     }
 
-    public Border getFocusBorder()
-    {
+    public Border getFocusBorder() {
         return focusBorder;
     }
 
-    private void setFocusBorder(Border focusBorder)
-    {
+    private void setFocusBorder(Border focusBorder) {
         this.focusBorder = focusBorder;
-        editButton.setBorder( focusBorder );
+        editButton.setBorder(focusBorder);
     }
 
-    public int getMnemonic()
-    {
+    public int getMnemonic() {
         return mnemonic;
     }
 
-    public void setMnemonic(int mnemonic)
-    {
+    public void setMnemonic(int mnemonic) {
         this.mnemonic = mnemonic;
         renderButton.setMnemonic(mnemonic);
         editButton.setMnemonic(mnemonic);
@@ -89,8 +88,7 @@ public class ButtonColumn extends AbstractCellEditor implements TableCellRendere
     }
 
     @Override
-    public Object getCellEditorValue()
-    {
+    public Object getCellEditorValue() {
         return editorValue;
     }
 
@@ -123,7 +121,7 @@ public class ButtonColumn extends AbstractCellEditor implements TableCellRendere
     }
 
     public void actionPerformed(ActionEvent e) {
-        int row = table.convertRowIndexToModel( table.getEditingRow() );
+        int row = table.convertRowIndexToModel(table.getEditingRow());
         int column = table.convertColumnIndexToModel(table.getEditingColumn());
 
         if(START && !((row == labyrinth.getFinish().x) && (column == labyrinth.getFinish().y))){
@@ -144,6 +142,7 @@ public class ButtonColumn extends AbstractCellEditor implements TableCellRendere
         }
         labyrinth.printLabyrinth();
     }
+
     public void mousePressed(MouseEvent e) {
         if (table.isEditing() &&  table.getCellEditor() == this)
             isButtonColumnEditor = true;

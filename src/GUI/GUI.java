@@ -19,9 +19,9 @@ public class GUI extends JFrame {
     private JMenuItem save_file;
     private JMenuItem next_step;
     private JMenuItem refresh;
+
     public GUI() {
         /*Меню */
-
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         JMenuBar menuBar = new JMenuBar();
         JMenu fileMenu = new JMenu("Файл");
@@ -34,8 +34,8 @@ public class GUI extends JFrame {
         scale_decrease = new JMenuItem(new ImageIcon("Pictures\\zoom-out.png"));
         save_file = new JMenuItem("Сохранить");
         next_step = new JMenuItem(new ImageIcon("Pictures\\next.png"));
-        JMenuItem pattern1 = new JMenuItem("Шаблон1");
-        JMenuItem pattern2 = new JMenuItem("Шаблон2");
+        JMenuItem pattern1 = new JMenuItem("Землеройка");
+        JMenuItem pattern2 = new JMenuItem("Параллельки");
         new_file.add(pattern1);
         new_file.add(pattern2);
         fileMenu.add(new_lab);
@@ -71,6 +71,7 @@ public class GUI extends JFrame {
                 play_button.setEnabled(true);
             }
         });
+
         next_step.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -82,7 +83,6 @@ public class GUI extends JFrame {
                 repaint();
                 pack();
                 labyrinth.printLabyrinth();
-
             }
         });
 
@@ -91,17 +91,17 @@ public class GUI extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 drawLabyrinth.ScaleDecrease();
                 pack();
-
             }
         });
+
         scale_increase.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 drawLabyrinth.ScaleIncrease();
                 pack();
-
             }
         });
+
         new_lab.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -113,6 +113,7 @@ public class GUI extends JFrame {
                 setLabyrinth();
             }
         });
+
         open_file.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
@@ -134,25 +135,35 @@ public class GUI extends JFrame {
                         System.exit(0);
                     }
                 }
-
             }
-
         });
+
         pattern1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                    // Случайная генерация лабиринта;
-                    if(drawLabyrinth != null)
-                        remove(drawLabyrinth.getJPanel());
-                    labyrinth = new Labyrinth(13);
-                    algorithm = new Algorithm(labyrinth);
-                    setLabyrinth();
-
+                // Случайная генерация лабиринта;
+                if(drawLabyrinth != null)
+                    remove(drawLabyrinth.getJPanel());
+                labyrinth = new Labyrinth(13, 1);
+                algorithm = new Algorithm(labyrinth);
+                setLabyrinth();
             }
         });
 
+        pattern2.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                // Случайная генерация лабиринта;
+                if(drawLabyrinth != null)
+                    remove(drawLabyrinth.getJPanel());
+                labyrinth = new Labyrinth(13, 2);
+                algorithm = new Algorithm(labyrinth);
+                setLabyrinth();
+            }
+        });
     }
-    private void setLabyrinth(){
+
+    private void setLabyrinth() {
         labyrinth.printLabyrinth();
         drawLabyrinth = new DrawLabyrinth(labyrinth);
         labyrinth.printLabyrinth();
@@ -165,8 +176,8 @@ public class GUI extends JFrame {
         save_file.setEnabled(true);
         next_step.setEnabled(true);
         refresh.setEnabled(true);
-
     }
+
     private void setPlay(JMenuItem play_button) {
         play_button.addActionListener(new ActionListener() {
             @Override
@@ -175,12 +186,11 @@ public class GUI extends JFrame {
                     next_step.setEnabled(false);
                     play_button.setEnabled(false);
                 }
-                else{
+                else {
                     JOptionPane.showMessageDialog(drawLabyrinth.getJPanel(),"Путь не найден");
                     next_step.setEnabled(false);
                     play_button.setEnabled(false);
                 }
-
                 repaint();
                 pack();
                 labyrinth.printLabyrinth();
@@ -188,7 +198,7 @@ public class GUI extends JFrame {
         });
     }
 
-    private void setSaveButton(JMenuItem save_file){
+    private void setSaveButton(JMenuItem save_file) {
         save_file.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -208,5 +218,4 @@ public class GUI extends JFrame {
             }
         });
     }
-
 }

@@ -14,10 +14,7 @@ public class Labyrinth {
     private Point start;
     private Point finish;
 
-
-    private ArrayList<Integer> pathes_x = new ArrayList<Integer>();
-    private ArrayList<Integer> pathes_y = new ArrayList<Integer>();
-	
+    // Геттеры и сеттеры;
     public int getSize() {
         return size;
     }
@@ -25,12 +22,14 @@ public class Labyrinth {
     public Point getStart() {
         return start;
     }
-	
+
     public char getCell(int i, int j) {
         return labyrinth[i][j];
     }
 
-    public void setCell(Point ij, char val) { labyrinth[ij.x][ij.y] = val; }
+    public void setCell(Point ij, char val) {
+        labyrinth[ij.x][ij.y] = val;
+    }
 
     public void setCell(int i, int j, char val) {
         labyrinth[i][j] = val;
@@ -40,6 +39,7 @@ public class Labyrinth {
         return finish;
     }
 
+    // Конструкторы;
     //Пустой лабиринт
     public Labyrinth() {
         size = 8;
@@ -52,6 +52,7 @@ public class Labyrinth {
         finish = new Point(size -1, size -1);
     }
 
+    // Ввод из файла;
     public Labyrinth(File file) throws IOException {
         String line;
         start = new Point();
@@ -64,11 +65,11 @@ public class Labyrinth {
                 labyrinth = new char[line.length()][line.length()];
                 size =  line.length();
             }
-            if (line.indexOf('s') != -1){
+            if (line.indexOf('s') != -1) {
                 start.x = i;
                 start.y = line.indexOf('s');
             }
-            if (line.indexOf('f') != -1){
+            if (line.indexOf('f') != -1) {
                 finish.x = i;
                 finish.y = line.indexOf('f');
             }
@@ -76,11 +77,28 @@ public class Labyrinth {
             i++;
         }
     }
-	
-    public Labyrinth(int n) {
+
+    // Рандомная генерация;
+    public Labyrinth(int n, int type) {
         // Инициализация;
         labyrinth = new char[n][n];
         size = n;
+
+        if (type == 2) {
+            for (int i = 0; i < size; i++) {
+                for (int j = 0; j < size; j++) {
+                    if (i > 0 && i < (size - 1) && i % 2 != 0) labyrinth[i][j] = '1';
+                    else labyrinth[i][j] = '0';
+                }
+            }
+            parall();
+            labyrinth[0][0] = 's';
+            labyrinth[size - 1][size - 1] = 'f';
+            start = new Point(0,0);
+            finish = new Point(size - 1, size - 1);
+            return;
+        }
+
         for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
                 if (i == 0 || j == 0 || i == (size - 1) || j == (size - 1))
@@ -133,8 +151,35 @@ public class Labyrinth {
         labyrinth[size - 1][size - 1] = 'f';
         start = new Point(n/2,n/2);
         finish = new Point(size - 1, size - 1);
+    }
 
-
+    // Вспомогательные методы;
+    public void parall() {
+        // Создание перегородок;
+        for (int i = 2; i < (size - 1); i += 2) {
+            int count = (int)(Math.random() * (size / 3 - 1) + 1);
+            for (int j = 0; j < size; j++) {
+                if ((j % (size / count) == 0 && j >= (size / count)) || j == 0 || j == (size - 1))
+                    labyrinth[i][j] = '1';
+            }
+        }
+        // Создание проходов;
+        for (int i = 1; i < (size - 1); i += 2) {
+            int st = 0, fin = 0;
+            for (int j = 1; j < size; j++) {
+                if (labyrinth[i + 1][j] != '1' && labyrinth[i - 1][j] != '1' && st == 0) {
+                    st = j;
+                }
+                if (labyrinth[i + 1][j] == '1' || labyrinth[i - 1][j] == '1' && st != 0) {
+                    fin = j - 1;
+                }
+                if (st != 0 && fin != 0) {
+                    labyrinth[i][(int)(Math.random() * (fin - st) + st)] = '0';
+                    st = 0;
+                    fin = 0;
+                }
+            }
+        }
     }
 
     private void digger(int curr_x, int curr_y) {
@@ -175,17 +220,19 @@ public class Labyrinth {
             }
         }
     }
-    public void newFinish(Point point){
+
+    public void newFinish(Point point) {
         labyrinth[finish.x][finish.y] = '0';
         finish = point;
         labyrinth[finish.x][finish.y] = 'f';
     }
-    public void newStart(Point point){
+
+    public void newStart(Point point) {
         labyrinth[start.x][start.y] = '0';
         start = point;
         labyrinth[start.x][start.y] = 's';
     }
-	
+
     public void save(File file) throws IOException {
         FileWriter fw = new FileWriter(file);
         for(int i = 0; i < size; i++){
@@ -196,7 +243,7 @@ public class Labyrinth {
         }
         fw.close();
     }
-	
+
     public void clearLab() {
         for (int i = 0; i < size; i++){
             for(int j = 0; j < size; j++){
@@ -204,7 +251,7 @@ public class Labyrinth {
                     labyrinth[i][j] = '0';
             }
         }
-	}
+    }
 
     public boolean checker(int x, int y) {
         if(x < 0 || y < 0 || x >= size || y >= size)
@@ -221,5 +268,4 @@ public class Labyrinth {
         }
         System.out.println(" ");
     }
-
 }
