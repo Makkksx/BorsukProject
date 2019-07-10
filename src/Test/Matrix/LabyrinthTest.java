@@ -1,12 +1,11 @@
-package Test;
+package Matrix;
 
-import Matrix.Labyrinth;
+import junit.framework.TestCase;
+import junit.framework.TestCase.*;
+import org.junit.Test;
+import static org.junit.Assert.*;
 
-import org.junit.*;
-
-import static junit.framework.TestCase.*;
-
-class LabyrinthTest {
+public class LabyrinthTest extends TestCase {
     @Test
     public void testGetStart() {
         Labyrinth labyrinth = new Labyrinth(13);
@@ -33,7 +32,4 @@ class LabyrinthTest {
         assertTrue(labyrinth.checker(5, 5));
         assertTrue(labyrinth.checker(0, 0));
     }
-
-
-
 }
