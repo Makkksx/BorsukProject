@@ -45,9 +45,11 @@ public class Algorithm {
     public boolean stepFindA(Labyrinth labyrinth){
         if(isFirstStep){
             labyrinth.clearLab();
+            closeSet.clear();
             openSet.poll();
             openSet.add(new Vertex(labyrinth.getStart(),0,0));
             isFirstStep = false;
+            stepFindA(labyrinth);
         }
         printOpenSetVertexes(openSet, labyrinth);
         Vertex node = openSet.peek(); //Берем вершину из очереди
