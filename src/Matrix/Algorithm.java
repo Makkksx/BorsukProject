@@ -47,7 +47,7 @@ public class Algorithm {
         if(isFirstStep){
             labyrinth.clearLab();
             closeSet.clear();
-            openSet.poll();
+            openSet.clear();
             openSet.add(new Vertex(labyrinth.getStart(),0,0));
             isFirstStep = false;
             stepFindA(labyrinth);
