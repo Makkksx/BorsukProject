@@ -23,6 +23,9 @@ public class GUI extends JFrame {
     public GUI() {
         /*Меню */
         setDefaultCloseOperation(EXIT_ON_CLOSE);
+        JLabel gif = new JLabel();
+        JLabel info = new JLabel("Нажмите 'Файл -> Новый', чтобы создать новый лабиринт");
+        gif.setIcon(new ImageIcon("Pictures\\tenor.gif"));
         JMenuBar menuBar = new JMenuBar();
         JMenu fileMenu = new JMenu("Файл");
         JMenu new_file = new JMenu("Создать");
@@ -108,6 +111,7 @@ public class GUI extends JFrame {
                 // Пустой лабиринт
                 if(drawLabyrinth != null)
                     remove(drawLabyrinth.getJPanel());
+                remove(gif);
 
                 String size_lab = new String("30");
                 while( (size_lab!=null && !(size_lab.matches("[0-9]+"))) || (size_lab!=null &&Integer.parseInt(size_lab) > 25))
@@ -124,6 +128,7 @@ public class GUI extends JFrame {
         open_file.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
+                remove(gif);
                 JFileChooser fileOpen = new JFileChooser();
                 fileOpen.setCurrentDirectory(new File("."));
                 int ret = fileOpen.showDialog(null, "Открыть");
@@ -148,6 +153,7 @@ public class GUI extends JFrame {
         pattern1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
+                remove(gif);
                 // Случайная генерация лабиринта;
                 if(drawLabyrinth != null)
                     remove(drawLabyrinth.getJPanel());
@@ -160,6 +166,7 @@ public class GUI extends JFrame {
         pattern2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
+                remove(gif);
                 // Случайная генерация лабиринта;
                 if(drawLabyrinth != null)
                     remove(drawLabyrinth.getJPanel());
@@ -168,6 +175,9 @@ public class GUI extends JFrame {
                 setLabyrinth();
             }
         });
+        getContentPane().add(gif,BorderLayout.NORTH);
+        getContentPane().add(info,BorderLayout.CENTER);
+        pack();
     }
 
     private void setLabyrinth() {
