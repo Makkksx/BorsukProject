@@ -28,7 +28,7 @@ public class Labyrinth {
         return labyrinth[i][j];
     }
 
-    public void setCell(Point ij, char val) { labyrinth[ij.x][ij.y] = val; }
+    void setCell(Point ij, char val) { labyrinth[ij.x][ij.y] = val; }
 
     public void setCell(int i, int j, char val) {
         labyrinth[i][j] = val;

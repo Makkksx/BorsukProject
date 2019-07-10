@@ -30,13 +30,13 @@ public class Algorithm {
 
     private void printOpenSetVertexes(PriorityQueue<Vertex> openSet, Labyrinth labyrinth){
         Vertex now = openSet.peek();
-        if (!now.name.equals(labyrinth.getStart()) && !now.name.equals(labyrinth.getFinish()))
+        if (!now.name.equals(labyrinth.getStart()) && !now.name.equals(labyrinth.getFinish())&& labyrinth.getCell(now.name.x,now.name.y) != '1')
             labyrinth.setCell(now.name,'4');
         Vertex[] arr = new Vertex[openSet.size()];
         arr = openSet.toArray(arr);
         for (Vertex vertex : arr) {
             Point point = vertex.name;
-            if (!point.equals(labyrinth.getStart()) && !point.equals(labyrinth.getFinish()) && !now.equals(vertex))
+            if (!point.equals(labyrinth.getStart()) && !point.equals(labyrinth.getFinish()) && !now.equals(vertex) && labyrinth.getCell(vertex.name.x,vertex.name.y) != '1')
                 labyrinth.setCell(point, '3');
         }
 
@@ -46,7 +46,7 @@ public class Algorithm {
         if(isFirstStep){
             labyrinth.clearLab();
             closeSet.clear();
-            openSet.poll();
+            openSet.clear();
             openSet.add(new Vertex(labyrinth.getStart(),0,0));
             isFirstStep = false;
             stepFindA(labyrinth);
@@ -55,7 +55,6 @@ public class Algorithm {
         Vertex node = openSet.peek(); //Берем вершину из очереди
         if (!closeSet.contains(node.name)) // Если еще не исследовали
         {
-//                new DrawLabyrinth();
             if (node.name.equals(labyrinth.getFinish()))
             {
                 getWay(fromSet, labyrinth);
