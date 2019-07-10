@@ -46,6 +46,7 @@ public class GUI extends JFrame {
         fileMenu.add(open_file);
         fileMenu.add(save_file);
         menuBar.add(fileMenu);
+        setLocationRelativeTo(null);
         scale_increase.setEnabled(false);
         scale_decrease.setEnabled(false);
         menuBar.add(scale_increase);

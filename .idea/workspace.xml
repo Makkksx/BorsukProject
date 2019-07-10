@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4b252c7a-d305-4437-847e-2c70f56919df" name="Default Changelist" comment="Добавил возможность задавать размер нового лабиринта">
+    <list default="true" id="4b252c7a-d305-4437-847e-2c70f56919df" name="Default Changelist" comment="Добавил начальное инфо">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/GUI.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,8 +19,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/GUI/GUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="178" column="33" selection-start-line="178" selection-start-column="33" selection-end-line="178" selection-end-column="33" />
+            <state relative-caret-position="380">
+              <caret line="178" column="71" selection-start-line="178" selection-start-column="71" selection-end-line="178" selection-end-column="71" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -277,7 +276,7 @@
       <workItem from="1562775206207" duration="104000" />
       <workItem from="1562783054446" duration="679000" />
       <workItem from="1562787797262" duration="938000" />
-      <workItem from="1562788993857" duration="3550000" />
+      <workItem from="1562788993857" duration="4843000" />
     </task>
     <task id="LOCAL-00001" summary="добавил вывод лаьиринта в виде JTable">
       <created>1562499426212</created>
@@ -335,7 +334,21 @@
       <option name="project" value="LOCAL" />
       <updated>1562791457796</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Добавил начальное инфо">
+      <created>1562792663282</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1562792663282</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Добавил начальное инфо">
+      <created>1562793607525</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1562793607525</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -350,7 +363,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38095000" />
+    <option name="totallyTimeSpent" value="39388000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -430,7 +443,8 @@
     <MESSAGE value="Добавил масштабирование лабиринта" />
     <MESSAGE value="Добаввил сообщение &quot;Путь не найден&quot;" />
     <MESSAGE value="Добавил возможность задавать размер нового лабиринта" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавил возможность задавать размер нового лабиринта" />
+    <MESSAGE value="Добавил начальное инфо" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавил начальное инфо" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -541,8 +555,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GUI/GUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="178" column="33" selection-start-line="178" selection-start-column="33" selection-end-line="178" selection-end-column="33" />
+        <state relative-caret-position="380">
+          <caret line="178" column="71" selection-start-line="178" selection-start-column="71" selection-end-line="178" selection-end-column="71" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
