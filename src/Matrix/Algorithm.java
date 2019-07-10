@@ -3,6 +3,7 @@ package Matrix;
 // A* algorithm for matrix;
 // Input: matrix and pathes-massive; Output: void (making pathes in a massive);
 
+import javax.swing.*;
 import java.awt.*;
 import java.util.Comparator;
 import java.util.HashSet;
@@ -84,6 +85,9 @@ public class Algorithm {
         while(!openSet.isEmpty()){
             if(stepFindA(labyrinth))
                 return true;
+            else{
+
+            }
         }
         return false;
     }
