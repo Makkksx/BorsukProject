@@ -21,28 +21,28 @@ import javax.swing.table.*;
  *  the model row number of the button that was clicked.
  *
  */
-public class ButtonColumn extends AbstractCellEditor
-        implements TableCellRenderer, TableCellEditor, ActionListener, MouseListener
-{
+public class ButtonColumn extends AbstractCellEditor implements TableCellRenderer, TableCellEditor, ActionListener, MouseListener {
     private JTable table;
+    private boolean FINISH;
+    private boolean START;
     private Action action;
     private int mnemonic;
-    private Border originalBorder;
     private Border focusBorder;
     private JButton renderButton;
     private JButton editButton;
     private Object editorValue;
     private boolean isButtonColumnEditor;
     private Labyrinth labyrinth;
-    public ButtonColumn(JTable table, Labyrinth labyrinth) {
+    ButtonColumn(JTable table, Labyrinth labyrinth) {
         this.table = table;
         this.labyrinth = labyrinth;
-
+        FINISH = false;
+        START = false;
         renderButton = new JButton();
         editButton = new JButton();
         editButton.setFocusPainted( false );
         editButton.addActionListener( this );
-        originalBorder = editButton.getBorder();
+        Border originalBorder = editButton.getBorder();
         setFocusBorder( new LineBorder(Color.BLUE) );
         TableColumnModel columnModel = table.getColumnModel();
         for(int i = 0; i < table.getColumnCount(); i++) {
@@ -50,6 +50,12 @@ public class ButtonColumn extends AbstractCellEditor
             columnModel.getColumn(i).setCellEditor(this);
         }
         table.addMouseListener( this );
+    }
+    void setFINISH(){
+        FINISH = true;
+    }
+    void setSTART(){
+        START = true;
     }
 
 
@@ -68,7 +74,7 @@ public class ButtonColumn extends AbstractCellEditor
      *
      *  @param focusBorder the foreground color
      */
-    public void setFocusBorder(Border focusBorder)
+    private void setFocusBorder(Border focusBorder)
     {
         this.focusBorder = focusBorder;
         editButton.setBorder( focusBorder );
@@ -120,14 +126,18 @@ public class ButtonColumn extends AbstractCellEditor
 //  Implement TableCellRenderer interface
 //
     public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
-        if(labyrinth.getCell(column,row) == '1')
+        if(labyrinth.getCell(row,column) == '1')
             renderButton.setIcon(new ImageIcon("Pictures\\black_cell.png"));
-        else if(labyrinth.getCell(column,row) == '0')
+        else if(labyrinth.getCell(row,column) == '0')
             renderButton.setIcon(new ImageIcon("Pictures\\white_cell.png"));
-        else if(labyrinth.getCell(column,row) == 's')
+        else if(labyrinth.getCell(row,column) == 's')
             renderButton.setIcon(new ImageIcon("Pictures\\start_cell.png"));
-        else if(labyrinth.getCell(column,row) == 'f')
+        else if(labyrinth.getCell(row,column) == 'f')
             renderButton.setIcon(new ImageIcon("Pictures\\finish_cell.png"));
+        else if (labyrinth.getCell(row,column) == '3')
+            renderButton.setIcon(new ImageIcon("Pictures\\queue_cell.png"));
+        else if (labyrinth.getCell(row,column) == '4')
+            renderButton.setIcon(new ImageIcon("Pictures\\current_step.png"));
         else
             renderButton.setIcon(new ImageIcon("Pictures\\path_cell.png"));
         //else if(labyrinth.getCell(row,column) == '0')
@@ -191,10 +201,21 @@ public class ButtonColumn extends AbstractCellEditor
     public void actionPerformed(ActionEvent e) {
         int row = table.convertRowIndexToModel( table.getEditingRow() );
         int column = table.convertColumnIndexToModel(table.getEditingColumn());
-        if(labyrinth.getCell(column,row) == '1')
-            labyrinth.setCell(column,row,'0');
+
+        if(START){
+            labyrinth.newStart(new Point(row,column));
+            START = false;
+            table.repaint();
+        }
+        else if(FINISH){
+            labyrinth.newFinish(new Point(row,column));
+            FINISH = false;
+            table.repaint();
+        }
+        else if(labyrinth.getCell(row,column) == '1')
+            labyrinth.setCell(row,column,'0');
         else
-            labyrinth.setCell(column,row,'1');
+            labyrinth.setCell(row,column,'1');
         labyrinth.printLabyrinth();
         /*
 
