@@ -1,10 +1,12 @@
 package Matrix;
 
-import GUI.DrawLabyrinth;
-
 import java.awt.*;
-import java.io.*;
-import java.util.*;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Scanner;
 
 public class Labyrinth {
     private static char [][] labyrinth;
