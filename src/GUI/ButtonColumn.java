@@ -136,6 +136,8 @@ public class ButtonColumn extends AbstractCellEditor implements TableCellRendere
             renderButton.setIcon(new ImageIcon("Pictures\\finish_cell.png"));
         else if (labyrinth.getCell(row,column) == '3')
             renderButton.setIcon(new ImageIcon("Pictures\\queue_cell.png"));
+        else if (labyrinth.getCell(row,column) == '4')
+            renderButton.setIcon(new ImageIcon("Pictures\\current_step.png"));
         else
             renderButton.setIcon(new ImageIcon("Pictures\\path_cell.png"));
         //else if(labyrinth.getCell(row,column) == '0')
