@@ -116,7 +116,7 @@ public class GUI extends JFrame {
 
                 String size_lab = new String("30");
                 while( (size_lab!=null && !(size_lab.matches("[0-9]+"))) || (size_lab!=null &&Integer.parseInt(size_lab) > 25)|| (size_lab!=null &&Integer.parseInt(size_lab) < 3))
-                    size_lab = JOptionPane.showInputDialog(null, "Размер лабиринта");
+                    size_lab = JOptionPane.showInputDialog(null, "Размер лабиринта (От 3 до 25)");
                 System.out.println(size_lab);
                 if(size_lab != null) {
                     labyrinth = new Labyrinth(Integer.parseInt(size_lab));
@@ -160,7 +160,7 @@ public class GUI extends JFrame {
                     remove(drawLabyrinth.getJPanel());
                 String size_lab = new String("30");
                 while( (size_lab!=null && !(size_lab.matches("[0-9]+"))) || (size_lab!=null &&Integer.parseInt(size_lab) > 25)|| (size_lab!=null &&Integer.parseInt(size_lab) < 3))
-                    size_lab = JOptionPane.showInputDialog(null, "Размер лабиринта");
+                    size_lab = JOptionPane.showInputDialog(null, "Размер лабиринта (От 3 до 25)");
                 labyrinth = new Labyrinth(Integer.parseInt(size_lab), 1);
                 algorithm = new Algorithm(labyrinth);
                 setLabyrinth();
@@ -176,14 +176,15 @@ public class GUI extends JFrame {
                     remove(drawLabyrinth.getJPanel());
                 String size_lab = new String("30");
                 while( (size_lab!=null && !(size_lab.matches("[0-9]+"))) || (size_lab!=null &&Integer.parseInt(size_lab) > 25)|| (size_lab!=null &&Integer.parseInt(size_lab) < 3))
-                    size_lab = JOptionPane.showInputDialog(null, "Размер лабиринта");
+                    size_lab = JOptionPane.showInputDialog(null, "Размер лабиринта (От 3 до 25)");
                 labyrinth = new Labyrinth(Integer.parseInt(size_lab), 2);
                 algorithm = new Algorithm(labyrinth);
                 setLabyrinth();
             }
         });
-        getContentPane().add(gif,BorderLayout.NORTH);
         getContentPane().add(info,BorderLayout.CENTER);
+        getContentPane().add(gif,BorderLayout.SOUTH);
+
         pack();
     }
 
