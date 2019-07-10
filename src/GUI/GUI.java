@@ -108,9 +108,16 @@ public class GUI extends JFrame {
                 // Пустой лабиринт
                 if(drawLabyrinth != null)
                     remove(drawLabyrinth.getJPanel());
-                labyrinth = new Labyrinth(8);
-                algorithm = new Algorithm(labyrinth);
-                setLabyrinth();
+
+                String size_lab = new String("30");
+                while( (size_lab!=null && !(size_lab.matches("[0-9]+"))) || Integer.parseInt(size_lab) > 25)
+                    size_lab = JOptionPane.showInputDialog(null, "Размер лабиринта");
+                System.out.println(size_lab);
+                if(size_lab != null) {
+                    labyrinth = new Labyrinth(Integer.parseInt(size_lab));
+                    algorithm = new Algorithm(labyrinth);
+                    setLabyrinth();
+                }
             }
         });
 
@@ -188,6 +195,7 @@ public class GUI extends JFrame {
                 }
                 else {
                     JOptionPane.showMessageDialog(drawLabyrinth.getJPanel(),"Путь не найден");
+                    drawLabyrinth.getJTable().setEnabled(false);
                     next_step.setEnabled(false);
                     play_button.setEnabled(false);
                 }
