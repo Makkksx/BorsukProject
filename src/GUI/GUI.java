@@ -3,10 +3,12 @@ package GUI;
 import Matrix.Algorithm;
 import Matrix.Labyrinth;
 
-import java.awt.*;
-import java.awt.event.*;
 import javax.swing.*;
-import java.io.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.IOException;
 import java.util.NoSuchElementException;
 
 public class GUI extends JFrame {
@@ -22,11 +24,15 @@ public class GUI extends JFrame {
 
     public GUI() {
         /*Меню */
+        JMenuItem reference =  new JMenuItem("Справка");
+
+        setResizable(false);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         JLabel gif = new JLabel();
         JLabel info = new JLabel("Нажмите 'Файл -> Новый', чтобы создать новый лабиринт");
         gif.setIcon(new ImageIcon("Pictures\\gifka.gif"));
         JMenuBar menuBar = new JMenuBar();
+//        menuBar.add(reference);
         JMenu fileMenu = new JMenu("Файл");
         JMenu new_file = new JMenu("Создать");
         JMenuItem new_lab = new JMenuItem("Новый");
@@ -46,6 +52,7 @@ public class GUI extends JFrame {
         fileMenu.add(open_file);
         fileMenu.add(save_file);
         menuBar.add(fileMenu);
+        menuBar.add(reference);
         scale_increase.setEnabled(false);
         scale_decrease.setEnabled(false);
         menuBar.add(scale_increase);
@@ -61,15 +68,21 @@ public class GUI extends JFrame {
         next_step.setEnabled(false);
         refresh.setEnabled(false);
         setSaveButton(save_file);
+        reference.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JOptionPane.showMessageDialog(null,"Нажмите 'Файл -> Новый', чтобы создать новый лабиринт\n\n" + "Ячейки\n" + "Желтая - старт\n" + "Красная - финиш\n" + "Белая - свободная\n" + "Серая - стена\n");
 
+            }
+        });
         refresh.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                drawLabyrinth.getJTable().setEnabled(true);
                 labyrinth.clearLab();
                 repaint();
                 pack();
                 algorithm = new Algorithm(labyrinth);
+                drawLabyrinth.getJTable().setEnabled(true);
                 next_step.setEnabled(true);
                 play_button.setEnabled(true);
             }
@@ -85,6 +98,12 @@ public class GUI extends JFrame {
                 }
                 repaint();
                 pack();
+                if (algorithm.openSetIsEmpty()){
+                    JOptionPane.showMessageDialog(drawLabyrinth.getJPanel(), "Путь не найден");
+                    drawLabyrinth.getJTable().setEnabled(false);
+                    next_step.setEnabled(false);
+                    play_button.setEnabled(false);
+                }
                 labyrinth.printLabyrinth();
             }
         });
@@ -111,19 +130,22 @@ public class GUI extends JFrame {
                 // Пустой лабиринт
                 if(drawLabyrinth != null)
                     remove(drawLabyrinth.getJPanel());
-                remove(gif);
 
-                String size_lab = new String("30");
-                while( (size_lab!=null && !(size_lab.matches("[0-9]+"))) || (size_lab!=null &&Integer.parseInt(size_lab) > 25)|| (size_lab!=null &&Integer.parseInt(size_lab) < 3))
+
+                String size_lab = "30";
+                while((size_lab != null) && (size_lab.length() > 3 || !size_lab.matches("[0-9]+") || Integer.parseInt(size_lab) > 25 || Integer.parseInt(size_lab) < 3))
                     size_lab = JOptionPane.showInputDialog(null, "Размер лабиринта (От 3 до 25)");
-                System.out.println(size_lab);
-                if(size_lab != null) {
+                if (size_lab != null) {
+                    remove(gif);
                     labyrinth = new Labyrinth(Integer.parseInt(size_lab));
                     algorithm = new Algorithm(labyrinth);
                     setLabyrinth();
                 }
+
+
             }
         });
+
 
         open_file.addActionListener(new ActionListener() {
             @Override
@@ -157,12 +179,15 @@ public class GUI extends JFrame {
                 // Случайная генерация лабиринта;
                 if(drawLabyrinth != null)
                     remove(drawLabyrinth.getJPanel());
-                String size_lab = new String("30");
-                while( (size_lab!=null && !(size_lab.matches("[0-9]+"))) || (size_lab!=null &&Integer.parseInt(size_lab) > 25)|| (size_lab!=null &&Integer.parseInt(size_lab) < 3))
+                String size_lab = "30";
+                while((size_lab != null) && (size_lab.length() > 3 || !size_lab.matches("[0-9]+") || Integer.parseInt(size_lab) > 25 || Integer.parseInt(size_lab) < 3))
                     size_lab = JOptionPane.showInputDialog(null, "Размер лабиринта (От 3 до 25)");
-                labyrinth = new Labyrinth(Integer.parseInt(size_lab), 1);
-                algorithm = new Algorithm(labyrinth);
-                setLabyrinth();
+                if (size_lab != null) {
+                    remove(gif);
+                    labyrinth = new Labyrinth(Integer.parseInt(size_lab),1);
+                    algorithm = new Algorithm(labyrinth);
+                    setLabyrinth();
+                }
             }
         });
 
@@ -173,12 +198,15 @@ public class GUI extends JFrame {
                 // Случайная генерация лабиринта;
                 if(drawLabyrinth != null)
                     remove(drawLabyrinth.getJPanel());
-                String size_lab = new String("30");
-                while( (size_lab!=null && !(size_lab.matches("[0-9]+"))) || (size_lab!=null &&Integer.parseInt(size_lab) > 25)|| (size_lab!=null &&Integer.parseInt(size_lab) < 3))
+                String size_lab = "30";
+                while((size_lab != null) && (size_lab.length() > 3 || !size_lab.matches("[0-9]+") || Integer.parseInt(size_lab) > 25 || Integer.parseInt(size_lab) < 3))
                     size_lab = JOptionPane.showInputDialog(null, "Размер лабиринта (От 3 до 25)");
-                labyrinth = new Labyrinth(Integer.parseInt(size_lab), 2);
-                algorithm = new Algorithm(labyrinth);
-                setLabyrinth();
+                if (size_lab != null) {
+                    remove(gif);
+                    labyrinth = new Labyrinth(Integer.parseInt(size_lab),2);
+                    algorithm = new Algorithm(labyrinth);
+                    setLabyrinth();
+                }
             }
         });
         getContentPane().add(info,BorderLayout.CENTER);
@@ -207,16 +235,14 @@ public class GUI extends JFrame {
         play_button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if(algorithm.FindA(labyrinth)) {
-                    next_step.setEnabled(false);
-                    play_button.setEnabled(false);
-                }
-                else {
-                    JOptionPane.showMessageDialog(drawLabyrinth.getJPanel(),"Путь не найден");
+                algorithm = new Algorithm(labyrinth);
+                algorithm.FindA(labyrinth);
+                if (algorithm.openSetIsEmpty()){
+                    JOptionPane.showMessageDialog(drawLabyrinth.getJPanel(), "Путь не найден");
                     drawLabyrinth.getJTable().setEnabled(false);
-                    next_step.setEnabled(false);
-                    play_button.setEnabled(false);
                 }
+                next_step.setEnabled(false);
+                play_button.setEnabled(false);
                 repaint();
                 pack();
                 labyrinth.printLabyrinth();
