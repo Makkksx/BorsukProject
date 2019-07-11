@@ -15,6 +15,7 @@ public class Algorithm {
     private Vertex[][] fromSet;
     private boolean isFirstStep;
 
+
     public Algorithm(Labyrinth labyrinth) {
         closeSet = new HashSet<>();
         openSet = new PriorityQueue<>(idComparator);
@@ -29,6 +30,9 @@ public class Algorithm {
         isFirstStep = true;
     }
 
+    public boolean openSetIsEmpty(){
+        return openSet.isEmpty();
+    }
     private void printOpenSetVertexes(PriorityQueue<Vertex> openSet, Labyrinth labyrinth) {
         Vertex now = openSet.peek();
         if (now != null && !now.name.equals(labyrinth.getStart()) && !now.name.equals(labyrinth.getFinish()))
