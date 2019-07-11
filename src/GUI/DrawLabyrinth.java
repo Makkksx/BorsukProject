@@ -31,7 +31,7 @@ public class DrawLabyrinth {
             TableColumn column = table.getColumnModel().getColumn(i);
             column.setPreferredWidth(TableScale);
         }
-         button = new ButtonColumn(table, labyrinth);
+        button = new ButtonColumn(table, labyrinth);
         board.add(table);
         board.setVisible(true);
     }

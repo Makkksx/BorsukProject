@@ -5,6 +5,7 @@ import Matrix.Labyrinth;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
+import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.File;
@@ -59,12 +60,14 @@ public class GUI extends JFrame {
         fileMenu.setPreferredSize(new Dimension(70,30));
         fileMenu.setHorizontalTextPosition(SwingConstants.CENTER);
        // fileMenu.setForeground(Color.orange);
+        JButton cancel = new JButton("Отмена");
         setFinish = new JButton("Финиш");
         setStart = new JButton("Старт");
         JPanel panel1 = new JPanel();
         JPanel panel2 = new JPanel();
         panel1.add(setFinish,BorderLayout.LINE_START);
         panel1.add(setStart,BorderLayout.AFTER_LAST_LINE);
+        panel1.add(cancel,BorderLayout.AFTER_LAST_LINE);
         panel2.add(scale_decrease);
         panel2.add(scale_increase);
         panel2.add(next_step);
@@ -72,7 +75,6 @@ public class GUI extends JFrame {
         panel2.add(play_button);
         add(panel1,BorderLayout.LINE_END);
         add(panel2,BorderLayout.LINE_START);
-
         new_file.add(pattern1);
         new_file.add(pattern2);
         fileMenu.add(new_lab);
@@ -94,6 +96,25 @@ public class GUI extends JFrame {
         refresh.setEnabled(false);
         setFinish.setEnabled(false);
         setStart.setEnabled(false);
+        cancel.setEnabled(false);
+        cancel.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if(drawLabyrinth.getButtonColumn().getFinishbool()) {
+                    drawLabyrinth.getButtonColumn().setFINISH(setFinish, cancel,false);
+                    setFinish.setIcon(null);
+                    setFinish.setPreferredSize(new Dimension(75,26));
+                    setFinish.setBorder(new LineBorder(Color.BLACK));
+                }
+                if(drawLabyrinth.getButtonColumn().getStarthbool()){
+                    drawLabyrinth.getButtonColumn().setSTART(setStart, cancel,false);
+                    setStart.setIcon(null);
+                    setStart.setPreferredSize(new Dimension(75,26));
+                    setStart.setBorder(new LineBorder(Color.BLACK));
+                }
+                cancel.setEnabled(false);
+            }
+        });
         exit.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -125,7 +146,7 @@ public class GUI extends JFrame {
 
                         }
                     });
-                    JOptionPane.showMessageDialog(null,button);
+                    JOptionPane.showMessageDialog(null,button, "Об авторах", JOptionPane.INFORMATION_MESSAGE);
                 }catch (Exception ex){
 
                 }
@@ -139,6 +160,42 @@ public class GUI extends JFrame {
                 reference.setIcon(new ImageIcon("Pictures\\buttonpressed.png"));
             }
         });
+        setFinish.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                super.mousePressed(e);
+                if (drawLabyrinth != null) {
+                    if (drawLabyrinth.getButtonColumn().getStarthbool()) {
+                        drawLabyrinth.getButtonColumn().setSTART(setStart, cancel, false);
+                        setStart.setIcon(null);
+                        setStart.setPreferredSize(new Dimension(75, 26));
+                        setStart.setBorder(new LineBorder(Color.BLACK));
+                    }
+                    setFinish.setIcon(new ImageIcon("Pictures\\buttonpressed1.png"));
+                    setFinish.setHorizontalTextPosition(SwingConstants.CENTER);
+                    setFinish.setBorder(null);
+                    cancel.setEnabled(true);
+                }
+            }
+        });
+        setStart.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                super.mousePressed(e);
+                if (drawLabyrinth != null) {
+                    if (drawLabyrinth.getButtonColumn().getFinishbool()) {
+                        drawLabyrinth.getButtonColumn().setSTART(setFinish, cancel, false);
+                        setFinish.setIcon(null);
+                        setFinish.setPreferredSize(new Dimension(75, 26));
+                        setFinish.setBorder(new LineBorder(Color.BLACK));
+                    }
+                    setStart.setIcon(new ImageIcon("Pictures\\buttonpressed1.png"));
+                    setStart.setHorizontalTextPosition(SwingConstants.CENTER);
+                    setStart.setBorder(null);
+                    cancel.setEnabled(true);
+                }
+            }
+        });
         creators.addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent e) {
@@ -150,14 +207,14 @@ public class GUI extends JFrame {
         setFinish.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                drawLabyrinth.getButtonColumn().setFINISH();
+                drawLabyrinth.getButtonColumn().setFINISH(setFinish,cancel,true);
             }
         });
 
         setStart.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                drawLabyrinth.getButtonColumn().setSTART();
+                drawLabyrinth.getButtonColumn().setSTART(setStart,cancel,true);
             }
         });
 
@@ -166,10 +223,13 @@ public class GUI extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 JOptionPane.showMessageDialog(null,"Нажмите 'Файл -> Новый', чтобы создать новый лабиринт\n\n" +
-                        "Ячейки\n" + "<html><font color=YELLOW>Желтая</font> - старт</html> \n" +
+                        "Ячейки\n" + "<html><font color=YELLOW> Желтая</font> - старт</html> \n" +
                         "<html><font color=RED>Красная</font> - финиш</html>\n" +
                         "<html><font color=WHITE>Белая</font> - свободная\n" +
-                        "<html><font color=GRAY>Серая</font> - стена\n");
+                        "<html><font color=GRAY>Серая</font> - стена\n" +
+                        "<html><font color=BLUE>Синяя</font> - посещенные вершины\n" +
+                        "<html><font color=ORANGE>Оранжевая</font> - может быть посещена\n"+
+                        "<html><font color=GREEN>Зеленая</font> - путь\n", "Справка", JOptionPane.INFORMATION_MESSAGE);
                 reference.setIcon(new ImageIcon("Pictures\\button.png"));
             }
         });
@@ -254,7 +314,7 @@ public class GUI extends JFrame {
         open_file.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                remove(gif);
+
                 JFileChooser fileOpen = new JFileChooser();
                 fileOpen.setCurrentDirectory(new File("."));
                 int ret = fileOpen.showDialog(null, "Открыть");
@@ -273,13 +333,13 @@ public class GUI extends JFrame {
                         System.exit(0);
                     }
                 }
+                remove(gif);
             }
         });
 
         pattern1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                remove(gif);
                 // Случайная генерация лабиринта;
                 if(drawLabyrinth != null)
                     remove(drawLabyrinth.getJPanel());
@@ -298,7 +358,6 @@ public class GUI extends JFrame {
         pattern2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                remove(gif);
                 // Случайная генерация лабиринта;
                 if(drawLabyrinth != null)
                     remove(drawLabyrinth.getJPanel());

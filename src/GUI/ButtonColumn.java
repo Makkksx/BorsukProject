@@ -15,6 +15,9 @@ public class ButtonColumn extends AbstractCellEditor implements TableCellRendere
     private int mnemonic;
     private Border focusBorder;
     private JButton renderButton;
+    private JButton finishButton;
+    private JButton startButton;
+    private JButton cancel;
     private JButton editButton;
     private boolean canChange;
     private Object editorValue;
@@ -40,13 +43,19 @@ public class ButtonColumn extends AbstractCellEditor implements TableCellRendere
         }
         table.addMouseListener(this);
     }
+    boolean  getFinishbool(){return FINISH;}
+    boolean  getStarthbool(){return START;}
 
-    void setFINISH() {
-        FINISH = true;
+    void setFINISH(JButton finish,JButton cancel ,boolean val) {
+        finishButton = finish;
+        this.cancel = cancel;
+        FINISH = val;
     }
 
-    void setSTART() {
-        START = true;
+    void setSTART(JButton start,JButton cancel, boolean val) {
+        startButton = start;
+        this.cancel = cancel;
+        START = val;
     }
 
     public Border getFocusBorder() {
@@ -126,11 +135,19 @@ public class ButtonColumn extends AbstractCellEditor implements TableCellRendere
 
         if(START && !((row == labyrinth.getFinish().x) && (column == labyrinth.getFinish().y))){
             labyrinth.newStart(new Point(row,column));
+            startButton.setIcon(null);
+            startButton.setPreferredSize(new Dimension(75,26));
+            startButton.setBorder(new LineBorder(Color.BLACK));
+            cancel.setEnabled(false);
             START = false;
             table.repaint();
         }
         else if(FINISH && !((row == labyrinth.getStart().x) && (column == labyrinth.getStart().y))){
             labyrinth.newFinish(new Point(row,column));
+            finishButton.setIcon(null);
+            finishButton.setPreferredSize(new Dimension(75,26));
+            finishButton.setBorder(new LineBorder(Color.BLACK));
+            cancel.setEnabled(false);
             FINISH = false;
             table.repaint();
         }
