@@ -1,9 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4b252c7a-d305-4437-847e-2c70f56919df" name="Default Changelist" comment="">
+    <list default="true" id="4b252c7a-d305-4437-847e-2c70f56919df" name="Default Changelist" comment="вот">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pictures/gifka.gif" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/gifka.gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BorsukProject/GUI/ButtonColumn.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BorsukProject/GUI/ButtonColumn.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BorsukProject/GUI/DrawLabyrinth.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BorsukProject/GUI/DrawLabyrinth.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BorsukProject/GUI/GUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BorsukProject/GUI/GUI$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BorsukProject/GUI/GUI$10.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BorsukProject/GUI/GUI$11.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BorsukProject/GUI/GUI$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BorsukProject/GUI/GUI$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BorsukProject/GUI/GUI$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BorsukProject/GUI/GUI$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BorsukProject/GUI/GUI$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BorsukProject/GUI/GUI$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BorsukProject/GUI/GUI$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BorsukProject/GUI/GUI$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BorsukProject/GUI/GUI$6.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BorsukProject/GUI/GUI$7.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BorsukProject/GUI/GUI$8.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BorsukProject/GUI/GUI$9.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BorsukProject/GUI/GUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BorsukProject/GUI/GUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BorsukProject/Matrix/Algorithm$Vertex.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BorsukProject/Matrix/Algorithm$Vertex.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BorsukProject/Matrix/Algorithm.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BorsukProject/Matrix/Algorithm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/ButtonColumn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/ButtonColumn.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/DrawLabyrinth.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/DrawLabyrinth.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/GUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Matrix/Algorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Matrix/Algorithm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Matrix/Labyrinth.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Matrix/Labyrinth.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,15 +38,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GUI/GUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="445">
-              <caret line="180" column="13" selection-start-line="180" selection-start-column="13" selection-end-line="180" selection-end-column="13" />
+            <state relative-caret-position="6256">
+              <caret line="368" column="34" selection-start-line="368" selection-start-column="34" selection-end-line="368" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#4990#4991#0" expanded="true" />
-                <element signature="e#6805#7789#0" expanded="true" />
+                <element signature="e#6528#6767#0" expanded="true" />
+                <element signature="e#6766#6767#0" expanded="true" />
+                <element signature="e#6923#7907#0" expanded="true" />
+                <element signature="e#7906#7907#0" expanded="true" />
+                <element signature="e#7944#8927#0" expanded="true" />
+                <element signature="e#8926#8927#0" expanded="true" />
+                <element signature="e#8604#8842#0" expanded="true" />
+                <element signature="e#8841#8842#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -34,8 +61,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="6" selection-start-line="6" selection-end-line="6" />
+            <state relative-caret-position="136">
+              <caret line="8" selection-start-line="8" selection-end-line="8" />
             </state>
           </provider>
         </entry>
@@ -43,10 +70,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GUI/ButtonColumn.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="755">
-              <caret line="132" selection-start-line="132" selection-end-line="132" />
+            <state relative-caret-position="-2431">
+              <caret line="7" column="28" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#1493#1494#0" expanded="true" />
+                <element signature="e#1522#1523#0" expanded="true" />
+                <element signature="e#1552#1553#0" expanded="true" />
+                <element signature="e#1580#1581#0" expanded="true" />
+                <element signature="e#1919#1920#0" expanded="true" />
+                <element signature="e#1951#1952#0" expanded="true" />
+                <element signature="e#1974#1975#0" expanded="true" />
+                <element signature="e#2023#2024#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -55,10 +89,16 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GUI/DrawLabyrinth.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="753">
-              <caret line="55" column="80" selection-start-line="55" selection-start-column="80" selection-end-line="55" selection-end-column="80" />
+            <state relative-caret-position="255">
+              <caret line="15" selection-start-line="15" selection-end-line="15" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#1283#1284#0" expanded="true" />
+                <element signature="e#1311#1312#0" expanded="true" />
+                <element signature="e#1337#1338#0" expanded="true" />
+                <element signature="e#1365#1366#0" expanded="true" />
+                <element signature="e#1246#1247#0" expanded="true" />
+                <element signature="e#1275#1276#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -67,20 +107,32 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Matrix/Labyrinth.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4356">
-              <caret line="232" selection-start-line="232" selection-end-line="232" />
+            <state relative-caret-position="-3944">
+              <caret line="14" selection-start-line="14" selection-end-line="14" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#361#362#0" expanded="true" />
+                <element signature="e#388#389#0" expanded="true" />
+                <element signature="e#419#420#0" expanded="true" />
+                <element signature="e#447#448#0" expanded="true" />
+                <element signature="e#488#489#0" expanded="true" />
+                <element signature="e#526#527#0" expanded="true" />
+                <element signature="e#566#567#0" expanded="true" />
+                <element signature="e#609#610#0" expanded="true" />
+                <element signature="e#660#661#0" expanded="true" />
+                <element signature="e#697#698#0" expanded="true" />
+                <element signature="e#729#730#0" expanded="true" />
+                <element signature="e#758#759#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Matrix/Algorithm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="3" column="20" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
+            <state relative-caret-position="289">
+              <caret line="134" column="57" lean-forward="true" selection-start-line="134" selection-start-column="57" selection-end-line="134" selection-end-column="57" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -104,7 +156,6 @@
       <find>scale_decrease</find>
       <find>floodFill</find>
       <find>getJPanel</find>
-      <find>play_button</find>
       <find>setCell</find>
       <find>getCell</find>
       <find>Dr</find>
@@ -118,6 +169,12 @@
       <find>reference</find>
       <find>ButtonColumn</find>
       <find>gif</find>
+      <find>Путь</find>
+      <find>setLabyrinth</find>
+      <find>setPlay</find>
+      <find>setSaveButton</find>
+      <find>save_file</find>
+      <find>play_button</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -131,16 +188,18 @@
         <option value="$PROJECT_DIR$/src/Test/LabyrinthTest.java" />
         <option value="$PROJECT_DIR$/src/GUI/MyTable.java" />
         <option value="$PROJECT_DIR$/src/Test/Matrix/LabyrinthTest.java" />
-        <option value="$PROJECT_DIR$/src/Matrix/Labyrinth.java" />
         <option value="$PROJECT_DIR$/src/Matrix/LabyrinthTest.java" />
+        <option value="$PROJECT_DIR$/src/Matrix/Labyrinth.java" />
         <option value="$PROJECT_DIR$/src/Matrix/Algorithm.java" />
-        <option value="$PROJECT_DIR$/src/GUI/ButtonColumn.java" />
         <option value="$PROJECT_DIR$/src/GUI/DrawLabyrinth.java" />
+        <option value="$PROJECT_DIR$/src/GUI/ButtonColumn.java" />
         <option value="$PROJECT_DIR$/src/GUI/GUI.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="360" />
+    <option name="y" value="-25" />
     <option name="width" value="1925" />
     <option name="height" value="1050" />
   </component>
@@ -151,6 +210,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -179,7 +239,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -287,7 +346,7 @@
       <workItem from="1562827438604" duration="1423000" />
       <workItem from="1562831573303" duration="5191000" />
       <workItem from="1562839194859" duration="2016000" />
-      <workItem from="1562844262640" duration="19244000" />
+      <workItem from="1562844262640" duration="18367000" />
     </task>
     <task id="LOCAL-00001" summary="добавил вывод лаьиринта в виде JTable">
       <created>1562499426212</created>
@@ -394,14 +453,7 @@
       <option name="project" value="LOCAL" />
       <updated>1562860070802</updated>
     </task>
-    <task id="LOCAL-00016" summary="вот">
-      <created>1562863689137</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1562863689137</updated>
-    </task>
-    <option name="localTasksCounter" value="17" />
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -416,13 +468,13 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="68577000" />
+    <option name="totallyTimeSpent" value="71559000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19865772" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20402685" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -499,336 +551,6 @@
     <MESSAGE value="Добавил начальное инфо" />
     <MESSAGE value="вот" />
     <option name="LAST_COMMIT_MESSAGE" value="вот" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint type="java-line">
-          <url>file://$PROJECT_DIR$/src/GUI/DrawLabyrinth.java</url>
-          <line>34</line>
-          <properties />
-          <option name="timeStamp" value="46" />
-        </line-breakpoint>
-        <line-breakpoint type="java-line">
-          <url>file://$PROJECT_DIR$/src/GUI/DrawLabyrinth.java</url>
-          <line>35</line>
-          <properties />
-          <option name="timeStamp" value="47" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Matrix/Labyrinth.java</url>
-          <line>108</line>
-          <properties />
-          <option name="timeStamp" value="67" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Matrix/Labyrinth.java</url>
-          <line>136</line>
-          <properties />
-          <option name="timeStamp" value="68" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/GUI/GUI.java</url>
-          <line>432</line>
-          <properties />
-          <option name="timeStamp" value="69" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/GUI/GUI.java</url>
-          <line>436</line>
-          <properties />
-          <option name="timeStamp" value="71" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/GUI/GUI.java</url>
-          <line>257</line>
-          <properties />
-          <option name="timeStamp" value="74" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/GUI/GUI.java</url>
-          <line>226</line>
-          <properties />
-          <option name="timeStamp" value="75" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/GUI/GUI.java</url>
-          <line>225</line>
-          <properties />
-          <option name="timeStamp" value="76" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/GUI/GUI.java</url>
-          <line>228</line>
-          <properties />
-          <option name="timeStamp" value="81" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/GUI/GUI.java</url>
-          <line>129</line>
-          <properties />
-          <option name="timeStamp" value="86" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/GUI/GUI.java</url>
-          <line>130</line>
-          <properties />
-          <option name="timeStamp" value="87" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/GUI/GUI.java</url>
-          <line>133</line>
-          <properties />
-          <option name="timeStamp" value="88" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/GUI/GUI.java</url>
-          <line>135</line>
-          <properties />
-          <option name="timeStamp" value="89" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/GUI/GUI.java</url>
-          <line>137</line>
-          <properties />
-          <option name="timeStamp" value="90" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/GUI/GUI.java</url>
-          <line>140</line>
-          <properties />
-          <option name="timeStamp" value="91" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/GUI/GUI.java</url>
-          <line>142</line>
-          <properties />
-          <option name="timeStamp" value="92" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/GUI/GUI.java</url>
-          <line>144</line>
-          <properties />
-          <option name="timeStamp" value="93" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/GUI/GUI.java</url>
-          <line>146</line>
-          <properties />
-          <option name="timeStamp" value="94" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/GUI/GUI.java</url>
-          <line>141</line>
-          <properties />
-          <option name="timeStamp" value="95" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/GUI/GUI.java</url>
-          <line>143</line>
-          <properties />
-          <option name="timeStamp" value="96" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/GUI/GUI.java</url>
-          <line>138</line>
-          <properties />
-          <option name="timeStamp" value="97" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/GUI/GUI.java</url>
-          <line>103</line>
-          <properties />
-          <option name="timeStamp" value="98" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/GUI/GUI.java</url>
-          <line>104</line>
-          <properties />
-          <option name="timeStamp" value="99" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/GUI/GUI.java</url>
-          <line>105</line>
-          <properties />
-          <option name="timeStamp" value="100" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/GUI/GUI.java</url>
-          <line>107</line>
-          <properties />
-          <option name="timeStamp" value="101" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/GUI/GUI.java</url>
-          <line>109</line>
-          <properties />
-          <option name="timeStamp" value="102" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/GUI/GUI.java</url>
-          <line>111</line>
-          <properties />
-          <option name="timeStamp" value="103" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/GUI/GUI.java</url>
-          <line>112</line>
-          <properties />
-          <option name="timeStamp" value="104" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/GUI/GUI.java</url>
-          <line>114</line>
-          <properties />
-          <option name="timeStamp" value="105" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/GUI/ButtonColumn.java</url>
-          <line>136</line>
-          <properties />
-          <option name="timeStamp" value="106" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/GUI/ButtonColumn.java</url>
-          <line>138</line>
-          <properties />
-          <option name="timeStamp" value="107" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/GUI/ButtonColumn.java</url>
-          <line>141</line>
-          <properties />
-          <option name="timeStamp" value="108" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/GUI/ButtonColumn.java</url>
-          <line>143</line>
-          <properties />
-          <option name="timeStamp" value="109" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/GUI/ButtonColumn.java</url>
-          <line>146</line>
-          <properties />
-          <option name="timeStamp" value="110" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/GUI/ButtonColumn.java</url>
-          <line>150</line>
-          <properties />
-          <option name="timeStamp" value="111" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/GUI/ButtonColumn.java</url>
-          <line>152</line>
-          <properties />
-          <option name="timeStamp" value="112" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/GUI/GUI.java</url>
-          <line>106</line>
-          <properties />
-          <option name="timeStamp" value="113" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/GUI/GUI.java</url>
-          <line>102</line>
-          <properties />
-          <option name="timeStamp" value="114" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/GUI/GUI.java</url>
-          <line>110</line>
-          <properties />
-          <option name="timeStamp" value="115" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/GUI/GUI.java</url>
-          <line>108</line>
-          <properties />
-          <option name="timeStamp" value="116" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/GUI/ButtonColumn.java</url>
-          <line>132</line>
-          <properties />
-          <option name="timeStamp" value="117" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/GUI/ButtonColumn.java</url>
-          <line>134</line>
-          <properties />
-          <option name="timeStamp" value="118" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/GUI/ButtonColumn.java</url>
-          <line>133</line>
-          <properties />
-          <option name="timeStamp" value="119" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/GUI/ButtonColumn.java</url>
-          <line>139</line>
-          <properties />
-          <option name="timeStamp" value="124" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/GUI/GUI.java</url>
-          <line>187</line>
-          <properties />
-          <option name="timeStamp" value="127" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/GUI/GUI.java</url>
-          <line>189</line>
-          <properties />
-          <option name="timeStamp" value="128" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/GUI/GUI.java</url>
-          <line>191</line>
-          <properties />
-          <option name="timeStamp" value="129" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/GUI/GUI.java</url>
-          <line>194</line>
-          <properties />
-          <option name="timeStamp" value="130" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/GUI/GUI.java</url>
-          <line>196</line>
-          <properties />
-          <option name="timeStamp" value="131" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/GUI/GUI.java</url>
-          <line>186</line>
-          <properties />
-          <option name="timeStamp" value="132" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/GUI/GUI.java</url>
-          <line>182</line>
-          <properties />
-          <option name="timeStamp" value="133" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/GUI/GUI.java</url>
-          <line>183</line>
-          <properties />
-          <option name="timeStamp" value="134" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/GUI/GUI.java</url>
-          <line>185</line>
-          <properties />
-          <option name="timeStamp" value="135" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/BorsukProject$Main.ic" NAME="Main Coverage Results" MODIFIED="1562756988940" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
@@ -933,68 +655,93 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-11.0.3/lib/src.zip!/java.desktop/java/awt/event/ActionListener.java">
+    <entry file="jar://C:/Program Files/Java/jdk-11.0.3/lib/src.zip!/java.desktop/java/awt/event/ActionListener.java" />
+    <entry file="file://$PROJECT_DIR$/src/GUI/GUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="50" column="16" selection-start-line="50" selection-start-column="16" selection-end-line="50" selection-end-column="16" />
+        <state relative-caret-position="6256">
+          <caret line="368" column="34" selection-start-line="368" selection-start-column="34" selection-end-line="368" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#6528#6767#0" expanded="true" />
+            <element signature="e#6766#6767#0" expanded="true" />
+            <element signature="e#6923#7907#0" expanded="true" />
+            <element signature="e#7906#7907#0" expanded="true" />
+            <element signature="e#7944#8927#0" expanded="true" />
+            <element signature="e#8926#8927#0" expanded="true" />
+            <element signature="e#8604#8842#0" expanded="true" />
+            <element signature="e#8841#8842#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        <state relative-caret-position="136">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Matrix/Algorithm.java">
+    <entry file="file://$PROJECT_DIR$/src/GUI/ButtonColumn.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="3" column="20" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
+        <state relative-caret-position="-2431">
+          <caret line="7" column="28" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
           <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Matrix/Labyrinth.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4356">
-          <caret line="232" selection-start-line="232" selection-end-line="232" />
-          <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#1493#1494#0" expanded="true" />
+            <element signature="e#1522#1523#0" expanded="true" />
+            <element signature="e#1552#1553#0" expanded="true" />
+            <element signature="e#1580#1581#0" expanded="true" />
+            <element signature="e#1919#1920#0" expanded="true" />
+            <element signature="e#1951#1952#0" expanded="true" />
+            <element signature="e#1974#1975#0" expanded="true" />
+            <element signature="e#2023#2024#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GUI/DrawLabyrinth.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="753">
-          <caret line="55" column="80" selection-start-line="55" selection-start-column="80" selection-end-line="55" selection-end-column="80" />
+        <state relative-caret-position="255">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#1283#1284#0" expanded="true" />
+            <element signature="e#1311#1312#0" expanded="true" />
+            <element signature="e#1337#1338#0" expanded="true" />
+            <element signature="e#1365#1366#0" expanded="true" />
+            <element signature="e#1246#1247#0" expanded="true" />
+            <element signature="e#1275#1276#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/ButtonColumn.java">
+    <entry file="file://$PROJECT_DIR$/src/Matrix/Labyrinth.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="755">
-          <caret line="132" selection-start-line="132" selection-end-line="132" />
+        <state relative-caret-position="-3944">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#361#362#0" expanded="true" />
+            <element signature="e#388#389#0" expanded="true" />
+            <element signature="e#419#420#0" expanded="true" />
+            <element signature="e#447#448#0" expanded="true" />
+            <element signature="e#488#489#0" expanded="true" />
+            <element signature="e#526#527#0" expanded="true" />
+            <element signature="e#566#567#0" expanded="true" />
+            <element signature="e#609#610#0" expanded="true" />
+            <element signature="e#660#661#0" expanded="true" />
+            <element signature="e#697#698#0" expanded="true" />
+            <element signature="e#729#730#0" expanded="true" />
+            <element signature="e#758#759#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/GUI.java">
+    <entry file="file://$PROJECT_DIR$/src/Matrix/Algorithm.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="445">
-          <caret line="180" column="13" selection-start-line="180" selection-start-column="13" selection-end-line="180" selection-end-column="13" />
+        <state relative-caret-position="289">
+          <caret line="134" column="57" lean-forward="true" selection-start-line="134" selection-start-column="57" selection-end-line="134" selection-end-column="57" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#4990#4991#0" expanded="true" />
-            <element signature="e#6805#7789#0" expanded="true" />
           </folding>
         </state>
       </provider>

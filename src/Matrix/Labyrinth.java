@@ -8,7 +8,7 @@ import java.util.Arrays;
 import java.util.Scanner;
 
 public class Labyrinth {
-    private static char [][] labyrinth;
+    private static char[][] labyrinth;
     private static int size;
     private Point start;
     private Point finish;
@@ -45,10 +45,10 @@ public class Labyrinth {
         labyrinth = new char[size][size];
         for (char[] row : labyrinth)
             Arrays.fill(row, '0');
-        labyrinth[size/2][size/2] = 's';
-        labyrinth[size-1][size-1] = 'f';
-        start = new Point(size /2, size /2);
-        finish = new Point(size -1, size -1);
+        labyrinth[size / 2][size / 2] = 's';
+        labyrinth[size - 1][size - 1] = 'f';
+        start = new Point(size / 2, size / 2);
+        finish = new Point(size - 1, size - 1);
     }
 
     // Ввод из файла;
@@ -62,7 +62,7 @@ public class Labyrinth {
             line = sc.nextLine();
             if (i == 0) {
                 labyrinth = new char[line.length()][line.length()];
-                size =  line.length();
+                size = line.length();
             }
             if (line.indexOf('s') != -1) {
                 start.x = i;
@@ -93,7 +93,7 @@ public class Labyrinth {
             parallel();
             labyrinth[0][0] = 's';
             labyrinth[size - 1][size - 1] = 'f';
-            start = new Point(0,0);
+            start = new Point(0, 0);
             finish = new Point(size - 1, size - 1);
             return;
         }
@@ -106,8 +106,8 @@ public class Labyrinth {
             }
         }
 
-        labyrinth[n/2][n/2] = '0';
-        digger(n/2, n/2);
+        labyrinth[n / 2][n / 2] = '0';
+        digger(n / 2, n / 2);
         boolean flag = true;
         while (flag) {
             int curr_x = 2, curr_y = 2;
@@ -132,23 +132,23 @@ public class Labyrinth {
 
         int count = size;
         while (count > 0) {
-            int curr_x = (int)(Math.random() * (size - 2) + 1);
-            int curr_y = (int)(Math.random() * (size - 2) + 1);
+            int curr_x = (int) (Math.random() * (size - 2) + 1);
+            int curr_y = (int) (Math.random() * (size - 2) + 1);
             while ((curr_x % 2 == 0 || curr_y % 2 == 0) || labyrinth[curr_x][curr_y] == '0' ||
                     (!(labyrinth[curr_x][curr_y + 1] == '0' && labyrinth[curr_x][curr_y - 1] == '0'
                             && labyrinth[curr_x + 1][curr_y] == '1' && labyrinth[curr_x - 1][curr_y] == '1') &&
                             !(labyrinth[curr_x + 1][curr_y] == '0' && labyrinth[curr_x - 1][curr_y] == '0'
                                     && labyrinth[curr_x][curr_y + 1] == '1' && labyrinth[curr_x][curr_y - 1] == '1'))) {
-                curr_x = (int)(Math.random() * (size - 1) + 1);
-                curr_y = (int)(Math.random() * (size - 1) + 1);
+                curr_x = (int) (Math.random() * (size - 1) + 1);
+                curr_y = (int) (Math.random() * (size - 1) + 1);
             }
             labyrinth[curr_x][curr_y] = '0';
             count--;
         }
 
-        labyrinth[n/2][n/2] = 's';
+        labyrinth[n / 2][n / 2] = 's';
         labyrinth[size - 1][size - 1] = 'f';
-        start = new Point(n/2,n/2);
+        start = new Point(n / 2, n / 2);
         finish = new Point(size - 1, size - 1);
     }
 
@@ -156,7 +156,7 @@ public class Labyrinth {
     private void parallel() {
         // Создание перегородок;
         for (int i = 2; i < (size - 1); i += 2) {
-            int count = (int)(Math.random() * (size / 3 - 1) + 1);
+            int count = (int) (Math.random() * (size / 3 - 1) + 1);
             for (int j = 0; j < size; j++) {
                 if ((j % (size / count) == 0 && j >= (size / count)) || j == 0 || j == (size - 1))
                     labyrinth[i][j] = '1';
@@ -173,7 +173,7 @@ public class Labyrinth {
                     fin = j - 1;
                 }
                 if (st != 0 && fin != 0) {
-                    labyrinth[i][(int)(Math.random() * (fin - st) + st)] = '0';
+                    labyrinth[i][(int) (Math.random() * (fin - st) + st)] = '0';
                     st = 0;
                     fin = 0;
                 }
@@ -184,7 +184,7 @@ public class Labyrinth {
     private void digger(int curr_x, int curr_y) {
         boolean up = true, down = true, left = true, right = true;
         while (up || down || left || right) {
-            int direction = (int)(Math.random() * 4);
+            int direction = (int) (Math.random() * 4);
             if (direction == 0) {
                 if (up && curr_x >= 0 && curr_y + 2 >= 0 && curr_x < size && curr_y + 2 < size && labyrinth[curr_x][curr_y + 2] != '0') {
                     labyrinth[curr_x][curr_y + 1] = '0';
@@ -234,8 +234,8 @@ public class Labyrinth {
 
     public void save(File file) throws IOException {
         FileWriter fw = new FileWriter(file);
-        for(int i = 0; i < size; i++){
-            for(int j = 0; j < size; j++){
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
                 fw.write(labyrinth[i][j]);
             }
             fw.write("\n");
@@ -244,8 +244,8 @@ public class Labyrinth {
     }
 
     public void clearLab() {
-        for (int i = 0; i < size; i++){
-            for(int j = 0; j < size; j++){
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
                 if (labyrinth[i][j] == '2' || labyrinth[i][j] == '3' || labyrinth[i][j] == '4')
                     labyrinth[i][j] = '0';
             }
@@ -253,13 +253,13 @@ public class Labyrinth {
     }
 
     boolean checker(int x, int y) {
-        if(x < 0 || y < 0 || x >= size || y >= size)
+        if (x < 0 || y < 0 || x >= size || y >= size)
             return false;
         return labyrinth[x][y] == '0' || labyrinth[x][y] == 'f';
     }
 
-    public void  printLabyrinth() {
-        for(int i = 0; i < size; i++) {
+    public void printLabyrinth() {
+        for (int i = 0; i < size; i++) {
             for (int j = 0; j < size; j++) {
                 System.out.print(labyrinth[i][j]);
             }
