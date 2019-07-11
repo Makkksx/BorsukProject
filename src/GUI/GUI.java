@@ -164,17 +164,19 @@ public class GUI extends JFrame {
             @Override
             public void mousePressed(MouseEvent e) {
                 super.mousePressed(e);
-                if (drawLabyrinth != null) {
-                    if (drawLabyrinth.getButtonColumn().getStarthbool()) {
-                        drawLabyrinth.getButtonColumn().setSTART(setStart, cancel, false);
-                        setStart.setIcon(null);
-                        setStart.setPreferredSize(new Dimension(75, 26));
-                        setStart.setBorder(new LineBorder(Color.BLACK));
+                if (setFinish.getModel().isEnabled()) {
+                    if (drawLabyrinth != null) {
+                        if (drawLabyrinth.getButtonColumn().getStarthbool()) {
+                            drawLabyrinth.getButtonColumn().setSTART(setStart, cancel, false);
+                            setStart.setIcon(null);
+                            setStart.setPreferredSize(new Dimension(75, 26));
+                            setStart.setBorder(new LineBorder(Color.BLACK));
+                        }
+                        setFinish.setIcon(new ImageIcon("Pictures\\buttonpressed1.png"));
+                        setFinish.setHorizontalTextPosition(SwingConstants.CENTER);
+                        setFinish.setBorder(null);
+                        cancel.setEnabled(true);
                     }
-                    setFinish.setIcon(new ImageIcon("Pictures\\buttonpressed1.png"));
-                    setFinish.setHorizontalTextPosition(SwingConstants.CENTER);
-                    setFinish.setBorder(null);
-                    cancel.setEnabled(true);
                 }
             }
         });
@@ -182,17 +184,19 @@ public class GUI extends JFrame {
             @Override
             public void mousePressed(MouseEvent e) {
                 super.mousePressed(e);
-                if (drawLabyrinth != null) {
-                    if (drawLabyrinth.getButtonColumn().getFinishbool()) {
-                        drawLabyrinth.getButtonColumn().setSTART(setFinish, cancel, false);
-                        setFinish.setIcon(null);
-                        setFinish.setPreferredSize(new Dimension(75, 26));
-                        setFinish.setBorder(new LineBorder(Color.BLACK));
+                if(setStart.getModel().isEnabled()) {
+                    if (drawLabyrinth != null) {
+                        if (drawLabyrinth.getButtonColumn().getFinishbool()) {
+                            drawLabyrinth.getButtonColumn().setSTART(setFinish, cancel, false);
+                            setFinish.setIcon(null);
+                            setFinish.setPreferredSize(new Dimension(75, 26));
+                            setFinish.setBorder(new LineBorder(Color.BLACK));
+                        }
+                        setStart.setIcon(new ImageIcon("Pictures\\buttonpressed1.png"));
+                        setStart.setHorizontalTextPosition(SwingConstants.CENTER);
+                        setStart.setBorder(null);
+                        cancel.setEnabled(true);
                     }
-                    setStart.setIcon(new ImageIcon("Pictures\\buttonpressed1.png"));
-                    setStart.setHorizontalTextPosition(SwingConstants.CENTER);
-                    setStart.setBorder(null);
-                    cancel.setEnabled(true);
                 }
             }
         });

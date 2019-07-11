@@ -57,7 +57,7 @@ public class ButtonColumn extends AbstractCellEditor implements TableCellRendere
         this.cancel = cancel;
         START = val;
     }
-
+    public Labyrinth getLabyrinth(){return labyrinth;}
     public Border getFocusBorder() {
         return focusBorder;
     }

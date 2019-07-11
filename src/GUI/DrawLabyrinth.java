@@ -19,7 +19,10 @@ public class DrawLabyrinth {
     private ButtonColumn button;
 
     DrawLabyrinth(Labyrinth labyrinth) {
-        TableScale = 40;
+        if(labyrinth.getSize() < 18)
+            TableScale = 40;
+        else if(labyrinth.getSize() < 26)
+            TableScale = 27;
         int SIZE = labyrinth.getSize();
         board = new JPanel();
         table = new JTable(SIZE, SIZE);
@@ -46,16 +49,22 @@ public class DrawLabyrinth {
     ButtonColumn getButtonColumn(){return button;}
 
     void ScaleIncrease() {
-        TableScale += 10;
-        table.setRowHeight(TableScale);
-        for (int i = 0; i < table.getColumnModel().getColumnCount(); i++) {
-            TableColumn column = table.getColumnModel().getColumn(i);
-            column.setPreferredWidth(TableScale);
+        if( button.getLabyrinth().getSize() < 11 && ( (TableScale + 10) < 80) )
+            TableScale += 10;
+        else if( button.getLabyrinth().getSize() < 20 && ( (TableScale + 10) < 50))
+            TableScale += 10;
+        else if( button.getLabyrinth().getSize() < 26 && ( (TableScale + 10) < 37))
+            TableScale += 10;
+            table.setRowHeight(TableScale);
+            for (int i = 0; i < table.getColumnModel().getColumnCount(); i++) {
+                TableColumn column = table.getColumnModel().getColumn(i);
+                column.setPreferredWidth(TableScale);
+            }
         }
-    }
+
 
     void ScaleDecrease() {
-        if ((TableScale - 10) > 0) {
+        if ((TableScale - 10) > 10) {
             TableScale -= 10;
             table.setRowHeight(TableScale);
             for (int i = 0; i < table.getColumnModel().getColumnCount(); i++) {
