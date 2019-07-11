@@ -4,11 +4,12 @@ import Matrix.Algorithm;
 import Matrix.Labyrinth;
 
 import javax.swing.*;
+import javax.swing.border.EmptyBorder;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.event.*;
 import java.io.File;
 import java.io.IOException;
+import java.net.URI;
 import java.util.NoSuchElementException;
 
 public class GUI extends JFrame {
@@ -21,22 +22,31 @@ public class GUI extends JFrame {
     private JMenuItem save_file;
     private JMenuItem next_step;
     private JMenuItem refresh;
+    private JButton setFinish;
+    private JButton setStart;
 
     public GUI() {
         /*Меню */
-        JMenuItem reference =  new JMenuItem("Справка");
+        JButton reference =  new JButton("Справка",new ImageIcon("Pictures\\button.png"));
+        JButton creators =  new JButton("Об авторах",new ImageIcon("Pictures\\button.png"));
+        creators.setHorizontalTextPosition(SwingConstants.CENTER);
+        creators.setBorder(null);
+        creators.setPreferredSize(new Dimension(40,30));
 
+        reference.setHorizontalTextPosition(SwingConstants.CENTER);
+        reference.setBorder(null);
+        reference.setPreferredSize(new Dimension(40,30));
         setResizable(false);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         JLabel gif = new JLabel();
-        JLabel info = new JLabel("Нажмите 'Файл -> Новый', чтобы создать новый лабиринт");
         gif.setIcon(new ImageIcon("Pictures\\gifka.gif"));
         JMenuBar menuBar = new JMenuBar();
-//        menuBar.add(reference);
+
         JMenu fileMenu = new JMenu("Файл");
         JMenu new_file = new JMenu("Создать");
         JMenuItem new_lab = new JMenuItem("Новый");
         JMenuItem open_file = new JMenuItem("Открыть");
+        JMenuItem exit = new JMenuItem("Выход");
         refresh = new JMenuItem(new ImageIcon("Pictures\\refresh.png"));
         play_button = new JMenuItem(new ImageIcon("Pictures\\play.png"));
         scale_increase = new JMenuItem(new ImageIcon("Pictures\\zoom-in-button.png"));
@@ -45,21 +55,36 @@ public class GUI extends JFrame {
         next_step = new JMenuItem(new ImageIcon("Pictures\\next.png"));
         JMenuItem pattern1 = new JMenuItem("Землеройка");
         JMenuItem pattern2 = new JMenuItem("Параллельки");
+       // fileMenu.setIcon(new ImageIcon("Pictures\\button.png"));
+        fileMenu.setPreferredSize(new Dimension(70,30));
+        fileMenu.setHorizontalTextPosition(SwingConstants.CENTER);
+       // fileMenu.setForeground(Color.orange);
+        setFinish = new JButton("Финиш");
+        setStart = new JButton("Старт");
+        JPanel panel1 = new JPanel();
+        JPanel panel2 = new JPanel();
+        panel1.add(setFinish,BorderLayout.LINE_START);
+        panel1.add(setStart,BorderLayout.AFTER_LAST_LINE);
+        panel2.add(scale_decrease);
+        panel2.add(scale_increase);
+        panel2.add(next_step);
+        panel2.add(refresh);
+        panel2.add(play_button);
+        add(panel1,BorderLayout.LINE_END);
+        add(panel2,BorderLayout.LINE_START);
+
         new_file.add(pattern1);
         new_file.add(pattern2);
         fileMenu.add(new_lab);
         fileMenu.add(new_file);
         fileMenu.add(open_file);
         fileMenu.add(save_file);
+        fileMenu.add(exit);
         menuBar.add(fileMenu);
         menuBar.add(reference);
+        menuBar.add(creators);
         scale_increase.setEnabled(false);
         scale_decrease.setEnabled(false);
-        menuBar.add(scale_increase);
-        menuBar.add(scale_decrease);
-        menuBar.add(next_step);
-        menuBar.add(refresh);
-        menuBar.add(play_button);
         setJMenuBar(menuBar);
         setSize(400,200);
         setVisible(true);
@@ -67,12 +92,85 @@ public class GUI extends JFrame {
         play_button.setEnabled(false);
         next_step.setEnabled(false);
         refresh.setEnabled(false);
+        setFinish.setEnabled(false);
+        setStart.setEnabled(false);
+        exit.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.exit(0);
+            }
+        });
+        creators.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                URI uri;
+                try {
+                    uri = new URI("https://github.com/Makkksx/BorsukProject");
+                    JButton button = new JButton();
+                    button.setText("<HTML><FONT color=\"#000099\"><U>Репозиторий</U></FONT></HTML>");
+                    button.setHorizontalAlignment(SwingConstants.LEFT);
+                    button.setBorderPainted(false);
+                    button.setOpaque(false);
+                    button.setBackground(Color.WHITE);
+                    button.setToolTipText(uri.toString());
+
+                    button.addActionListener(new ActionListener() {
+                        @Override
+                        public void actionPerformed(ActionEvent e) {
+                         if (Desktop.isDesktopSupported()) {
+                         try {
+                            Desktop.getDesktop().browse(uri);
+                         } catch (IOException ex) { /* TODO: error handling */ }
+                         } else { /* TODO: error handling */ }
+
+                        }
+                    });
+                    JOptionPane.showMessageDialog(null,button);
+                }catch (Exception ex){
+
+                }
+                creators.setIcon(new ImageIcon("Pictures\\button.png"));
+            }
+        });
+        reference.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                super.mouseClicked(e);
+                reference.setIcon(new ImageIcon("Pictures\\buttonpressed.png"));
+            }
+        });
+        creators.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mousePressed(MouseEvent e) {
+                super.mouseClicked(e);
+                creators.setIcon(new ImageIcon("Pictures\\buttonpressed.png"));
+            }
+        });
+
+        setFinish.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                drawLabyrinth.getButtonColumn().setFINISH();
+            }
+        });
+
+        setStart.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                drawLabyrinth.getButtonColumn().setSTART();
+            }
+        });
+
         setSaveButton(save_file);
         reference.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(null,"Нажмите 'Файл -> Новый', чтобы создать новый лабиринт\n\n" + "Ячейки\n" + "Желтая - старт\n" + "Красная - финиш\n" + "Белая - свободная\n" + "Серая - стена\n");
-
+                JOptionPane.showMessageDialog(null,"Нажмите 'Файл -> Новый', чтобы создать новый лабиринт\n\n" +
+                        "Ячейки\n" + "<html><font color=YELLOW>Желтая</font> - старт</html> \n" +
+                        "<html><font color=RED>Красная</font> - финиш</html>\n" +
+                        "<html><font color=WHITE>Белая</font> - свободная\n" +
+                        "<html><font color=GRAY>Серая</font> - стена\n");
+                reference.setIcon(new ImageIcon("Pictures\\button.png"));
             }
         });
         refresh.addActionListener(new ActionListener() {
@@ -85,6 +183,8 @@ public class GUI extends JFrame {
                 drawLabyrinth.getJTable().setEnabled(true);
                 next_step.setEnabled(true);
                 play_button.setEnabled(true);
+                setFinish.setEnabled(true);
+                setStart.setEnabled(true);
             }
         });
 
@@ -95,6 +195,8 @@ public class GUI extends JFrame {
                 if (algorithm.stepFindA(labyrinth)) {
                     next_step.setEnabled(false);
                     play_button.setEnabled(false);
+                    setFinish.setEnabled(false);
+                    setStart.setEnabled(false);
                 }
                 repaint();
                 pack();
@@ -103,6 +205,8 @@ public class GUI extends JFrame {
                     drawLabyrinth.getJTable().setEnabled(false);
                     next_step.setEnabled(false);
                     play_button.setEnabled(false);
+                    setFinish.setEnabled(false);
+                    setStart.setEnabled(false);
                 }
                 labyrinth.printLabyrinth();
             }
@@ -209,7 +313,6 @@ public class GUI extends JFrame {
                 }
             }
         });
-        getContentPane().add(info,BorderLayout.CENTER);
         getContentPane().add(gif,BorderLayout.SOUTH);
         //ffffff
 
@@ -220,7 +323,7 @@ public class GUI extends JFrame {
         labyrinth.printLabyrinth();
         drawLabyrinth = new DrawLabyrinth(labyrinth);
         labyrinth.printLabyrinth();
-        add(drawLabyrinth.getJPanel(),BorderLayout.NORTH);
+        add(drawLabyrinth.getJPanel(),BorderLayout.SOUTH);
         pack();
         scale_increase.setEnabled(true);
         scale_decrease.setEnabled(true);
@@ -229,6 +332,8 @@ public class GUI extends JFrame {
         save_file.setEnabled(true);
         next_step.setEnabled(true);
         refresh.setEnabled(true);
+        setFinish.setEnabled(true);
+        setStart.setEnabled(true);
     }
 
     private void setPlay(JMenuItem play_button) {
@@ -243,6 +348,8 @@ public class GUI extends JFrame {
                 }
                 next_step.setEnabled(false);
                 play_button.setEnabled(false);
+                setFinish.setEnabled(false);
+                setStart.setEnabled(false);
                 repaint();
                 pack();
                 labyrinth.printLabyrinth();

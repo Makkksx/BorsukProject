@@ -16,6 +16,7 @@ public class DrawLabyrinth {
     private JPanel board;
     private JTable table;
     private int TableScale;
+    private ButtonColumn button;
 
     DrawLabyrinth(Labyrinth labyrinth) {
         TableScale = 40;
@@ -30,28 +31,9 @@ public class DrawLabyrinth {
             TableColumn column = table.getColumnModel().getColumn(i);
             column.setPreferredWidth(TableScale);
         }
-        ButtonColumn button = new ButtonColumn(table, labyrinth);
+         button = new ButtonColumn(table, labyrinth);
         board.add(table);
         board.setVisible(true);
-        JButton setFinish = new JButton("Финиш");
-        JButton setStart = new JButton("Старт");
-
-        setFinish.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                button.setFINISH();
-            }
-        });
-
-        setStart.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                button.setSTART();
-            }
-        });
-
-        board.add(setFinish, BorderLayout.EAST);
-        board.add(setStart, BorderLayout.EAST);
     }
 
     JPanel getJPanel() {
@@ -61,6 +43,7 @@ public class DrawLabyrinth {
     JTable getJTable() {
         return table;
     }
+    ButtonColumn getButtonColumn(){return button;}
 
     void ScaleIncrease() {
         TableScale += 10;
