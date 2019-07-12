@@ -3,76 +3,76 @@
   <ID>JAVA</ID>
   <OriginalElement />
   <nodes>
-    <node x="699.0" y="1166.0">Matrix.Algorithm</node>
-    <node x="527.3429487179487" y="0.0">Matrix.Labyrinth</node>
-    <node x="639.75" y="1518.0">GUI.GUI</node>
-    <node x="241.8862179487179" y="1199.0">GUI.DrawLabyrinth</node>
-    <node x="0.0" y="494.0">GUI.ButtonColumn</node>
-    <node x="530.0" y="747.5">Matrix.LabyrinthTest</node>
-    <node x="667.25" y="1860.0">Main</node>
+    <node x="712.0" y="1156.0">Matrix.Algorithm</node>
+    <node x="556.1570512820513" y="0.0">Matrix.Labyrinth</node>
+    <node x="597.5" y="1498.0">GUI.GUI</node>
+    <node x="238.95673076923083" y="1189.0">GUI.DrawLabyrinth</node>
+    <node x="0.0" y="484.0">GUI.ButtonColumn</node>
+    <node x="525.0" y="737.5">Matrix.LabyrinthTest</node>
+    <node x="625.0" y="1840.0">Main</node>
   </nodes>
   <notes />
   <edges>
-    <edge source="Main" target="GUI.GUI">
-      <point x="36.5" y="-24.5" />
-      <point x="776.75" y="1835.0" />
-      <point x="790.5" y="1835.0" />
-      <point x="50.25" y="146.0" />
-    </edge>
     <edge source="GUI.GUI" target="GUI.DrawLabyrinth">
-      <point x="-83.75" y="-146.0" />
-      <point x="656.5" y="1498.0" />
-      <point x="298.6362179487179" y="1498.0" />
-      <point x="-56.75" y="113.0" />
+      <point x="-82.08333333333337" y="-146.0" />
+      <point x="613.9166666666666" y="1478.0" />
+      <point x="294.70673076923083" y="1478.0" />
+      <point x="-55.75" y="113.0" />
+    </edge>
+    <edge source="Main" target="GUI.GUI">
+      <point x="-35.5" y="-24.5" />
+      <point x="660.5" y="1815.0" />
+      <point x="646.75" y="1815.0" />
+      <point x="-49.25" y="146.0" />
     </edge>
     <edge source="Matrix.Algorithm" target="Matrix.Labyrinth">
       <point x="0.0" y="-146.0" />
-      <point x="885.0" y="464.0" />
-      <point x="671.1554487179487" y="464.0" />
-      <point x="55.3125" y="212.0" />
+      <point x="896.0" y="464.0" />
+      <point x="718.3445512820513" y="464.0" />
+      <point x="75.6875" y="212.0" />
     </edge>
     <edge source="GUI.DrawLabyrinth" target="Matrix.Labyrinth">
-      <point x="85.125" y="-113.0" />
-      <point x="440.5112179487179" y="1146.0" />
-      <point x="519.5" y="1146.0" />
-      <point x="519.5" y="464.0" />
-      <point x="582.6554487179487" y="464.0" />
-      <point x="-33.1875" y="212.0" />
+      <point x="83.625" y="-113.0" />
+      <point x="434.08173076923083" y="1136.0" />
+      <point x="679.5" y="1136.0" />
+      <point x="679.5" y="464.0" />
+      <point x="653.4695512820513" y="464.0" />
+      <point x="10.8125" y="212.0" />
     </edge>
     <edge source="Matrix.LabyrinthTest" target="Matrix.Labyrinth">
-      <point x="-37.0" y="-57.5" />
-      <point x="567.0" y="474.0" />
-      <point x="604.7804487179487" y="474.0" />
-      <point x="-11.0625" y="212.0" />
+      <point x="-36.0" y="-57.5" />
+      <point x="561.0" y="464.0" />
+      <point x="610.2195512820513" y="464.0" />
+      <point x="-32.4375" y="212.0" />
     </edge>
     <edge source="GUI.ButtonColumn" target="Matrix.Labyrinth">
-      <point x="-127.25000000000006" y="-311.0" />
-      <point x="127.25" y="444.0" />
-      <point x="538.4054487179487" y="444.0" />
-      <point x="-77.4375" y="212.0" />
+      <point x="126.25" y="-311.0" />
+      <point x="378.75" y="454.0" />
+      <point x="588.5945512820513" y="454.0" />
+      <point x="-54.0625" y="212.0" />
     </edge>
     <edge source="GUI.GUI" target="Matrix.Algorithm">
-      <point x="50.25" y="-146.0" />
-      <point x="790.5" y="1488.0" />
-      <point x="978.0" y="1488.0" />
-      <point x="93.0" y="146.0" />
+      <point x="82.08333333333337" y="-146.0" />
+      <point x="778.0833333333334" y="1478.0" />
+      <point x="988.0" y="1478.0" />
+      <point x="92.0" y="146.0" />
     </edge>
     <edge source="GUI.DrawLabyrinth" target="GUI.ButtonColumn">
-      <point x="-85.125" y="-113.0" />
-      <point x="270.2612179487179" y="1146.0" />
-      <point x="84.83333333333326" y="1146.0" />
-      <point x="-169.66666666666669" y="311.0" />
+      <point x="27.875" y="-113.0" />
+      <point x="378.33173076923083" y="1136.0" />
+      <point x="420.83333333333337" y="1136.0" />
+      <point x="168.33333333333337" y="311.0" />
     </edge>
     <edge source="GUI.GUI" target="Matrix.Labyrinth">
-      <point x="-16.75" y="-146.0" />
-      <point x="723.5" y="1478.0" />
-      <point x="688.5" y="1478.0" />
-      <point x="688.5" y="474.0" />
-      <point x="649.0304487179487" y="474.0" />
-      <point x="33.1875" y="212.0" />
+      <point x="16.41666666666663" y="-146.0" />
+      <point x="712.4166666666666" y="1478.0" />
+      <point x="701.5" y="1478.0" />
+      <point x="701.5" y="464.0" />
+      <point x="696.7195512820513" y="464.0" />
+      <point x="54.0625" y="212.0" />
     </edge>
   </edges>
-  <settings layout="Hierarchic Group" zoom="0.9" x="2.9494949494949196" y="730.8888888888889" />
+  <settings layout="Hierarchic Group" zoom="0.9" x="3.0" y="532.5555555555555" />
   <SelectedNodes>
     <node>Matrix.Algorithm</node>
     <node>GUI.ButtonColumn</node>

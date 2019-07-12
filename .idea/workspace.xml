@@ -1,30 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="BorsukProject:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="4b252c7a-d305-4437-847e-2c70f56919df" name="Default Changelist" comment="вот">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pictures/gifka.gif" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/gifka.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BorsukProject/GUI/ButtonColumn.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BorsukProject/GUI/ButtonColumn.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BorsukProject/GUI/DrawLabyrinth.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BorsukProject/GUI/DrawLabyrinth.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BorsukProject/GUI/GUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BorsukProject/GUI/GUI$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BorsukProject/GUI/GUI$10.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BorsukProject/GUI/GUI$11.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BorsukProject/GUI/GUI$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BorsukProject/GUI/GUI$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BorsukProject/GUI/GUI$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BorsukProject/GUI/GUI$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BorsukProject/GUI/GUI$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BorsukProject/GUI/GUI$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BorsukProject/GUI/GUI$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BorsukProject/GUI/GUI$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BorsukProject/GUI/GUI$6.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BorsukProject/GUI/GUI$7.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BorsukProject/GUI/GUI$8.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BorsukProject/GUI/GUI$9.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BorsukProject/GUI/GUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BorsukProject/GUI/GUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BorsukProject/Matrix/Algorithm$Vertex.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BorsukProject/Matrix/Algorithm$Vertex.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BorsukProject/Matrix/Algorithm.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BorsukProject/Matrix/Algorithm.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/ButtonColumn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/ButtonColumn.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/DrawLabyrinth.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/DrawLabyrinth.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/GUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Matrix/Algorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Matrix/Algorithm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Matrix/Labyrinth.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Matrix/Labyrinth.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pictures/UML.png" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/UML.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pictures/UML.uml" beforeDir="false" afterPath="$PROJECT_DIR$/Pictures/UML.uml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -41,18 +25,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GUI/GUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6256">
-              <caret line="368" column="34" selection-start-line="368" selection-start-column="34" selection-end-line="368" selection-end-column="34" />
+            <state relative-caret-position="1154">
+              <caret line="265" selection-start-line="265" selection-end-line="265" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#6528#6767#0" expanded="true" />
-                <element signature="e#6766#6767#0" expanded="true" />
-                <element signature="e#6923#7907#0" expanded="true" />
-                <element signature="e#7906#7907#0" expanded="true" />
-                <element signature="e#7944#8927#0" expanded="true" />
-                <element signature="e#8926#8927#0" expanded="true" />
-                <element signature="e#8604#8842#0" expanded="true" />
-                <element signature="e#8841#8842#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -70,18 +46,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GUI/ButtonColumn.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2431">
+            <state relative-caret-position="119">
               <caret line="7" column="28" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
-              <folding>
-                <element signature="e#1493#1494#0" expanded="true" />
-                <element signature="e#1522#1523#0" expanded="true" />
-                <element signature="e#1552#1553#0" expanded="true" />
-                <element signature="e#1580#1581#0" expanded="true" />
-                <element signature="e#1919#1920#0" expanded="true" />
-                <element signature="e#1951#1952#0" expanded="true" />
-                <element signature="e#1974#1975#0" expanded="true" />
-                <element signature="e#2023#2024#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -89,14 +55,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GUI/DrawLabyrinth.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
+            <state relative-caret-position="187">
               <caret line="15" selection-start-line="15" selection-end-line="15" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1283#1284#0" expanded="true" />
-                <element signature="e#1311#1312#0" expanded="true" />
-                <element signature="e#1337#1338#0" expanded="true" />
-                <element signature="e#1365#1366#0" expanded="true" />
                 <element signature="e#1246#1247#0" expanded="true" />
                 <element signature="e#1275#1276#0" expanded="true" />
               </folding>
@@ -107,35 +69,111 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Matrix/Labyrinth.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3944">
+            <state relative-caret-position="-255">
               <caret line="14" selection-start-line="14" selection-end-line="14" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#361#362#0" expanded="true" />
-                <element signature="e#388#389#0" expanded="true" />
-                <element signature="e#419#420#0" expanded="true" />
-                <element signature="e#447#448#0" expanded="true" />
-                <element signature="e#488#489#0" expanded="true" />
-                <element signature="e#526#527#0" expanded="true" />
-                <element signature="e#566#567#0" expanded="true" />
-                <element signature="e#609#610#0" expanded="true" />
-                <element signature="e#660#661#0" expanded="true" />
-                <element signature="e#697#698#0" expanded="true" />
-                <element signature="e#729#730#0" expanded="true" />
-                <element signature="e#758#759#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Matrix/Algorithm.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="43" column="21" lean-forward="true" selection-start-line="43" selection-start-column="21" selection-end-line="43" selection-end-column="21" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Matrix/Algorithm.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="134" column="57" lean-forward="true" selection-start-line="134" selection-start-column="57" selection-end-line="134" selection-end-column="57" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+        <entry file="file://$PROJECT_DIR$/Pictures/UML.uml">
+          <provider selected="true" editor-type-id="UmlEditorProvider">
+            <state>
+              <ID>JAVA</ID>
+              <OriginalElement />
+              <nodes>
+                <node x="712.0" y="1156.0">Matrix.Algorithm</node>
+                <node x="556.1570512820513" y="0.0">Matrix.Labyrinth</node>
+                <node x="597.5" y="1498.0">GUI.GUI</node>
+                <node x="238.95673076923083" y="1189.0">GUI.DrawLabyrinth</node>
+                <node x="0.0" y="484.0">GUI.ButtonColumn</node>
+                <node x="525.0" y="737.5">Matrix.LabyrinthTest</node>
+                <node x="625.0" y="1840.0">Main</node>
+              </nodes>
+              <notes />
+              <edges>
+                <edge source="GUI.GUI" target="GUI.DrawLabyrinth">
+                  <point x="-82.08333333333337" y="-146.0" />
+                  <point x="613.9166666666666" y="1478.0" />
+                  <point x="294.70673076923083" y="1478.0" />
+                  <point x="-55.75" y="113.0" />
+                </edge>
+                <edge source="Main" target="GUI.GUI">
+                  <point x="-35.5" y="-24.5" />
+                  <point x="660.5" y="1815.0" />
+                  <point x="646.75" y="1815.0" />
+                  <point x="-49.25" y="146.0" />
+                </edge>
+                <edge source="Matrix.Algorithm" target="Matrix.Labyrinth">
+                  <point x="0.0" y="-146.0" />
+                  <point x="896.0" y="464.0" />
+                  <point x="718.3445512820513" y="464.0" />
+                  <point x="75.6875" y="212.0" />
+                </edge>
+                <edge source="GUI.DrawLabyrinth" target="Matrix.Labyrinth">
+                  <point x="83.625" y="-113.0" />
+                  <point x="434.08173076923083" y="1136.0" />
+                  <point x="679.5" y="1136.0" />
+                  <point x="679.5" y="464.0" />
+                  <point x="653.4695512820513" y="464.0" />
+                  <point x="10.8125" y="212.0" />
+                </edge>
+                <edge source="Matrix.LabyrinthTest" target="Matrix.Labyrinth">
+                  <point x="-36.0" y="-57.5" />
+                  <point x="561.0" y="464.0" />
+                  <point x="610.2195512820513" y="464.0" />
+                  <point x="-32.4375" y="212.0" />
+                </edge>
+                <edge source="GUI.ButtonColumn" target="Matrix.Labyrinth">
+                  <point x="126.25" y="-311.0" />
+                  <point x="378.75" y="454.0" />
+                  <point x="588.5945512820513" y="454.0" />
+                  <point x="-54.0625" y="212.0" />
+                </edge>
+                <edge source="GUI.GUI" target="Matrix.Algorithm">
+                  <point x="82.08333333333337" y="-146.0" />
+                  <point x="778.0833333333334" y="1478.0" />
+                  <point x="988.0" y="1478.0" />
+                  <point x="92.0" y="146.0" />
+                </edge>
+                <edge source="GUI.DrawLabyrinth" target="GUI.ButtonColumn">
+                  <point x="27.875" y="-113.0" />
+                  <point x="378.33173076923083" y="1136.0" />
+                  <point x="420.83333333333337" y="1136.0" />
+                  <point x="168.33333333333337" y="311.0" />
+                </edge>
+                <edge source="GUI.GUI" target="Matrix.Labyrinth">
+                  <point x="16.41666666666663" y="-146.0" />
+                  <point x="712.4166666666666" y="1478.0" />
+                  <point x="701.5" y="1478.0" />
+                  <point x="701.5" y="464.0" />
+                  <point x="696.7195512820513" y="464.0" />
+                  <point x="54.0625" y="212.0" />
+                </edge>
+              </edges>
+              <settings layout="Hierarchic Group" zoom="0.9" x="3.0" y="624.2222222222222" />
+              <SelectedNodes />
+              <Categories>
+                <Category>Fields</Category>
+                <Category>Methods</Category>
+              </Categories>
+              <SCOPE>All</SCOPE>
+              <VISIBILITY>private</VISIBILITY>
             </state>
           </provider>
         </entry>
@@ -175,6 +213,7 @@
       <find>setSaveButton</find>
       <find>save_file</find>
       <find>play_button</find>
+      <find>setFinish</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -197,7 +236,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="360" />
     <option name="y" value="-25" />
     <option name="width" value="1925" />
@@ -217,6 +256,11 @@
             <path>
               <item name="BorsukProject" type="b2602c69:ProjectViewProjectNode" />
               <item name="BorsukProject" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="BorsukProject" type="b2602c69:ProjectViewProjectNode" />
+              <item name="BorsukProject" type="462c0819:PsiDirectoryNode" />
+              <item name="Pictures" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="BorsukProject" type="b2602c69:ProjectViewProjectNode" />
@@ -246,11 +290,11 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../IdeaProjects/untitled4" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -347,6 +391,9 @@
       <workItem from="1562831573303" duration="5191000" />
       <workItem from="1562839194859" duration="2016000" />
       <workItem from="1562844262640" duration="18367000" />
+      <workItem from="1562871234471" duration="660000" />
+      <workItem from="1562913630381" duration="77000" />
+      <workItem from="1562920465188" duration="1707000" />
     </task>
     <task id="LOCAL-00001" summary="добавил вывод лаьиринта в виде JTable">
       <created>1562499426212</created>
@@ -468,13 +515,13 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="71559000" />
+    <option name="totallyTimeSpent" value="74003000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20402685" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21208054" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -484,7 +531,7 @@
       <window_info id="simpleUML" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.23371105" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.23371105" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.2719547" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -644,7 +691,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Pictures/UML.uml" />
     <entry file="file://$PROJECT_DIR$/src/Matrix/LabyrinthTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
@@ -656,24 +702,6 @@
       </provider>
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk-11.0.3/lib/src.zip!/java.desktop/java/awt/event/ActionListener.java" />
-    <entry file="file://$PROJECT_DIR$/src/GUI/GUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6256">
-          <caret line="368" column="34" selection-start-line="368" selection-start-column="34" selection-end-line="368" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#6528#6767#0" expanded="true" />
-            <element signature="e#6766#6767#0" expanded="true" />
-            <element signature="e#6923#7907#0" expanded="true" />
-            <element signature="e#7906#7907#0" expanded="true" />
-            <element signature="e#7944#8927#0" expanded="true" />
-            <element signature="e#8926#8927#0" expanded="true" />
-            <element signature="e#8604#8842#0" expanded="true" />
-            <element signature="e#8841#8842#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -683,66 +711,136 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GUI/ButtonColumn.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2431">
+        <state relative-caret-position="119">
           <caret line="7" column="28" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
-          <folding>
-            <element signature="e#1493#1494#0" expanded="true" />
-            <element signature="e#1522#1523#0" expanded="true" />
-            <element signature="e#1552#1553#0" expanded="true" />
-            <element signature="e#1580#1581#0" expanded="true" />
-            <element signature="e#1919#1920#0" expanded="true" />
-            <element signature="e#1951#1952#0" expanded="true" />
-            <element signature="e#1974#1975#0" expanded="true" />
-            <element signature="e#2023#2024#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GUI/DrawLabyrinth.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
+        <state relative-caret-position="187">
           <caret line="15" selection-start-line="15" selection-end-line="15" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1283#1284#0" expanded="true" />
-            <element signature="e#1311#1312#0" expanded="true" />
-            <element signature="e#1337#1338#0" expanded="true" />
-            <element signature="e#1365#1366#0" expanded="true" />
             <element signature="e#1246#1247#0" expanded="true" />
             <element signature="e#1275#1276#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/GUI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1154">
+          <caret line="265" selection-start-line="265" selection-end-line="265" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Matrix/Labyrinth.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3944">
+        <state relative-caret-position="-255">
           <caret line="14" selection-start-line="14" selection-end-line="14" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#361#362#0" expanded="true" />
-            <element signature="e#388#389#0" expanded="true" />
-            <element signature="e#419#420#0" expanded="true" />
-            <element signature="e#447#448#0" expanded="true" />
-            <element signature="e#488#489#0" expanded="true" />
-            <element signature="e#526#527#0" expanded="true" />
-            <element signature="e#566#567#0" expanded="true" />
-            <element signature="e#609#610#0" expanded="true" />
-            <element signature="e#660#661#0" expanded="true" />
-            <element signature="e#697#698#0" expanded="true" />
-            <element signature="e#729#730#0" expanded="true" />
-            <element signature="e#758#759#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Matrix/Algorithm.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="134" column="57" lean-forward="true" selection-start-line="134" selection-start-column="57" selection-end-line="134" selection-end-column="57" />
+        <state relative-caret-position="136">
+          <caret line="43" column="21" lean-forward="true" selection-start-line="43" selection-start-column="21" selection-end-line="43" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Pictures/UML.uml">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JAVA</ID>
+          <OriginalElement />
+          <nodes>
+            <node x="712.0" y="1156.0">Matrix.Algorithm</node>
+            <node x="556.1570512820513" y="0.0">Matrix.Labyrinth</node>
+            <node x="597.5" y="1498.0">GUI.GUI</node>
+            <node x="238.95673076923083" y="1189.0">GUI.DrawLabyrinth</node>
+            <node x="0.0" y="484.0">GUI.ButtonColumn</node>
+            <node x="525.0" y="737.5">Matrix.LabyrinthTest</node>
+            <node x="625.0" y="1840.0">Main</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="GUI.GUI" target="GUI.DrawLabyrinth">
+              <point x="-82.08333333333337" y="-146.0" />
+              <point x="613.9166666666666" y="1478.0" />
+              <point x="294.70673076923083" y="1478.0" />
+              <point x="-55.75" y="113.0" />
+            </edge>
+            <edge source="Main" target="GUI.GUI">
+              <point x="-35.5" y="-24.5" />
+              <point x="660.5" y="1815.0" />
+              <point x="646.75" y="1815.0" />
+              <point x="-49.25" y="146.0" />
+            </edge>
+            <edge source="Matrix.Algorithm" target="Matrix.Labyrinth">
+              <point x="0.0" y="-146.0" />
+              <point x="896.0" y="464.0" />
+              <point x="718.3445512820513" y="464.0" />
+              <point x="75.6875" y="212.0" />
+            </edge>
+            <edge source="GUI.DrawLabyrinth" target="Matrix.Labyrinth">
+              <point x="83.625" y="-113.0" />
+              <point x="434.08173076923083" y="1136.0" />
+              <point x="679.5" y="1136.0" />
+              <point x="679.5" y="464.0" />
+              <point x="653.4695512820513" y="464.0" />
+              <point x="10.8125" y="212.0" />
+            </edge>
+            <edge source="Matrix.LabyrinthTest" target="Matrix.Labyrinth">
+              <point x="-36.0" y="-57.5" />
+              <point x="561.0" y="464.0" />
+              <point x="610.2195512820513" y="464.0" />
+              <point x="-32.4375" y="212.0" />
+            </edge>
+            <edge source="GUI.ButtonColumn" target="Matrix.Labyrinth">
+              <point x="126.25" y="-311.0" />
+              <point x="378.75" y="454.0" />
+              <point x="588.5945512820513" y="454.0" />
+              <point x="-54.0625" y="212.0" />
+            </edge>
+            <edge source="GUI.GUI" target="Matrix.Algorithm">
+              <point x="82.08333333333337" y="-146.0" />
+              <point x="778.0833333333334" y="1478.0" />
+              <point x="988.0" y="1478.0" />
+              <point x="92.0" y="146.0" />
+            </edge>
+            <edge source="GUI.DrawLabyrinth" target="GUI.ButtonColumn">
+              <point x="27.875" y="-113.0" />
+              <point x="378.33173076923083" y="1136.0" />
+              <point x="420.83333333333337" y="1136.0" />
+              <point x="168.33333333333337" y="311.0" />
+            </edge>
+            <edge source="GUI.GUI" target="Matrix.Labyrinth">
+              <point x="16.41666666666663" y="-146.0" />
+              <point x="712.4166666666666" y="1478.0" />
+              <point x="701.5" y="1478.0" />
+              <point x="701.5" y="464.0" />
+              <point x="696.7195512820513" y="464.0" />
+              <point x="54.0625" y="212.0" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="0.9" x="3.0" y="624.2222222222222" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Fields</Category>
+            <Category>Methods</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>private</VISIBILITY>
         </state>
       </provider>
     </entry>
@@ -752,10 +850,12 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
+          <last-edited>BorsukProject:jar</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>
@@ -763,6 +863,7 @@
       </state>
       <state key="FacetStructureConfigurable.UI">
         <settings>
+          <last-edited>No facets are configured</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -801,7 +902,6 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>

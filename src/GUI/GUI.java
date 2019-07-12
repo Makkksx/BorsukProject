@@ -244,19 +244,18 @@ public class GUI extends JFrame {
 
         next_step.addActionListener(e -> {
             save_file.setEnabled(false);
+            setFinish.setEnabled(false);
+            setStart.setEnabled(false);
             drawLabyrinth.getJTable().setEnabled(false);
             if (algorithm.stepFindA(labyrinth)) {
                 next_step.setEnabled(false);
                 play_button.setEnabled(false);
-                setFinish.setEnabled(false);
-                setStart.setEnabled(false);
 
             } else if (algorithm.openSetIsEmpty()) {
                 JOptionPane.showMessageDialog(drawLabyrinth.getJPanel(), "Путь не найден");
                 drawLabyrinth.getJTable().setEnabled(false);
                 next_step.setEnabled(false);
                 play_button.setEnabled(false);
-                setFinish.setEnabled(false);
                 setStart.setEnabled(false);
             }
             repaint();
